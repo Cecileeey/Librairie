@@ -1,16 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.librairie.librairie.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
+<VBox alignment="CENTER" prefHeight="709.0" prefWidth="1319.0" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.librairie.librairie.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <children>
+      <AnchorPane prefHeight="713.0" prefWidth="1302.0">
+         <children>
+            <TableView layoutX="6.0" layoutY="79.0" prefHeight="518.0" prefWidth="768.0">
+              <columns>
+                <TableColumn prefWidth="149.99996948242188" text="Titre" />
+                <TableColumn minWidth="0.0" prefWidth="0.0" text="Auteur" />
+                  <TableColumn prefWidth="182.00003051757812" text="Présentation" />
+                  <TableColumn prefWidth="160.0" text="Parution" />
+                  <TableColumn prefWidth="123.0" text="Colonne" />
+                  <TableColumn prefWidth="152.0" text="Rangée" />
+              </columns>
+            </TableView>
+            <MenuBar prefHeight="32.0" prefWidth="1302.0">
+               <menus>
+                  <Menu mnemonicParsing="false" text="Fichier">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Ouvrir" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="Quitter" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Edition">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Sauvegarder" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="Sauvegarder sous..." />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="About">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Infos" />
+                     </items>
+                  </Menu>
+               </menus>
+            </MenuBar>
+            <Label layoutX="839.0" layoutY="287.0" text="Parution :">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="832.0" layoutY="221.0" text="Présentation :">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="832.0" layoutY="89.0" text="Titre :">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="832.0" layoutY="155.0" text="Auteur :">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="840.0" layoutY="354.0" text="Colonne :">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="843.0" layoutY="424.0" text="Rangée :">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Button layoutX="1206.0" layoutY="478.0" mnemonicParsing="false" text="Valider" />
+            <TextField layoutX="939.0" layoutY="216.0" prefHeight="31.0" prefWidth="334.0" />
+            <TextField layoutX="939.0" layoutY="150.0" prefHeight="31.0" prefWidth="334.0" />
+            <TextField layoutX="939.0" layoutY="84.0" prefHeight="31.0" prefWidth="334.0" />
+            <TextField layoutX="939.0" layoutY="282.0" prefHeight="31.0" prefWidth="334.0" />
+            <TextField layoutX="939.0" layoutY="349.0" prefHeight="31.0" prefWidth="334.0" />
+            <TextField layoutX="939.0" layoutY="419.0" prefHeight="31.0" prefWidth="334.0" />
+            <Button layoutX="774.0" layoutY="617.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="39.0" text="-" />
+            <Button layoutX="824.0" layoutY="617.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="39.0" text="+" />
+         </children>
+      </AnchorPane>
+   </children>
 </VBox>
