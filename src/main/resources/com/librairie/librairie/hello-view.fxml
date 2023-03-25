@@ -6,94 +6,164 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.SeparatorMenuItem?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="709.0" prefWidth="1319.0" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.librairie.librairie.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-    </padding>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.librairie.librairie.HelloController">
    <children>
-      <AnchorPane prefHeight="713.0" prefWidth="1302.0">
+      <MenuBar>
+        <menus>
+          <Menu mnemonicParsing="false" text="Fichier">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Ouvrir" />
+                  <MenuItem mnemonicParsing="false" text="Quitter" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edition">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Sauvegarder" />
+                  <MenuItem mnemonicParsing="false" text="Sauvegarder sous..." />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="About">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Infos" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <HBox prefHeight="771.0" prefWidth="1200.0">
          <children>
-            <TableView layoutX="6.0" layoutY="79.0" prefHeight="518.0" prefWidth="768.0">
-              <columns>
-                <TableColumn prefWidth="149.99996948242188" text="Titre" />
-                <TableColumn minWidth="0.0" prefWidth="0.0" text="Auteur" />
-                  <TableColumn prefWidth="182.00003051757812" text="Présentation" />
-                  <TableColumn prefWidth="160.0" text="Parution" />
-                  <TableColumn prefWidth="123.0" text="Colonne" />
-                  <TableColumn prefWidth="152.0" text="Rangée" />
-              </columns>
-            </TableView>
-            <MenuBar prefHeight="32.0" prefWidth="1302.0">
-               <menus>
-                  <Menu mnemonicParsing="false" text="Fichier">
-                     <items>
-                        <MenuItem mnemonicParsing="false" text="Ouvrir" />
-                        <SeparatorMenuItem mnemonicParsing="false" />
-                        <MenuItem mnemonicParsing="false" text="Quitter" />
-                     </items>
-                  </Menu>
-                  <Menu mnemonicParsing="false" text="Edition">
-                     <items>
-                        <MenuItem mnemonicParsing="false" text="Sauvegarder" />
-                        <SeparatorMenuItem mnemonicParsing="false" />
-                        <MenuItem mnemonicParsing="false" text="Sauvegarder sous..." />
-                     </items>
-                  </Menu>
-                  <Menu mnemonicParsing="false" text="About">
-                     <items>
-                        <MenuItem mnemonicParsing="false" text="Infos" />
-                     </items>
-                  </Menu>
-               </menus>
-            </MenuBar>
-            <Label layoutX="839.0" layoutY="287.0" text="Parution :">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Label>
-            <Label layoutX="832.0" layoutY="221.0" text="Présentation :">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Label>
-            <Label layoutX="832.0" layoutY="89.0" text="Titre :">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Label>
-            <Label layoutX="832.0" layoutY="155.0" text="Auteur :">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Label>
-            <Label layoutX="840.0" layoutY="354.0" text="Colonne :">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Label>
-            <Label layoutX="843.0" layoutY="424.0" text="Rangée :">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Label>
-            <Button layoutX="1206.0" layoutY="478.0" mnemonicParsing="false" text="Valider" />
-            <TextField layoutX="939.0" layoutY="216.0" prefHeight="31.0" prefWidth="334.0" />
-            <TextField layoutX="939.0" layoutY="150.0" prefHeight="31.0" prefWidth="334.0" />
-            <TextField layoutX="939.0" layoutY="84.0" prefHeight="31.0" prefWidth="334.0" />
-            <TextField layoutX="939.0" layoutY="282.0" prefHeight="31.0" prefWidth="334.0" />
-            <TextField layoutX="939.0" layoutY="349.0" prefHeight="31.0" prefWidth="334.0" />
-            <TextField layoutX="939.0" layoutY="419.0" prefHeight="31.0" prefWidth="334.0" />
-            <Button layoutX="774.0" layoutY="617.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="39.0" text="-" />
-            <Button layoutX="824.0" layoutY="617.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="39.0" text="+" />
+            <VBox prefHeight="800.0" prefWidth="800.0">
+               <children>
+                  <TableView prefHeight="617.0" prefWidth="750.0">
+                    <columns>
+                      <TableColumn prefWidth="179.99996948242188" text="Titre" />
+                      <TableColumn prefWidth="124.00003051757812" text="Auteur" />
+                        <TableColumn prefWidth="215.0" text="Présentation" />
+                        <TableColumn prefWidth="103.0" text="Parution" />
+                        <TableColumn prefWidth="67.0" text="Colonne" />
+                        <TableColumn prefWidth="61.0" text="Rangée" />
+                    </columns>
+                  </TableView>
+                  <HBox prefHeight="49.0" prefWidth="1084.0">
+                     <children>
+                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="31.0" text="+">
+                           <HBox.margin>
+                              <Insets left="650.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="31.0" text="-">
+                           <HBox.margin>
+                              <Insets left="15.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="40.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+            <HBox prefHeight="768.0" prefWidth="495.0">
+               <children>
+                  <VBox prefHeight="768.0" prefWidth="147.0">
+                     <children>
+                        <Label text="Titre">
+                           <VBox.margin>
+                              <Insets top="35.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font></Label>
+                        <Label text="Auteur">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="50.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label text="Présentation">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="45.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label text="Parution">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="50.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label text="Colonne">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="50.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label text="Rangée">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="50.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets bottom="100.0" left="10.0" top="5.0" />
+                     </padding>
+                  </VBox>
+                  <VBox prefHeight="768.0" prefWidth="261.0">
+                     <children>
+                        <TextField fx:id="titre" prefHeight="31.0" prefWidth="229.0" promptText="Titre">
+                           <VBox.margin>
+                              <Insets top="30.0" />
+                           </VBox.margin></TextField>
+                        <TextField fx:id="auteur" promptText="Auteur">
+                           <VBox.margin>
+                              <Insets top="40.0" />
+                           </VBox.margin></TextField>
+                        <TextField fx:id="presentation" promptText="Présentation">
+                           <VBox.margin>
+                              <Insets top="40.0" />
+                           </VBox.margin></TextField>
+                        <TextField fx:id="parution" promptText="Parution">
+                           <VBox.margin>
+                              <Insets top="40.0" />
+                           </VBox.margin></TextField>
+                        <TextField fx:id="colonne" promptText="Colonne">
+                           <VBox.margin>
+                              <Insets top="40.0" />
+                           </VBox.margin></TextField>
+                        <TextField fx:id="rangee" promptText="Rangée">
+                           <VBox.margin>
+                              <Insets top="40.0" />
+                           </VBox.margin></TextField>
+                        <Button mnemonicParsing="false" prefHeight="31.0" text="Valider">
+                           <VBox.margin>
+                              <Insets left="180.0" top="70.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                     <padding>
+                        <Insets top="2.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </HBox>
          </children>
-      </AnchorPane>
+      </HBox>
    </children>
 </VBox>
