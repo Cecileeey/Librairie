@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
@@ -13,51 +14,54 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox id="VBoxPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.librairie.librairie.HelloController">
+<VBox fx:id="vboxFenetre" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.librairie.librairie.HelloController">
    <children>
-      <MenuBar>
+      <MenuBar fx:id="menu">
          <menus>
-            <Menu mnemonicParsing="false" text="Fichier">
+            <Menu fx:id="fichier" mnemonicParsing="false" text="Fichier">
                <items>
-                  <MenuItem mnemonicParsing="false" text="Ouvrir" />
-                  <MenuItem mnemonicParsing="false" text="Quitter" />
+                  <MenuItem fx:id="ouvrir" mnemonicParsing="false" text="Ouvrir" />
+                  <MenuItem fx:id="quitter" mnemonicParsing="false" text="Quitter" />
                </items>
             </Menu>
-            <Menu mnemonicParsing="false" text="Edition">
+            <Menu fx:id="edition" mnemonicParsing="false" text="Edition">
                <items>
-                  <MenuItem mnemonicParsing="false" text="Sauvegarder" />
-                  <MenuItem mnemonicParsing="false" text="Sauvegarder sous..." />
+                  <MenuItem fx:id="save" mnemonicParsing="false" text="Sauvegarder" />
+                  <MenuItem fx:id="saveAs" mnemonicParsing="false" text="Sauvegarder sous..." />
                </items>
             </Menu>
-            <Menu mnemonicParsing="false" text="About">
+            <Menu fx:id="about" mnemonicParsing="false" text="About">
                <items>
-                  <MenuItem mnemonicParsing="false" text="Infos" />
+                  <MenuItem fx:id="infos" mnemonicParsing="false" text="Infos" />
                </items>
             </Menu>
          </menus>
       </MenuBar>
-      <HBox id="HBoxPrincipal" prefHeight="771.0" prefWidth="1200.0">
+      <HBox fx:id="hboxGlobal" prefHeight="771.0" prefWidth="1200.0">
          <children>
-            <VBox id="VBoxAffichage" prefHeight="800.0" prefWidth="800.0">
+            <VBox fx:id="vboxTableau" prefHeight="800.0" prefWidth="800.0">
                <children>
-                  <TableView prefHeight="617.0" prefWidth="750.0">
+                  <TableView fx:id="tableview" prefHeight="509.0" prefWidth="753.0">
                      <columns>
-                        <TableColumn prefWidth="179.99996948242188" text="Titre" />
-                        <TableColumn prefWidth="124.00003051757812" text="Auteur" />
-                        <TableColumn prefWidth="215.0" text="Présentation" />
-                        <TableColumn prefWidth="103.0" text="Parution" />
-                        <TableColumn prefWidth="67.0" text="Colonne" />
-                        <TableColumn prefWidth="61.0" text="Rangée" />
+                        <TableColumn fx:id="titreColumn" prefWidth="179.99996948242188" text="Titre" />
+                        <TableColumn fx:id="auteurColumn" prefWidth="124.00003051757812" text="Auteur" />
+                        <TableColumn fx:id="presentationColumn" prefWidth="162.0" text="Présentation" />
+                        <TableColumn fx:id="parutionColumn" prefWidth="103.0" text="Parution" />
+                        <TableColumn fx:id="colonneColumn" prefWidth="97.0" text="Colonne" />
+                        <TableColumn fx:id="rangeeColumn" prefWidth="84.0" text="Rangée" />
                      </columns>
+                     <VBox.margin>
+                        <Insets top="35.0" />
+                     </VBox.margin>
                   </TableView>
-                  <HBox id="HBoxTableau" prefHeight="49.0" prefWidth="1084.0">
+                  <HBox fx:id="hboxButton" prefHeight="49.0" prefWidth="1084.0">
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="31.0" text="+">
+                        <Button fx:id="buttonPlus" mnemonicParsing="false" prefHeight="31.0" prefWidth="31.0" text="+">
                            <HBox.margin>
                               <Insets left="650.0" />
                            </HBox.margin>
                         </Button>
-                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="31.0" text="-">
+                        <Button fx:id="buttonMoins" mnemonicParsing="false" prefHeight="31.0" prefWidth="31.0" text="-">
                            <HBox.margin>
                               <Insets left="15.0" />
                            </HBox.margin>
@@ -69,9 +73,9 @@
                   </HBox>
                </children>
             </VBox>
-            <HBox id="HBoxAffichage" prefHeight="768.0" prefWidth="495.0">
+            <HBox fx:id="hboxForm" prefHeight="768.0" prefWidth="495.0">
                <children>
-                  <VBox id="VBoxFormulaireTitre" prefHeight="768.0" prefWidth="147.0">
+                  <VBox fx:id="vboxLabel" prefHeight="768.0" prefWidth="147.0">
                      <children>
                         <Label text="Titre">
                            <VBox.margin>
@@ -124,8 +128,11 @@
                      <padding>
                         <Insets bottom="100.0" left="10.0" top="5.0" />
                      </padding>
+                     <HBox.margin>
+                        <Insets left="25.0" />
+                     </HBox.margin>
                   </VBox>
-                  <VBox id="VBoxFormulaireSaisie" prefHeight="768.0" prefWidth="261.0">
+                  <VBox fx:id="vboxTextfield" prefHeight="768.0" prefWidth="261.0">
                      <children>
                         <TextField fx:id="titre" prefHeight="31.0" prefWidth="229.0" promptText="Titre">
                            <VBox.margin>
@@ -139,10 +146,11 @@
                            <VBox.margin>
                               <Insets top="40.0" />
                            </VBox.margin></TextField>
-                        <TextField fx:id="parution" promptText="Parution">
+                        <DatePicker fx:id="parution">
                            <VBox.margin>
                               <Insets top="40.0" />
-                           </VBox.margin></TextField>
+                           </VBox.margin>
+                        </DatePicker>
                         <TextField fx:id="colonne" promptText="Colonne">
                            <VBox.margin>
                               <Insets top="40.0" />
@@ -151,7 +159,7 @@
                            <VBox.margin>
                               <Insets top="40.0" />
                            </VBox.margin></TextField>
-                        <Button mnemonicParsing="false" prefHeight="31.0" text="Valider">
+                        <Button fx:id="valider" mnemonicParsing="false" onAction="#btnValider" prefHeight="31.0" text="Valider">
                            <VBox.margin>
                               <Insets left="180.0" top="70.0" />
                            </VBox.margin>
