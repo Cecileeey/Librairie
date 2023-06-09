@@ -7,6 +7,7 @@ package com.librairie.librairie.Model;//
 
 
 import jakarta.xml.bind.annotation.*;
+import javafx.beans.property.StringProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -183,6 +184,17 @@ public class Bibliotheque {
         public String getTitre() {
             return titre;
         }
+        public String titreProperty() {
+            return titre;
+        }
+
+        /**
+
+         D�finit la valeur de la propri�t� titre.
+         @param value
+         allowed object is
+         {@link StringProperty }
+         */
 
         /**
          * D�finit la valeur de la propri�t� titre.
@@ -266,6 +278,10 @@ public class Bibliotheque {
          * Obtient la valeur de la propri�t� rangee.
          */
         public short getRangee() {
+            return rangee;
+        }
+
+        public short rangeeProperty() {
             return rangee;
         }
 
