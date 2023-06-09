@@ -1,17 +1,25 @@
-package com.librairie.librairie.Model;//
+//
 // Ce fichier a �t� g�n�r� par l'impl�mentation de r�f�rence JavaTM Architecture for XML Binding (JAXB), v2.2.8-b130911.1802
 // Voir <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a>
 // Toute modification apport�e � ce fichier sera perdue lors de la recompilation du sch�ma source.
-// G�n�r� le : 2023.03.23 � 10:22:50 AM CET
+// G�n�r� le : 2023.03.23 � 02:30:44 PM CET
 //
+package com.librairie.librairie.Model;
 
-
-import jakarta.xml.bind.annotation.*;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import javafx.scene.control.DatePicker;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
@@ -46,7 +54,6 @@ import java.util.Objects;
  *                   &lt;element name="parution" type="{http://www.w3.org/2001/XMLSchema}unsignedShort"/>
  *                   &lt;element name="colonne" type="{http://www.w3.org/2001/XMLSchema}unsignedByte"/>
  *                   &lt;element name="rangee" type="{http://www.w3.org/2001/XMLSchema}unsignedByte"/>
- *                   &lt;element name="image" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *                 &lt;/sequence>
  *               &lt;/restriction>
  *             &lt;/complexContent>
@@ -57,6 +64,8 @@ import java.util.Objects;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -87,6 +96,8 @@ public class Bibliotheque {
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link Bibliotheque.Livre }
+     *
+     *
      */
     public List<Bibliotheque.Livre> getLivre() {
         if (livre == null) {
@@ -95,10 +106,6 @@ public class Bibliotheque {
         return this.livre;
     }
 
-    public void setLivre(List<Bibliotheque.Livre> livres) {
-        livre = livres;
-
-    }
 
     /**
      * <p>Classe Java pour anonymous complex type.
@@ -127,12 +134,13 @@ public class Bibliotheque {
      *         &lt;element name="parution" type="{http://www.w3.org/2001/XMLSchema}unsignedShort"/>
      *         &lt;element name="colonne" type="{http://www.w3.org/2001/XMLSchema}unsignedByte"/>
      *         &lt;element name="rangee" type="{http://www.w3.org/2001/XMLSchema}unsignedByte"/>
-     *         &lt;element name="image" type="{http://www.w3.org/2001/XMLSchema}string"/>
      *       &lt;/sequence>
      *     &lt;/restriction>
      *   &lt;/complexContent>
      * &lt;/complexType>
      * </pre>
+     *
+     *
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "", propOrder = {
@@ -146,71 +154,73 @@ public class Bibliotheque {
     })
     public static class Livre {
 
+
         @XmlElement(required = true)
-        protected String titre;
+        protected StringProperty titre;
         @XmlElement(required = true)
         protected Bibliotheque.Livre.Auteur auteur;
         @XmlElement(required = true)
-        protected String presentation;
-        @XmlSchemaType(name = "unsignedShort")
-        protected int parution;
+        protected StringProperty presentation;
+        @XmlSchemaType(name ="unsignedShort")
+        protected StringProperty parution;
         @XmlSchemaType(name = "unsignedByte")
-        protected short colonne;
+        protected IntegerProperty colonne;
         @XmlSchemaType(name = "unsignedByte")
-        protected short rangee;
-        @XmlElement(required = true)
-        protected String image;
+        protected IntegerProperty rangee;
+        @XmlSchemaType(name = "unsignedByte")
+        protected StringProperty image;
 
-        public Livre() {
-            // Constructeur vide
+        public Livre(String titre, Bibliotheque.Livre.Auteur auteur,String presentation,String parution,Integer colonne, Integer rangee){
+            this.titre = new SimpleStringProperty(titre);
+            this.auteur =auteur;
+            this.presentation = new SimpleStringProperty(presentation);
+            this.parution= new SimpleStringProperty(parution);
+            this.colonne= new SimpleIntegerProperty(colonne);
+            this.rangee= new SimpleIntegerProperty(rangee);
         }
-
-        public Livre(String titre, Auteur auteur, String presentation, int parution, short colonne, short rangee, String image) {
-            this.titre = titre;
-            this.auteur = auteur;
-            this.presentation = presentation;
-            this.parution = parution;
-            this.colonne = colonne;
-            this.rangee = rangee;
-            this.image = image;
+        public Livre(){
+            this.titre= new SimpleStringProperty(null);
+            this.auteur =null;
+            this.presentation= new SimpleStringProperty(null);
+            this.parution= new SimpleStringProperty(null);
+            this.colonne= new SimpleIntegerProperty(0);
+            this.rangee= new SimpleIntegerProperty(0);
         }
 
         /**
          * Obtient la valeur de la propri�t� titre.
          *
-         * @return possible object is
-         * {@link String }
+         * @return
+         *     possible object is
+         *     {@link StringProperty }
+         *
          */
         public String getTitre() {
+            return titre.get();
+        }
+        public StringProperty titreProperty() {
             return titre;
         }
-        public String titreProperty() {
-            return titre;
-        }
-
-        /**
-
-         D�finit la valeur de la propri�t� titre.
-         @param value
-         allowed object is
-         {@link StringProperty }
-         */
 
         /**
          * D�finit la valeur de la propri�t� titre.
          *
-         * @param value allowed object is
-         *              {@link String }
+         * @param value
+         *     allowed object is
+         *     {@link StringProperty }
+         *
          */
         public void setTitre(String value) {
-            this.titre = value;
+            this.titre.set(value);
         }
 
         /**
          * Obtient la valeur de la propri�t� auteur.
          *
-         * @return possible object is
-         * {@link Bibliotheque.Livre.Auteur }
+         * @return
+         *     possible object is
+         *     {@link Bibliotheque.Livre.Auteur }
+         *
          */
         public Bibliotheque.Livre.Auteur getAuteur() {
             return auteur;
@@ -219,8 +229,10 @@ public class Bibliotheque {
         /**
          * D�finit la valeur de la propri�t� auteur.
          *
-         * @param value allowed object is
-         *              {@link Bibliotheque.Livre.Auteur }
+         * @param value
+         *     allowed object is
+         *     {@link Bibliotheque.Livre.Auteur }
+         *
          */
         public void setAuteur(Bibliotheque.Livre.Auteur value) {
             this.auteur = value;
@@ -229,87 +241,85 @@ public class Bibliotheque {
         /**
          * Obtient la valeur de la propri�t� presentation.
          *
-         * @return possible object is
-         * {@link String }
+         * @return
+         *     possible object is
+         *     {@link StringProperty }
+         *
          */
-        public String getPresentation() {
+        public StringProperty getPresentation() {
             return presentation;
         }
 
         /**
          * D�finit la valeur de la propri�t� presentation.
          *
-         * @param value allowed object is
-         *              {@link String }
+         * @param value
+         *     allowed object is
+         *     {@link StringProperty }
+         *
          */
-        public void setPresentation(String value) {
+        public void setPresentation(StringProperty value) {
             this.presentation = value;
         }
+        /**
+         * Obtient la valeur de l'image.
+         *
+         */
+        public StringProperty getImage(){
+            return image;
+        }
+
+        public void setImage(StringProperty value){this.presentation=value;}
 
         /**
          * Obtient la valeur de la propri�t� parution.
+         *
          */
-        public int getParution() {
+        public StringProperty getParution() {
             return parution;
         }
 
         /**
          * D�finit la valeur de la propri�t� parution.
+         *
          */
-        public void setParution(int value) {
+        public void setParution(StringProperty value) {
             this.parution = value;
         }
 
         /**
          * Obtient la valeur de la propri�t� colonne.
+         *
          */
-        public short getColonne() {
+        public IntegerProperty getColonne() {
             return colonne;
         }
 
         /**
          * D�finit la valeur de la propri�t� colonne.
+         *
          */
-        public void setColonne(short value) {
+        public void setColonne(IntegerProperty value) {
             this.colonne = value;
         }
 
         /**
          * Obtient la valeur de la propri�t� rangee.
+         *
          */
-        public short getRangee() {
-            return rangee;
+        public Integer getRangee() {
+            return rangee.get();
         }
-
-        public short rangeeProperty() {
+        public IntegerProperty rangeeProperty() {
             return rangee;
         }
 
         /**
          * D�finit la valeur de la propri�t� rangee.
-         */
-        public void setRangee(short value) {
-            this.rangee = value;
-        }
-
-        /**
-         * Obtient la valeur de la propri�t� image.
          *
-         * @return possible object is
-         * {@link String }
          */
-        public String getImage() {
-            return image;
-        }
-
-        /**
-         * D�finit la valeur de la propri�t� image.
-         *
-         * @param value allowed object is
-         *              {@link String }
-         */
-        public void setImage(String value) {
-            this.image = value;
+        public void setRangee(Integer value) {
+            this.rangee.set(value);
         }
 
 
@@ -330,6 +340,8 @@ public class Bibliotheque {
          *   &lt;/complexContent>
          * &lt;/complexType>
          * </pre>
+         *
+         *
          */
         @XmlAccessorType(XmlAccessType.FIELD)
         @XmlType(name = "", propOrder = {
@@ -338,26 +350,27 @@ public class Bibliotheque {
         })
         public static class Auteur {
 
-
             @XmlElement(required = true)
             protected String nom;
             @XmlElement(required = true)
             protected String prenom;
 
-            public Auteur() {
-
-            }
-
-            public Auteur(String nom, String prenom) {
+            public Auteur(String nom, String prenom){
                 this.nom = nom;
                 this.prenom = prenom;
             }
 
+            public Auteur(){
+                this.nom = null;
+                this.prenom = null;
+            }
             /**
              * Obtient la valeur de la propri�t� nom.
              *
-             * @return possible object is
-             * {@link String }
+             * @return
+             *     possible object is
+             *     {@link String }
+             *
              */
             public String getNom() {
                 return nom;
@@ -366,8 +379,10 @@ public class Bibliotheque {
             /**
              * D�finit la valeur de la propri�t� nom.
              *
-             * @param value allowed object is
-             *              {@link String }
+             * @param value
+             *     allowed object is
+             *     {@link String }
+             *
              */
             public void setNom(String value) {
                 this.nom = value;
@@ -376,8 +391,10 @@ public class Bibliotheque {
             /**
              * Obtient la valeur de la propri�t� prenom.
              *
-             * @return possible object is
-             * {@link String }
+             * @return
+             *     possible object is
+             *     {@link String }
+             *
              */
             public String getPrenom() {
                 return prenom;
@@ -386,29 +403,15 @@ public class Bibliotheque {
             /**
              * D�finit la valeur de la propri�t� prenom.
              *
-             * @param value allowed object is
-             *              {@link String }
+             * @param value
+             *     allowed object is
+             *     {@link String }
+             *
              */
             public void setPrenom(String value) {
                 this.prenom = value;
             }
 
-            /**
-             * Obtient la valeur des prppriétés nom et prenom
-             *
-             * @return possible object is
-             * {@link String }
-             */
-            public String getNomPrenom() {
-                return prenom + " " + nom;
-            }
-
-            @Override
-            public String toString() {
-                if(!Objects.isNull(nom) && !Objects.isNull(prenom))
-                    return getNomPrenom();
-                return "";
-            }
         }
 
     }

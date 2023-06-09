@@ -7,7 +7,7 @@ package com.librairie.librairie.Model;//
 
 
 import com.librairie.librairie.Model.Bibliotheque;
-import jakarta.xml.bind.annotation.XmlRegistry;
+import javax.xml.bind.annotation.XmlRegistry;
 
 
 

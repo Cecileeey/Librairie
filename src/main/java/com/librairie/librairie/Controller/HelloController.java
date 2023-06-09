@@ -9,21 +9,21 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
-public class HomeController {
+public class HelloController {
     @FXML
-    private TextField titre;
+    public TextField titre;
     @FXML
-    private TextField auteur;
+    public TextField auteur;
     @FXML
-    private DatePicker parution;
+    public TextField presentation;
     @FXML
-    private TextField presentation;
+    public TextField colonne;
     @FXML
-    private TextField colonne;
+    public TextField rangee;
     @FXML
-    private TextField rangee;
+    public DatePicker parution;
     @FXML
-    private TextField image;
+    public TextField image;
 
     //BUTTON
     @FXML
@@ -32,8 +32,7 @@ public class HomeController {
     private Button buttonMoins;
     @FXML
     private Button btnValider;
-    @FXML
-    private Button save;
+
 
     //TABLE COLUMN
     @FXML
@@ -61,18 +60,18 @@ public class HomeController {
     Bibliotheque.Livre.Auteur auteur1 = new Bibliotheque.Livre.Auteur(auteur.getText(), auteur.getText());
         String titreText = titre.getText();
         String presentationText = presentation.getText();
-        String parutionText = String.valueOf(parution.getValue();
-        Integer colonneText = Integer.parseInt(colonne.getText();
-        Integer rangeeText = Integer.parseInt(rangee.getText();
+        String parutionText = String.valueOf(parution.getValue());
+        Integer colonneText = Integer.parseInt(colonne.getText());
+        Integer rangeeText = Integer.parseInt(rangee.getText());
 
         System.out.println(parutionText);
 
-        // Affichage des données dans le tableau nameColumn.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
+
         ObservableList<Bibliotheque.Livre> listD = getList();
 
         presentationColumn.setCellValueFactory(cellData -> cellData.getValue().getPresentation());
         titreColumn.setCellValueFactory(cellData -> cellData.getValue().titreProperty());
-        auteurColumn.setCellValueFactory(cellData -> cellData.getValue().getAuteur());
+        //auteurColumn.setCellValueFactory(cellData -> cellData.getValue().getAuteur());
         rangeeColumn.setCellValueFactory(cellData -> {
             IntegerProperty rangee = cellData.getValue().rangeeProperty();
             ObservableValue<Integer> observableRangee = Bindings.createIntegerBinding(() -> rangee.get()).asObject();
