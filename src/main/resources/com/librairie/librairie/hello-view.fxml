@@ -13,6 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
+<?import javafx.scene.image.ImageView?>
 <VBox prefHeight="500.0" prefWidth="870.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.librairie.librairie.Controller.HelloController">
    <children>
       <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="549.0" prefWidth="979.0" VBox.vgrow="ALWAYS">
@@ -77,6 +78,7 @@
             <Button fx:id="buttonPlus" layoutX="369.0" layoutY="427.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="36.0" style="-fx-background-color: #409a13;" text="+" textFill="WHITE" />
             <Button fx:id="buttonMoins" layoutX="421.0" layoutY="427.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="34.0" text="-" />
             <DatePicker fx:id="parution" layoutX="694.0" layoutY="210.0" prefHeight="23.0" prefWidth="160.0" />
+            <ImageView fx:id="imageView" fitHeight="121.0" fitWidth="134.0" layoutX="586.0" layoutY="373.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </AnchorPane>
    </children>

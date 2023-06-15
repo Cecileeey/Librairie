@@ -8,6 +8,15 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.stage.FileChooser;
+
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+import javax.xml.bind.Unmarshaller;
+import java.io.File;
 
 public class HelloController {
     @FXML
@@ -24,6 +33,8 @@ public class HelloController {
     public DatePicker parution;
     @FXML
     public TextField image;
+    @FXML
+    public ImageView imageView;
 
     //BUTTON
     @FXML
@@ -50,6 +61,7 @@ public class HelloController {
 
     public TableView <Bibliotheque.Livre> tableView;
 
+    public Bibliotheque bibliotheque = new Bibliotheque();
 
     public ObservableList<Bibliotheque.Livre> getList() {
     ObservableList<Bibliotheque.Livre> listBook = FXCollections.observableArrayList();
@@ -65,7 +77,6 @@ public class HelloController {
         Integer rangeeText = Integer.parseInt(rangee.getText());
 
         System.out.println(parutionText);
-
 
         ObservableList<Bibliotheque.Livre> listD = getList();
 
@@ -88,6 +99,47 @@ public class HelloController {
 
         Bibliotheque.Livre livre = new Bibliotheque.Livre(titreText,auteur1,presentationText,parutionText,colonneText,rangeeText);
         tableView.getItems().add(livre);
+
+        String imageUrl = image.getText();
+        System.out.println(imageUrl);
+        Image image = new Image(imageUrl);
+        imageView.setImage(image);
     }
+
+    @FXML
+    public void handleSaveAs(ActionEvent event) throws JAXBException {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Enregistrer");
+        fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("Fichier XML", ".xml"));
+        File selectedFile = fileChooser.showSaveDialog(tableView.getScene().getWindow());
+        if (selectedFile != null){
+            JAXBContext jaxbContext = JAXBContext.newInstance(Bibliotheque.class);
+            Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
+            jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+            System.out.println("ok");
+            jaxbMarshaller.marshal(bibliotheque, selectedFile);
+        }
+    }
+
+    public void handleOpen(ActionEvent event) throws JAXBException {
+        // ouverture du fichier xml
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Ouvrir");
+        fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("Fichier XML", ".xml"));
+        File selectedFile = fileChooser.showOpenDialog(tableView.getScene().getWindow());
+        if (selectedFile != null){
+            //unmarshalling ( xml -> java)
+            JAXBContext jaxbContext = JAXBContext.newInstance(Bibliotheque.class);
+            Unmarshaller jaxbunMarshaller = jaxbContext.createUnmarshaller();
+            bibliotheque= (Bibliotheque) jaxbunMarshaller.unmarshal(selectedFile);
+
+            /* mise a jour du tableau d'affichage */
+
+            bibliotheque.getLivre().forEach(l->tableView.getItems().add(l));
+
+        }
+    }
+
+
 
 }
