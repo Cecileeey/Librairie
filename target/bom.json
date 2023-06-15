@@ -1,0 +1,1440 @@
+{
+  "bomFormat" : "CycloneDX",
+  "specVersion" : "1.4",
+  "serialNumber" : "urn:uuid:011075b1-e6be-49f4-bb0f-6cb484e9d57b",
+  "version" : 1,
+  "metadata" : {
+    "timestamp" : "2023-06-15T08:09:28Z",
+    "tools" : [
+      {
+        "vendor" : "OWASP Foundation",
+        "name" : "CycloneDX Maven plugin",
+        "version" : "2.7.9",
+        "hashes" : [
+          {
+            "alg" : "MD5",
+            "content" : "8e595cdb67f17e4b41e046456970591d"
+          },
+          {
+            "alg" : "SHA-1",
+            "content" : "69e8ca804520d09ce4657e7235bae84d01cbffa6"
+          },
+          {
+            "alg" : "SHA-256",
+            "content" : "aa09074fe5aa403c008cd4fc7ef8ce41cd244489337f16b3e91a3914158a4db8"
+          },
+          {
+            "alg" : "SHA-512",
+            "content" : "1488a8112da8e675813d7585f57c5efb178aed32901118186ee12d0e4ae3d19c53774c7f860bf70d17d70f050119b69443a2637cf641675b4b5d9cdcdd69b89b"
+          },
+          {
+            "alg" : "SHA-384",
+            "content" : "b097295dfbf10887abc6eec58d4d0822cde5a73d1f5c1cf183a57bf569016ad5ced9d34efae3e574d82bb62837540c6c"
+          },
+          {
+            "alg" : "SHA3-384",
+            "content" : "289f9520bd73a2031276248a6ef8f0891c691062c2d1ea86a2bc9ea8db2c52377d92a53be9957179e71aee3deda26a8c"
+          },
+          {
+            "alg" : "SHA3-256",
+            "content" : "32b50a7efe5d491a4039c0017eca3cf49d98b55fc66d06b3dd06209487323474"
+          },
+          {
+            "alg" : "SHA3-512",
+            "content" : "1daf813da53e5d5cda4d0302ff3a5e388aa45d96ebe6dcbe240f35d33f14b1e6390f6bbe7f21f3ed8cf96ebd9f5516a08b18487b7339715109c81cebfc1563df"
+          }
+        ]
+      }
+    ],
+    "component" : {
+      "group" : "com.librairie",
+      "name" : "Librairie",
+      "version" : "1.0-SNAPSHOT",
+      "licenses" : [ ],
+      "purl" : "pkg:maven/com.librairie/Librairie@1.0-SNAPSHOT?type=jar",
+      "type" : "library",
+      "bom-ref" : "pkg:maven/com.librairie/Librairie@1.0-SNAPSHOT?type=jar"
+    },
+    "properties" : [
+      {
+        "name" : "maven.goal",
+        "value" : "makeAggregateBom"
+      },
+      {
+        "name" : "maven.scopes",
+        "value" : "compile,provided,runtime,system"
+      }
+    ]
+  },
+  "components" : [
+    {
+      "group" : "org.openjfx",
+      "name" : "javafx-controls",
+      "version" : "19-ea+7",
+      "description" : "OpenJFX JavaFX",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "d78ae85efe6364b9dcfd60ef0a924c8b"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "e61aeb19ff9c2c3cf2ca68619746f35351b34a3b"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "efe475df42712683256bbf1aada6cfcb7956f47cd4fe3b69998550f46f3852c0"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "9db2761dbc99cf3ff031979c922edf3bb3eca4777fd5baec3e8504f039b85877297d3d22b594dc5d6eb3d41e69a8a79cb44e805c7836d2093ce5926cbac0782c"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "346cd4ba21aebecc323f268823fe5dff348ae1c64fc7e71957542137efd68292d300a6b346052e654216b925a0a4722c"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "b2106f7b0f2e37fcd9720bd0b5b62cc87ae489113aba30f66fb21053eaca14fa444ba14783cc3a9d3952e0725564327e"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "4a6c9598d6298754f991fcf2fdb35044b41bd301103110f3c3169b7a9e4b0bac"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "935f5941b384eda620ec2ce221e4e5f00e68c2aa8bed2874ea44182c5081a385fb298243d6a828a235c4366340517b410c310e81787fcb59cc1e9086bb32c93d"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "GPL-2.0-with-classpath-exception"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.openjfx/javafx-controls@19-ea%2B7?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://openjdk.java.net/projects/openjfx/javafx-controls/"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/openjdk/jfx/javafx-controls"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.openjfx/javafx-controls@19-ea%2B7?type=jar"
+    },
+    {
+      "group" : "org.openjfx",
+      "name" : "javafx-controls",
+      "version" : "19-ea+7",
+      "description" : "OpenJFX JavaFX",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "891aa0dbe75fac12df6fb62f5975f9b6"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "c22a249fffe084f939f1b9a1ab5c104db1d77800"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "f40baa631874609add5e1a39c6af833c86b362d34b3d4e29e0015ab53df0b2ff"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "734c3422c9107122fd6b88dc85e2a3b9616396c026d8571155cb4b1250a5943ab95a4e077eda5b054f0f5f1de9228ff98fe1b8294673ad2b89abff099608fec3"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "344fcf46d1c9a1deb3ba6bef264bff1fc9248349406074f246a8b28e273cbaa9ec60a7a4bf720957c48078f38f38a894"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "9b8224947d083a41680c744e7b5bba96f57773c41e5022dc538378a5415b0c932d5bf6b2da8d0529a7b5015576d8f9f4"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "f0b1fdc9acdf81b7939859599edb435b2c23b6cf815c4799ed12a90b842a8e19"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "ab36e76eaa5ef35273db1172a67fe321c1a6b382f266849320afc1cb84efe1203f9be9a7b774cc4b0bd7a95a81231b868344bfd5fddfae7c7d9ce24acf9e271a"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "GPL-2.0-with-classpath-exception"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.openjfx/javafx-controls@19-ea%2B7?classifier=win&type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://openjdk.java.net/projects/openjfx/javafx-controls/"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/openjdk/jfx/javafx-controls"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.openjfx/javafx-controls@19-ea%2B7?classifier=win&type=jar"
+    },
+    {
+      "group" : "org.openjfx",
+      "name" : "javafx-graphics",
+      "version" : "19-ea+7",
+      "description" : "OpenJFX JavaFX",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "54aa5f9c8a590e49eaf27f785b65e50f"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "3b0a224171337f4752f511bf4ef343f76ec9a188"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "7997aadab74c1f6158a5d65ea94e8ad6e61de451b751e67ae160d3a9d4d71dbd"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "3ff07d24e77f0eba283fee3f9fc1d1098725500b141cb8597f205c4f432524627b2b63120077cc848565a2a1865d515c2c444c9f4f725ec334480d63b4e096ca"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "4dd337756db00a4286f685138c9249f6c65e968a560780ebe2237af2083b1caf946545e58615ee85f56964f455770e7d"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "8919e5b44faec6550b6f3b82f2892a5525f4a7c9be1610ce007de2e4002842eab58664616ffe740c2e14dcc365efe2d4"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "8bd1a0aa041d7915e676747f7167116a3ac50614074c4c9975fe910cc542fd98"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "e21bf022d93412ef9f2ac2ae64436683a6c13430977c58a7908ce6321f48ea893b4778952a1dc280002d13287f26457c428d068dbbdd45a134c3e62623b09c27"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "GPL-2.0-with-classpath-exception"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.openjfx/javafx-graphics@19-ea%2B7?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://openjdk.java.net/projects/openjfx/javafx-graphics/"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/openjdk/jfx/javafx-graphics"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.openjfx/javafx-graphics@19-ea%2B7?type=jar"
+    },
+    {
+      "group" : "org.openjfx",
+      "name" : "javafx-graphics",
+      "version" : "19-ea+7",
+      "description" : "OpenJFX JavaFX",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "46a08a2c412340daa4398c0e7cc900d0"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "9536a27280b41e28d30164110867eca253af5726"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "0e17367a1400dccfbbf1cd7c9154802703838b75ec2b79f8c9d882e46f5daacd"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "c53031fb8ebdce5c3bbd3116557e48677c3a2b81a9e354ef4f15da354f0a18b24c0fdb264e0f2f57c7efe60a79f79534e9ac7d579ab8ab1011b855f86f1e2f4e"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "b0cfef119bc8d1084103554d6ba8b8d1d7f5d607b44d2b9d8c4f80c35cd94741033804825848d2bcf5690d3b16f34ca8"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "dca4dab21c9be8b976b55e5780df39a84ac4d4f69c5f4fd510f14cdc8292be194275c33da45da97f9147997cef62b8a9"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "d788f85871fe8092e255e5f6e2c16329eddd54d95de3f20bb82548b4391dc100"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "54c44a699666f2dfdbd087e434eccb448d0b53ad5b462c6927db98c63ac850645f0e0caf86f1e2740e34eb25b0d30b58290926b58049afd837f1e13cb3d1cc64"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "GPL-2.0-with-classpath-exception"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.openjfx/javafx-graphics@19-ea%2B7?classifier=win&type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://openjdk.java.net/projects/openjfx/javafx-graphics/"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/openjdk/jfx/javafx-graphics"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.openjfx/javafx-graphics@19-ea%2B7?classifier=win&type=jar"
+    },
+    {
+      "group" : "org.openjfx",
+      "name" : "javafx-base",
+      "version" : "19-ea+7",
+      "description" : "OpenJFX JavaFX",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "162bfa19c2a23415a4c7e3fa9b1a2d2a"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "e66da59d4e2544fc93d84f9936203aaf658f201d"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "7b1abbad342090f195783436078a0b10cd9d15d2dd5d4b9f7093162388bc87ef"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "b8e1c8ab3db8fc07477a0d7fdbe8d6f4575608051ad4c046c8b0eab317a71aa562beafd5be5b9d34d94e27c6737d2a97a3f201eb0090c9eb34dc3cf30ba38808"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "3e9c4fd1fd399c93b9ba588931dcc8a1c6aad585d1987aaa30752d40800fabecc77adc6c1c124cce717f125f3d40aed0"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "148895d2e7c94b23d09b2c84ee34e20780b4772b638f810ba4b3139f053242066d63657d172c4f1983071501d6452a53"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "f14df19526f1ce25f4ab8884dc08bab1ec93e3e62ac8123a71a14dd33b604ecb"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "be0d8a4c55cfec01b5f7c297aa966c381499390817cd018f256616fd5e7ae5d30c351cd5e793f93a302464735bd0c5b0ef1fbd51f8726b0500b959750636bc28"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "GPL-2.0-with-classpath-exception"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.openjfx/javafx-base@19-ea%2B7?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://openjdk.java.net/projects/openjfx/javafx-base/"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/openjdk/jfx/javafx-base"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.openjfx/javafx-base@19-ea%2B7?type=jar"
+    },
+    {
+      "group" : "org.openjfx",
+      "name" : "javafx-base",
+      "version" : "19-ea+7",
+      "description" : "OpenJFX JavaFX",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "20cb1ddec46f7da67cf0e26f2e199855"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "25fbcc126fd80e8a0cb7b02c866f94e2affdc563"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "f8df6b9065324eb0caf32cf7c5391e838ca2c4fea7011b480a10cc8cf44ef251"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "6168894c68cec2c2a236207e71c9b5ed845ac56fbb5fec6b85148dd385cb6ef405b2685ee31bc2cd9854af355e370ad7a395236884a69d0b08465c9d4b2b82af"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "665e9b561a10fd87caf6450492fb5cc4e099c664d4d9deae8573c1728014a84ef1b76d0d4a4a66761d3f65956234f896"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "15731943b510d13aea1423de3f4331e67bd542313d827e151cc45aa5004c5a81c8a26f9cf2b2a1ba4b61e4818e39b7ec"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "1b38f2822e54322fa67a99cee2e362195996cc66c9b67853fe3103890eb8ab62"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "789caa8464381f66715017f0a77b2160924721c4064b0e71382ce4e88fab1a08f903e995c1b1e1567283008073d1c71ba489c588e10f567e601c7818163b5acd"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "GPL-2.0-with-classpath-exception"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.openjfx/javafx-base@19-ea%2B7?classifier=win&type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://openjdk.java.net/projects/openjfx/javafx-base/"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/openjdk/jfx/javafx-base"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.openjfx/javafx-base@19-ea%2B7?classifier=win&type=jar"
+    },
+    {
+      "group" : "org.openjfx",
+      "name" : "javafx-fxml",
+      "version" : "19-ea+7",
+      "description" : "OpenJFX JavaFX",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "ed44bcd122cd21184921325fe5349fa7"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "b0ba49187d0f3ffe1db634aeea446fb59069e339"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "516d6f994ed69c24fbd8af89225619b294bc79fbe8ee4db65b7b79bbb6f5d957"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "3569d134b4451f2cb8efc3808fe4dc87aaf65ced39db3838b1a46a1fa61d1758d49c86b66e132374e584e0c56f0678e2e652bc45af551c1acc7946be09f8994d"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "a56914ea4157f288ae27a5528521afbdb10a2bb354752b9be1f35e62be98bc5a9afe975f343d56e085656e50a4f3ff80"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "de16c7a9c0514d1dfa0fcb3b522c769694cde581fe8a627904f53f0a24b2a03cc8704c697641490c74b366f0d853b31f"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "31ad07e76484a9f955c2aed12cf52745f0d9a872d392b56c5ce3358217c81a5a"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "354f117a03a0e99bc25afa6fd99c2605055ec58f4c3826b35198258ac004dd35e6af3420b237442219c80ff481b83ff603e05dabb7219a89b64a5abf3b8bae27"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "GPL-2.0-with-classpath-exception"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.openjfx/javafx-fxml@19-ea%2B7?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://openjdk.java.net/projects/openjfx/javafx-fxml/"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/openjdk/jfx/javafx-fxml"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.openjfx/javafx-fxml@19-ea%2B7?type=jar"
+    },
+    {
+      "group" : "org.openjfx",
+      "name" : "javafx-fxml",
+      "version" : "19-ea+7",
+      "description" : "OpenJFX JavaFX",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "c42dd921fd151d7c521b793519772c29"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "aceb806f9a96796c0bd8940d9b87f08d129e2812"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "2be2af68a5372833ee9e04a4f0c2c5d06f52d5b73bdfeb75b57a53e8dbba5e4d"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "6b631b9c33bb4c5b596152fb7d1bd1f0c33594926a5d24d203c30ad31a3b6be84d84b61f6ee85ce811968ff367e4129cc36d39ef0186663cab52eb01dd82e24f"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "be5c304f566748c8b64955e55d277c5ade0c859e2ceabea5e23a0c9caf1dca30f70e85da983ce455501c19e467484f59"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "eafc7990b7f217ff69c93c96940c5e368328c3ee8aa80ae4e4b9211656c4be4914ba14fa2032d7556696ca00ab5b6853"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "815d32622f651d52735f7095f51f5b30932edd8de6083debd80f834ce31aaddc"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "f04724959674d340a9649419a6d2889cb16f309ab7d30dabd3e3f05146cb2a00645f8f679baf85de334d2a6075e499a86a9e3a5c2de631b529db786fc7a35d6d"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "GPL-2.0-with-classpath-exception"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.openjfx/javafx-fxml@19-ea%2B7?classifier=win&type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://openjdk.java.net/projects/openjfx/javafx-fxml/"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/openjdk/jfx/javafx-fxml"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.openjfx/javafx-fxml@19-ea%2B7?classifier=win&type=jar"
+    },
+    {
+      "group" : "org.controlsfx",
+      "name" : "controlsfx",
+      "version" : "11.1.1",
+      "description" : "High quality UI controls and other tools to complement the core JavaFX distribution",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "2f8ea111d3609fee7d6cb040912926a5"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "d303c563c23d5176346e8d05932afbec421060ae"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "dc35e14b98d8d7270a5e990a90d14cb8e35d795c3b954629419db654130640b8"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "522ea3dba0b5ea4fe9d20d8e442d521f3450f467bab44d26a854bb188995d94e04f4ff0ef337cc892d5b0d37e04862cbe1fa0dcb1dc257c6ca3a8c289e8c124d"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "1f78680c9eb854959a161b7688edd57dc56ce7fe0c32872141d364ca8e55fb03eb2a864e5db8d965639832ac14e0f229"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "b8015aad8115154fd38961b675f94819980bf3efd226448b4757005de49a70e4938b9f8b0ea67976de317fc4da6d2684"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "20d862a1a75b121e04ac084529f3741aa0e59b6bb6ee21b540e2e714e04fc623"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "491f701a182e90c81c6a96546580808eb2d45804f390640e377de46eab4a007976ee731d30df8b301907b9b405e53d2d5fa5c3196ed8d944da41c70e6f434c62"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "name" : "The 3-Clause BSD License",
+            "url" : "http://www.opensource.org/licenses/bsd-license.php"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.controlsfx/controlsfx@11.1.1?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "http://www.controlsfx.org/"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/controlsfx/controlsfx"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.controlsfx/controlsfx@11.1.1?type=jar"
+    },
+    {
+      "publisher" : "DLSC Software & Consulting",
+      "group" : "com.dlsc.formsfx",
+      "name" : "formsfx-core",
+      "version" : "11.5.0",
+      "description" : "A framework for quickly creating form-based UIs.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "03073a4f8ed058906709a10a1ca85f17"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "4e6bc5b8ba4633b1c59d19380623c980eb81e7c2"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "95f5c300baa32b6a4fef4cdb03d20ae68e16d5711e0038a02f268d03a3f3f767"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "4f4df6f6465ce62cc8212c5257dde47eab703ef6a99ff88229b92e2df717b0c5a439817a6ce0f1c2d76c32d9a70e51c8be7e582f96e4f1b226a5755fc3a38a9f"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "30f754372dd6662235c9992854dfc4eaaf0f5bdf5790657f4c3418b0330dba78ecfb2e247b27914b2db01bbed311321a"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "9009c9c999a926bdfbab89471d2a958419b5789210f0ce0e0d0997034488b3d3480ac87d873c9d96ebddda23ae0077dc"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "792a1ddcdff165e5004f7419796113e8f8180e689a04aad005c80ae483f694dd"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "d5a53ffe14496d63eb90aff5c9cb65be029cd15d942d7e152af17053d446d72373459a6d1b0e1f95b620313601894e1385462c8929e3cd154695c60730ec182f"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/com.dlsc.formsfx/formsfx-core@11.5.0?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://github.com/dlemmermann/formsfx"
+        },
+        {
+          "type" : "distribution",
+          "url" : "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://github.com/dlsc-software-consulting-gmbh/FormsFX/issues"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/dlemmermann/formsfx"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/com.dlsc.formsfx/formsfx-core@11.5.0?type=jar"
+    },
+    {
+      "group" : "net.synedra",
+      "name" : "validatorfx",
+      "version" : "0.3.1",
+      "description" : "A form validation library for JavaFX",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "bdff94a5a989c8f99a82f61dc7b0a824"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "cb7cf720db10335be7cc211b22cd4fb902c9bb18"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "d03e191b6b2194ea5634d27db4d120585df4d16a5ae8600df25d9e0568a3b328"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "5020db2d2b241feac1768879dfb3f8b8ba6715aa6357bdbc099cab2600eaf2eb9c536f854e3230dc1954121e9590c7e0beab2c035689e05d4a67c72cf214c878"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "a4c9ed138d78e7511408742a7ffc9b91617014fb7d76232fb600f83dbe9f4f43ab2afccc268966ad07bdec962b6f668a"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "2df55141fd89dabd54363f17a97d84a46ca3c1dd41b9c00f9137eb750aceccdcd425516c4aa60b5c6fa51601cef84259"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "7cb4c91c6c614f8e1760328a1e20f7b233b98af396da27259d50941b477c0467"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "8a8bf1980b1fd2cc601df13e1541538f7ace1f73a36723d0b4c943e56fdc770383132b27f400afa9f0f44f063939b2ea91375381f1cab1c8135ff5ecf590b571"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/net.synedra/validatorfx@0.3.1?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://github.com/effad/ValidatorFX"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/effad/ValidatorFX"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/net.synedra/validatorfx@0.3.1?type=jar"
+    },
+    {
+      "group" : "org.kordamp.bootstrapfx",
+      "name" : "bootstrapfx-core",
+      "version" : "0.4.0",
+      "description" : "BootstrapFX: CSS and widgets",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "2948997b841802c06b5100ce868e01f9"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "8d019b30266c00770cf29921d1008ad7feed0ed6"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "8814de4ff63d0b4c16169ee6ef7feb4b7e6553b0905f741a5b2191da49923868"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "3052ed1b85b2f73dca1081b5c535fe595ef1a97ecf576524f0d360a52823a707f707a1e82a9e6e9338665dc6ba205b159f05485b28f8c5de51825f00e8c9be12"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "6e9bcc6316a8804fb8cac18c8444a311b2f478ec87715ea543c02e44bbb8214282a09e0be7d32e4289a68143e3949427"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "16973da44ba78d7d9b4eef6ef14bab0569e29c722b062759b286f7e5b8f6fb9c3089b73986407215f0e03db041856ccc"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "f7c92f956d2d475dd702d2f06e2e6beb75c9e3764ba04cbff8c0f418956c6c9e"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "d394b85a6828b22eb023ad5be5916a74fdda8bf2be6bc4a4f2ea77cf3d8e3cf8f1d8494502ce815134d325d2b0c4e0f0a73d15e27a254b843bc68bc6561a32ad"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "MIT",
+            "url" : "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.kordamp.bootstrapfx/bootstrapfx-core@0.4.0?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://github.com/kordamp/bootstrapfx"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/kordamp/bootstrapfx"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.kordamp.bootstrapfx/bootstrapfx-core@0.4.0?type=jar"
+    },
+    {
+      "publisher" : "Oracle Corporation",
+      "group" : "javax.xml.bind",
+      "name" : "jaxb-api",
+      "version" : "2.4.0-b180830.0359",
+      "description" : "JAXB (JSR 222) API",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "a9b97f6723902f40287c02980aa66eef"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "b54184b7dcab2031add3f525550c7f1b7e12209d"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "56b9e9702753763007435162ea788055efcfefc86ab920f032c0411dc547b836"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "1d9e270e7ae1ab6bf3ad8c85b044096a58716180daeb9ffa181230b1d8862812954d4d2d3162b24cb2f1c947e998a186581259094e05ad875416488ca7dc3932"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "5da90218790c276b99e13044e27aeb4f03b51e3192b8f9ce13b8cf129894c7a0ed78759d1e21d8b28414c72c2d16e43a"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "9018d3442f4d9d420a025613f7a101f9fa5dea513f98e0711b279e797c80379f4803e8699e6b632904f41a4d033315f6"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "67f73c364ec5d46d5c0b92a7eb8f2257b11f6ba03ff3d39947a74f72cb5522b2"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "a5a6f011475eed70062637ed6eaf7c62881c93a2eec7157dab1a0eb2bd06da57fe5769c3bf3022f66b9cfaf77b69956bb691928f06ecaea3c061bd0a686b87c1"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "CDDL-1.1"
+          }
+        },
+        {
+          "license" : {
+            "id" : "GPL-2.0-with-classpath-exception"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/javax.xml.bind/jaxb-api@2.4.0-b180830.0359?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://github.com/javaee/jaxb-spec/jaxb-api"
+        },
+        {
+          "type" : "distribution",
+          "url" : "https://maven.java.net/service/local/staging/deploy/maven2/"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://github.com/javaee/jaxb-spec/issues"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/javaee/jaxb-spec.git/jaxb-api"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/javax.xml.bind/jaxb-api@2.4.0-b180830.0359?type=jar"
+    },
+    {
+      "publisher" : "Oracle",
+      "group" : "javax.activation",
+      "name" : "javax.activation-api",
+      "version" : "1.2.0",
+      "description" : "JavaBeans Activation Framework API jar",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "5e50e56bcf4a3ef3bc758f69f7643c3b"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "85262acf3ca9816f9537ca47d5adeabaead7cb16"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "43fdef0b5b6ceb31b0424b208b930c74ab58fac2ceeb7b3f6fd3aeb8b5ca4393"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "8ee0db43ae402f0079a836ef2bff5d15160e3ff9d585c3283f4cf474be4edd2fcc8714d8f032efd72cae77ec5f6d304fc24fa094d9cdba5cf72966cc964af6c9"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "d38a6af7ed00f13de8b46d49b9592af9b67adf3df47ddae5e4672f989f3f39101d446a77d1c11319acf8ff0a5b4feedf"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "cfee76de5976d5994758a06113368092f09b0729d753b99969d6a5ec32919428bd7c270c98cbbc682ff8ebcf2b93fd8d"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "aff48d0f28d8a99690c5a84c3fffdb3775452d5387e5698f4c9028c92a3b4888"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "0507ece74b3147de60a830071bd434569c82e03f414a2b7f0d8a225dda36720d2e2194799cdc04def1909fdec21059b67c518bb9162f7f605764d542194e721d"
+        }
+      ],
+      "licenses" : [
+        {
+          "expression" : "(CDDL-1.0 OR GPL-2.0-with-classpath-exception)"
+        }
+      ],
+      "purl" : "pkg:maven/javax.activation/javax.activation-api@1.2.0?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "http://java.net/all/javax.activation-api/"
+        },
+        {
+          "type" : "distribution",
+          "url" : "https://maven.java.net/service/local/staging/deploy/maven2/"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://github.com/javaee/activation/issues"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/javaee/activation/javax.activation-api"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/javax.activation/javax.activation-api@1.2.0?type=jar"
+    },
+    {
+      "publisher" : "Eclipse Foundation",
+      "group" : "com.sun.xml.bind",
+      "name" : "jaxb-impl",
+      "version" : "4.0.1",
+      "description" : "Old JAXB Runtime module. Contains sources required for runtime processing.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "a206231cbdf21fd1c6539e323c75a6b2"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "bad26cea1d483dda57b6f634cdeaca3238637aea"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "d97a653a78f8cf9a6de9acf39d4ed91da3907bfed748e8730a62c30f9f3ec9c1"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "ac45a0e17e1d165fe8b050450da0921624f5d6ac61857b16a2c59e45a771bf00ef6464831a842c981fcdb44055f71e9f606532e005007aeb1a3f7d42b93f7c89"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "87110c81c4c154d0fe7f7eb196015613bb0350f9ac956cd9e7a99d8548afb9f8eb87b6ae705e9b593bf0da80d75ef0dc"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "a78cb77214e2800700c89c4ada641309008390a4156617411d2582babcad4461714b749b9b107e8b96f0207c0b8456a6"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "ff1392014fa62e3f66845844986617ad129e852abce9a2f5c59adbc7a57ec936"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "c41eb96d4334c95cdefd2a864c72ea0a09407d8b96ce5bbc22a604032e4044fa61f93f8db83a5a679a8810e228be6f3f06a5bd66b2c20ca06e96e00df1837f70"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/com.sun.xml.bind/jaxb-impl@4.0.1?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://eclipse-ee4j.github.io/jaxb-ri/"
+        },
+        {
+          "type" : "distribution",
+          "url" : "https://jakarta.oss.sonatype.org/service/local/staging/deploy/maven2/"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://github.com/eclipse-ee4j/jaxb-ri/issues"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://accounts.eclipse.org/mailing-list/jaxb-impl-dev"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/eclipse-ee4j/jaxb-ri.git/jaxb-bundles/jaxb-impl"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/com.sun.xml.bind/jaxb-impl@4.0.1?type=jar"
+    },
+    {
+      "publisher" : "Eclipse Foundation",
+      "group" : "com.sun.xml.bind",
+      "name" : "jaxb-core",
+      "version" : "4.0.1",
+      "description" : "Old JAXB Core module. Contains sources required by XJC, JXC and Runtime modules with dependencies.",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "86957dab6148bc36333f6244e4f52ea8"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "e8bf2d711d2d4250537199602bccae0cd4e62726"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "1086909cb130433039d8e2865bf331af628d992bcef10a95f72dc121ab020775"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "083cd810d22f6a071e8cbad5e1b96b82a58d47c8a0a842590bf301431de3c8787c2557692c00a8c0186e603bccf5d5a141cf308d31d5661e5a06260a7c5bc145"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "146b9df97f013de115fa8cb62a402e5360aaa70876aa05181d4fa8186bcedb2ffe284d73143edaa857fdbe96db3a1d31"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "93008638d8b28661b459695b8a084d1add097b4c1faf169d12ed130f023c71567d64d50295c79700d25783e8d94fc2f6"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "45aa77d48df38c432ff8141fe372f387268cae9793bf3d0aecb64483304912c6"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "24c1840077f7555390459aada26c8ea466a0b7bb22a7d06adf9078e6ad3d3c5f8648ae547fd5aefed2683d987a52f72c8d983aa2735fd3402ef8364ca27da676"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/com.sun.xml.bind/jaxb-core@4.0.1?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://eclipse-ee4j.github.io/jaxb-ri/"
+        },
+        {
+          "type" : "distribution",
+          "url" : "https://jakarta.oss.sonatype.org/service/local/staging/deploy/maven2/"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://github.com/eclipse-ee4j/jaxb-ri/issues"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://accounts.eclipse.org/mailing-list/jaxb-impl-dev"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/eclipse-ee4j/jaxb-ri.git/jaxb-bundles/jaxb-core"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/com.sun.xml.bind/jaxb-core@4.0.1?type=jar"
+    },
+    {
+      "publisher" : "Eclipse Foundation",
+      "group" : "jakarta.xml.bind",
+      "name" : "jakarta.xml.bind-api",
+      "version" : "4.0.0",
+      "description" : "Jakarta XML Binding API",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "b5132a66e2d3a60904f8035a1f8a34a8"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "bbb399208d288b15ec101fa4fcfc4bd77cedc97a"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "57e3796ad5753640088f5f9d3c53c183f2c250b7dad90529ea3e19a5515aa122"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "3628ea2ce89380f3d1c09aba611d5b1cf0b53e2a2f87689112e8153b9409995ebc9c6ab1e0e7cfcee194c8233604473bcd8e7b6c4b2aba4e0ef220332208ce70"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "92170801cbeef42dfe5f14f008422fec5e17e4ef172eb2fdfd6d9f70bf269a0609b39187bf0c0f0cd6aae11502d28d37"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "559bc1752bcb888736fd48354363715676bff1f8b541239308d5510a19572430a5ba553cf7b9460149e9460b54486485"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "040475238bcea57cc293d184c25af8f88e058285e66be3e48469561fa820914b"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "49e69f0794ef9d4f37a11a847cb76f196b03ceb02858904bcfabd4832f2d0f51d21b1361325fd75b07f2195f83994e3f3bc519ffb4f9e227618a8a299f942d7a"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/jakarta.xml.bind/jakarta.xml.bind-api@4.0.0?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://github.com/eclipse-ee4j/jaxb-api/jakarta.xml.bind-api"
+        },
+        {
+          "type" : "distribution",
+          "url" : "https://jakarta.oss.sonatype.org/service/local/staging/deploy/maven2/"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://github.com/eclipse-ee4j/jaxb-api/issues"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://dev.eclipse.org/mhonarc/lists/jaxb-dev"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/eclipse-ee4j/jaxb-api.git/jakarta.xml.bind-api"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/jakarta.xml.bind/jakarta.xml.bind-api@4.0.0?type=jar"
+    },
+    {
+      "publisher" : "Eclipse Foundation",
+      "group" : "jakarta.activation",
+      "name" : "jakarta.activation-api",
+      "version" : "2.1.0",
+      "description" : "Jakarta Activation API 2.1 Specification",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "7c79641566f97305e17c5f7b9bb33fc3"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "a58861b5deac5e151140511cf57d6b80a83f2d20"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "56e8d994095fe49c28138c60291482f66f18d12ac2b720e938697dce6a3135c7"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "53026e23571e77b9696cf02d1eeb20295b7199a169c12db9807f2ef2512eff859b37108b96bfdbcd2c9f4a66728d12ad8182b5548146897cdc2ad49e7b2b2ebc"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "2e835f36fa8c90490cd4f543062f3ce548175fc97b3dfa2ab3c63f2dcd59c57060a196ace53933639399657f6aec9e5c"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "bde529fca53e87d22908b4794730a03a2fa29b62ba8cce07edd4e10e34d98cd43a7b0e449241010ce55e962ee4140837"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "be51f4c74f02fb8c98fca209dc5d33ed89dfb240c882e790974c06bef563a6ee"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "835e222a4ed4e31f570afd5b10b1935ff8fe4453ce79e340cb021229cc186586e9461411ce7749798a97122794bc3a1965ab770f9682bfb68f6b740e41c50943"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/jakarta.activation/jakarta.activation-api@2.1.0?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://github.com/eclipse-ee4j/jaf"
+        },
+        {
+          "type" : "distribution",
+          "url" : "https://jakarta.oss.sonatype.org/service/local/staging/deploy/maven2/"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://github.com/eclipse-ee4j/jaf/issues/"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://dev.eclipse.org/mhonarc/lists/jakarta.ee-community/"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/eclipse-ee4j/jaf"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/jakarta.activation/jakarta.activation-api@2.1.0?type=jar"
+    },
+    {
+      "publisher" : "Eclipse Foundation",
+      "group" : "org.eclipse.angus",
+      "name" : "angus-activation",
+      "version" : "1.0.0",
+      "description" : "Angus Activation Registries Implementation",
+      "scope" : "required",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "9e3baa4febebb96420a512190a5c44d9"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "0f0ceddd49f92109fbfad9125e958f5bfd3f2aa1"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "e37aff147e18ed48c50aa9fb78cc85e7478cbfd01257b02d53d3a186d1832245"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "dcf6727e97d8831492fe24b515f6bc7f0e8552646590895415de2075a3835ed7b4557261caab0e968b0ad767ec80ce517fd8a88161c6fc37da03fcc9e5ba435f"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "f83719dba2642448f8e56190213aeb05fb72138c05831938c97a6ba620908e134fbb8a302ee09f3307d40bb498bc4fcb"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "a40e5e3c9e2da890090e69708b05d0c4f9c844699d8422345a7234b46b0f962d842a9d99e21c052ff0db5042fe8b2189"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "130301a8cfb9135ff8b4a6e890968ea71223d36d97de47d32c0c2d6179189d1a"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "eaad80cce76fcd1bcec9edc00cc87b82a2c27d28630e5d6f6398b051e796207732f14c4304f000ac3fefc87ab13b1d9a23dd5682c7c3d225a7129c13750b40fe"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.eclipse.angus/angus-activation@1.0.0?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "https://github.com/eclipse-ee4j/angus-activation/angus-activation"
+        },
+        {
+          "type" : "distribution",
+          "url" : "https://jakarta.oss.sonatype.org/service/local/staging/deploy/maven2/"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://github.com/eclipse-ee4j/angus-activation/issues/"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://dev.eclipse.org/mhonarc/lists/jakarta.ee-community/"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://github.com/eclipse-ee4j/angus-activation/angus-activation"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.eclipse.angus/angus-activation@1.0.0?type=jar"
+    }
+  ],
+  "dependencies" : [
+    {
+      "ref" : "pkg:maven/com.librairie/Librairie@1.0-SNAPSHOT?type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.openjfx/javafx-controls@19-ea%2B7?type=jar",
+        "pkg:maven/org.openjfx/javafx-fxml@19-ea%2B7?type=jar",
+        "pkg:maven/org.controlsfx/controlsfx@11.1.1?type=jar",
+        "pkg:maven/com.dlsc.formsfx/formsfx-core@11.5.0?type=jar",
+        "pkg:maven/net.synedra/validatorfx@0.3.1?type=jar",
+        "pkg:maven/org.kordamp.bootstrapfx/bootstrapfx-core@0.4.0?type=jar",
+        "pkg:maven/javax.xml.bind/jaxb-api@2.4.0-b180830.0359?type=jar",
+        "pkg:maven/com.sun.xml.bind/jaxb-impl@4.0.1?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.openjfx/javafx-controls@19-ea%2B7?type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.openjfx/javafx-controls@19-ea%2B7?classifier=win&type=jar",
+        "pkg:maven/org.openjfx/javafx-graphics@19-ea%2B7?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.openjfx/javafx-controls@19-ea%2B7?classifier=win&type=jar",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:maven/org.openjfx/javafx-graphics@19-ea%2B7?type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.openjfx/javafx-graphics@19-ea%2B7?classifier=win&type=jar",
+        "pkg:maven/org.openjfx/javafx-base@19-ea%2B7?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.openjfx/javafx-graphics@19-ea%2B7?classifier=win&type=jar",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:maven/org.openjfx/javafx-base@19-ea%2B7?type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.openjfx/javafx-base@19-ea%2B7?classifier=win&type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.openjfx/javafx-base@19-ea%2B7?classifier=win&type=jar",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:maven/org.openjfx/javafx-fxml@19-ea%2B7?type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.openjfx/javafx-fxml@19-ea%2B7?classifier=win&type=jar",
+        "pkg:maven/org.openjfx/javafx-controls@19-ea%2B7?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.openjfx/javafx-fxml@19-ea%2B7?classifier=win&type=jar",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:maven/org.controlsfx/controlsfx@11.1.1?type=jar",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:maven/com.dlsc.formsfx/formsfx-core@11.5.0?type=jar",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:maven/net.synedra/validatorfx@0.3.1?type=jar",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:maven/org.kordamp.bootstrapfx/bootstrapfx-core@0.4.0?type=jar",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:maven/javax.xml.bind/jaxb-api@2.4.0-b180830.0359?type=jar",
+      "dependsOn" : [
+        "pkg:maven/javax.activation/javax.activation-api@1.2.0?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/javax.activation/javax.activation-api@1.2.0?type=jar",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:maven/com.sun.xml.bind/jaxb-impl@4.0.1?type=jar",
+      "dependsOn" : [
+        "pkg:maven/com.sun.xml.bind/jaxb-core@4.0.1?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/com.sun.xml.bind/jaxb-core@4.0.1?type=jar",
+      "dependsOn" : [
+        "pkg:maven/jakarta.xml.bind/jakarta.xml.bind-api@4.0.0?type=jar",
+        "pkg:maven/org.eclipse.angus/angus-activation@1.0.0?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/jakarta.xml.bind/jakarta.xml.bind-api@4.0.0?type=jar",
+      "dependsOn" : [
+        "pkg:maven/jakarta.activation/jakarta.activation-api@2.1.0?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/jakarta.activation/jakarta.activation-api@2.1.0?type=jar",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:maven/org.eclipse.angus/angus-activation@1.0.0?type=jar",
+      "dependsOn" : [
+        "pkg:maven/jakarta.activation/jakarta.activation-api@2.1.0?type=jar"
+      ]
+    }
+  ]
+}
