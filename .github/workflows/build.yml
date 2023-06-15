@@ -25,4 +25,3 @@ jobs:
         run: mvn -B verify sonar:sonar -Dsonar.projectKey=Cecileeey_librairie -Dsonar.organization=cecileeey -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${{ secrets.SONAR_TOKEN }}
       - name: Génération SBOM
         run: mvn verify
-
