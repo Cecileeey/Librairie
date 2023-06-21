@@ -205,7 +205,7 @@ public class HelloController {
             ti = false;
             System.out.println("pb titre");
         }
-        if(auteur.getText().matches("[a-z]*\s[a-z]*")){
+        if(auteur.getText().matches("[A-za-z]*\s[A-za-z]*")){
             aut = true;
         }
         else{

@@ -77,6 +77,10 @@ public class Bibliotheque {
     @XmlElement(required = true)
     protected List<Bibliotheque.Livre> livre;
 
+    public Bibliotheque() {
+        livre = new ArrayList<>();
+    }
+
     /**
      * Gets the value of the livre property.
      *
