@@ -1,4 +1,0 @@
---patch-module
-com.librairie.librairie=_
---add-reads
-com.librairie.librairie=ALL-UNNAMED

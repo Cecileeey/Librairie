@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bom serialNumber="urn:uuid:84564f9c-0d4e-43ea-b139-f1e111760b7a" version="1" xmlns="http://cyclonedx.org/schema/bom/1.4">
+<bom serialNumber="urn:uuid:a77dbaeb-8d96-41b9-98b8-c46c1cae9840" version="1" xmlns="http://cyclonedx.org/schema/bom/1.4">
   <metadata>
-    <timestamp>2023-06-15T09:06:44Z</timestamp>
+    <timestamp>2023-06-21T13:08:25Z</timestamp>
     <tools>
       <tool>
         <vendor>OWASP Foundation</vendor>
@@ -80,102 +80,6 @@
       <purl>pkg:maven/org.openjfx/javafx-controls@19-ea%2B7?classifier=win&amp;type=jar</purl>
       <externalReferences><reference type="website"><url>https://openjdk.java.net/projects/openjfx/javafx-controls/</url></reference><reference type="vcs"><url>https://github.com/openjdk/jfx/javafx-controls</url></reference></externalReferences>
     </component>
-    <component type="library" bom-ref="pkg:maven/org.openjfx/javafx-graphics@19-ea%2B7?type=jar">
-      <group>org.openjfx</group>
-      <name>javafx-graphics</name>
-      <version>19-ea+7</version>
-      <description>OpenJFX JavaFX</description>
-      <scope>required</scope>
-      <hashes>
-        <hash alg="MD5">54aa5f9c8a590e49eaf27f785b65e50f</hash>
-        <hash alg="SHA-1">3b0a224171337f4752f511bf4ef343f76ec9a188</hash>
-        <hash alg="SHA-256">7997aadab74c1f6158a5d65ea94e8ad6e61de451b751e67ae160d3a9d4d71dbd</hash>
-        <hash alg="SHA-512">3ff07d24e77f0eba283fee3f9fc1d1098725500b141cb8597f205c4f432524627b2b63120077cc848565a2a1865d515c2c444c9f4f725ec334480d63b4e096ca</hash>
-        <hash alg="SHA-384">4dd337756db00a4286f685138c9249f6c65e968a560780ebe2237af2083b1caf946545e58615ee85f56964f455770e7d</hash>
-        <hash alg="SHA3-384">8919e5b44faec6550b6f3b82f2892a5525f4a7c9be1610ce007de2e4002842eab58664616ffe740c2e14dcc365efe2d4</hash>
-        <hash alg="SHA3-256">8bd1a0aa041d7915e676747f7167116a3ac50614074c4c9975fe910cc542fd98</hash>
-        <hash alg="SHA3-512">e21bf022d93412ef9f2ac2ae64436683a6c13430977c58a7908ce6321f48ea893b4778952a1dc280002d13287f26457c428d068dbbdd45a134c3e62623b09c27</hash>
-      </hashes>
-      <licenses>
-        <license>
-          <id>GPL-2.0-with-classpath-exception</id>
-        </license>
-      </licenses>
-      <purl>pkg:maven/org.openjfx/javafx-graphics@19-ea%2B7?type=jar</purl>
-      <externalReferences><reference type="website"><url>https://openjdk.java.net/projects/openjfx/javafx-graphics/</url></reference><reference type="vcs"><url>https://github.com/openjdk/jfx/javafx-graphics</url></reference></externalReferences>
-    </component>
-    <component type="library" bom-ref="pkg:maven/org.openjfx/javafx-graphics@19-ea%2B7?classifier=win&amp;type=jar">
-      <group>org.openjfx</group>
-      <name>javafx-graphics</name>
-      <version>19-ea+7</version>
-      <description>OpenJFX JavaFX</description>
-      <scope>required</scope>
-      <hashes>
-        <hash alg="MD5">46a08a2c412340daa4398c0e7cc900d0</hash>
-        <hash alg="SHA-1">9536a27280b41e28d30164110867eca253af5726</hash>
-        <hash alg="SHA-256">0e17367a1400dccfbbf1cd7c9154802703838b75ec2b79f8c9d882e46f5daacd</hash>
-        <hash alg="SHA-512">c53031fb8ebdce5c3bbd3116557e48677c3a2b81a9e354ef4f15da354f0a18b24c0fdb264e0f2f57c7efe60a79f79534e9ac7d579ab8ab1011b855f86f1e2f4e</hash>
-        <hash alg="SHA-384">b0cfef119bc8d1084103554d6ba8b8d1d7f5d607b44d2b9d8c4f80c35cd94741033804825848d2bcf5690d3b16f34ca8</hash>
-        <hash alg="SHA3-384">dca4dab21c9be8b976b55e5780df39a84ac4d4f69c5f4fd510f14cdc8292be194275c33da45da97f9147997cef62b8a9</hash>
-        <hash alg="SHA3-256">d788f85871fe8092e255e5f6e2c16329eddd54d95de3f20bb82548b4391dc100</hash>
-        <hash alg="SHA3-512">54c44a699666f2dfdbd087e434eccb448d0b53ad5b462c6927db98c63ac850645f0e0caf86f1e2740e34eb25b0d30b58290926b58049afd837f1e13cb3d1cc64</hash>
-      </hashes>
-      <licenses>
-        <license>
-          <id>GPL-2.0-with-classpath-exception</id>
-        </license>
-      </licenses>
-      <purl>pkg:maven/org.openjfx/javafx-graphics@19-ea%2B7?classifier=win&amp;type=jar</purl>
-      <externalReferences><reference type="website"><url>https://openjdk.java.net/projects/openjfx/javafx-graphics/</url></reference><reference type="vcs"><url>https://github.com/openjdk/jfx/javafx-graphics</url></reference></externalReferences>
-    </component>
-    <component type="library" bom-ref="pkg:maven/org.openjfx/javafx-base@19-ea%2B7?type=jar">
-      <group>org.openjfx</group>
-      <name>javafx-base</name>
-      <version>19-ea+7</version>
-      <description>OpenJFX JavaFX</description>
-      <scope>required</scope>
-      <hashes>
-        <hash alg="MD5">162bfa19c2a23415a4c7e3fa9b1a2d2a</hash>
-        <hash alg="SHA-1">e66da59d4e2544fc93d84f9936203aaf658f201d</hash>
-        <hash alg="SHA-256">7b1abbad342090f195783436078a0b10cd9d15d2dd5d4b9f7093162388bc87ef</hash>
-        <hash alg="SHA-512">b8e1c8ab3db8fc07477a0d7fdbe8d6f4575608051ad4c046c8b0eab317a71aa562beafd5be5b9d34d94e27c6737d2a97a3f201eb0090c9eb34dc3cf30ba38808</hash>
-        <hash alg="SHA-384">3e9c4fd1fd399c93b9ba588931dcc8a1c6aad585d1987aaa30752d40800fabecc77adc6c1c124cce717f125f3d40aed0</hash>
-        <hash alg="SHA3-384">148895d2e7c94b23d09b2c84ee34e20780b4772b638f810ba4b3139f053242066d63657d172c4f1983071501d6452a53</hash>
-        <hash alg="SHA3-256">f14df19526f1ce25f4ab8884dc08bab1ec93e3e62ac8123a71a14dd33b604ecb</hash>
-        <hash alg="SHA3-512">be0d8a4c55cfec01b5f7c297aa966c381499390817cd018f256616fd5e7ae5d30c351cd5e793f93a302464735bd0c5b0ef1fbd51f8726b0500b959750636bc28</hash>
-      </hashes>
-      <licenses>
-        <license>
-          <id>GPL-2.0-with-classpath-exception</id>
-        </license>
-      </licenses>
-      <purl>pkg:maven/org.openjfx/javafx-base@19-ea%2B7?type=jar</purl>
-      <externalReferences><reference type="website"><url>https://openjdk.java.net/projects/openjfx/javafx-base/</url></reference><reference type="vcs"><url>https://github.com/openjdk/jfx/javafx-base</url></reference></externalReferences>
-    </component>
-    <component type="library" bom-ref="pkg:maven/org.openjfx/javafx-base@19-ea%2B7?classifier=win&amp;type=jar">
-      <group>org.openjfx</group>
-      <name>javafx-base</name>
-      <version>19-ea+7</version>
-      <description>OpenJFX JavaFX</description>
-      <scope>required</scope>
-      <hashes>
-        <hash alg="MD5">20cb1ddec46f7da67cf0e26f2e199855</hash>
-        <hash alg="SHA-1">25fbcc126fd80e8a0cb7b02c866f94e2affdc563</hash>
-        <hash alg="SHA-256">f8df6b9065324eb0caf32cf7c5391e838ca2c4fea7011b480a10cc8cf44ef251</hash>
-        <hash alg="SHA-512">6168894c68cec2c2a236207e71c9b5ed845ac56fbb5fec6b85148dd385cb6ef405b2685ee31bc2cd9854af355e370ad7a395236884a69d0b08465c9d4b2b82af</hash>
-        <hash alg="SHA-384">665e9b561a10fd87caf6450492fb5cc4e099c664d4d9deae8573c1728014a84ef1b76d0d4a4a66761d3f65956234f896</hash>
-        <hash alg="SHA3-384">15731943b510d13aea1423de3f4331e67bd542313d827e151cc45aa5004c5a81c8a26f9cf2b2a1ba4b61e4818e39b7ec</hash>
-        <hash alg="SHA3-256">1b38f2822e54322fa67a99cee2e362195996cc66c9b67853fe3103890eb8ab62</hash>
-        <hash alg="SHA3-512">789caa8464381f66715017f0a77b2160924721c4064b0e71382ce4e88fab1a08f903e995c1b1e1567283008073d1c71ba489c588e10f567e601c7818163b5acd</hash>
-      </hashes>
-      <licenses>
-        <license>
-          <id>GPL-2.0-with-classpath-exception</id>
-        </license>
-      </licenses>
-      <purl>pkg:maven/org.openjfx/javafx-base@19-ea%2B7?classifier=win&amp;type=jar</purl>
-      <externalReferences><reference type="website"><url>https://openjdk.java.net/projects/openjfx/javafx-base/</url></reference><reference type="vcs"><url>https://github.com/openjdk/jfx/javafx-base</url></reference></externalReferences>
-    </component>
     <component type="library" bom-ref="pkg:maven/org.openjfx/javafx-fxml@19-ea%2B7?type=jar">
       <group>org.openjfx</group>
       <name>javafx-fxml</name>
@@ -223,6 +127,54 @@
       </licenses>
       <purl>pkg:maven/org.openjfx/javafx-fxml@19-ea%2B7?classifier=win&amp;type=jar</purl>
       <externalReferences><reference type="website"><url>https://openjdk.java.net/projects/openjfx/javafx-fxml/</url></reference><reference type="vcs"><url>https://github.com/openjdk/jfx/javafx-fxml</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.openjfx/javafx-swing@11.0.2?type=jar">
+      <group>org.openjfx</group>
+      <name>javafx-swing</name>
+      <version>11.0.2</version>
+      <description>OpenJFX JavaFX</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">0f4616ffa769f223b9a8a88498b0b477</hash>
+        <hash alg="SHA-1">128e242b1da453716160990efc84834e67bc97b3</hash>
+        <hash alg="SHA-256">49965fdc301283e96279eb79a7cc919e5354df5be62c85406ce6c7f21118b8b2</hash>
+        <hash alg="SHA-512">342e401e238a6e8670bd8d2c43d4f0f1f4e17f3ec27a47af1378c762d2a64cfdb1bb4a4c248cb30ba3a7c521cd1d5f7d0dd8b535a84d52961740dc075809de27</hash>
+        <hash alg="SHA-384">84639329a01d68bf7084ee60a924a0901c479346e7fc9eb8c9bbae75242910b092d649cd29b206d3bc3489e6b49c73f9</hash>
+        <hash alg="SHA3-384">3f39950f67a457b8273f6a4f25d708b064c7048f1859c597a2adb2a0e1e5e9deb3ddc06c05474c53a2a8dc9b4aba9d36</hash>
+        <hash alg="SHA3-256">9a33500f49c5c45c1c2e2cceae21662f1f2fd9404a9f2f339684be1187b68921</hash>
+        <hash alg="SHA3-512">8311197be6db83e0787fe4089aadbbed91be80d71370aab29569821b565dba897c57dba5a561e84d9906677e741a12dfa7c71478cc8983ea3df453ce28ff0c34</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>GPL-2.0-with-classpath-exception</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.openjfx/javafx-swing@11.0.2?type=jar</purl>
+      <externalReferences><reference type="website"><url>https://openjdk.java.net/projects/openjfx/javafx-swing/</url></reference><reference type="vcs"><url>https://github.com/javafxports/openjdk-jfx/javafx-swing</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.openjfx/javafx-swing@11.0.2?classifier=win&amp;type=jar">
+      <group>org.openjfx</group>
+      <name>javafx-swing</name>
+      <version>11.0.2</version>
+      <description>OpenJFX JavaFX</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">0452592089b0a0cf7b8c423888efed1a</hash>
+        <hash alg="SHA-1">09b5728e61148142fae8c47f6295c84d7a8d6c89</hash>
+        <hash alg="SHA-256">b2896377370132993cbc61d18fc65c4634ca771f3d1dd2c69db8bf81ce798770</hash>
+        <hash alg="SHA-512">fedae63fe1e5f192b280e5a4f01624b571010b64825608390bda3bd41ea70a980637ad60b4daec400a1b6c71944875c390d7d19ebef540f310471b836fe68dd0</hash>
+        <hash alg="SHA-384">05121678fb1fd78f5bdae5ca05c6f1bbb80280c7e22418f4a07d5a17a76f49328f2ba9318eaae4ee3b57293104586e19</hash>
+        <hash alg="SHA3-384">617c08020a81278b329f78a563a36de22ba2b0c377f6a7ceb6ad3ecee3aa1a0e4a9399d0617903a13c29d2c0f1e4d782</hash>
+        <hash alg="SHA3-256">c567206991e9b71e332e7f6ef04472e0bf7628b767dc42969d3dc05f9b01c210</hash>
+        <hash alg="SHA3-512">30f7a93d50b089ea8eb3f2e39ddbf0081e68275956689d8fb7ad167756eaf194f46ee29f9c9055eec226b7e7a6ed62b80b0609d6171aab3b5cb310a0d122329c</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>GPL-2.0-with-classpath-exception</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.openjfx/javafx-swing@11.0.2?classifier=win&amp;type=jar</purl>
+      <externalReferences><reference type="website"><url>https://openjdk.java.net/projects/openjfx/javafx-swing/</url></reference><reference type="vcs"><url>https://github.com/javafxports/openjdk-jfx/javafx-swing</url></reference></externalReferences>
     </component>
     <component type="library" bom-ref="pkg:maven/org.controlsfx/controlsfx@11.1.1?type=jar">
       <group>org.controlsfx</group>
@@ -374,56 +326,6 @@
       <purl>pkg:maven/javax.activation/javax.activation-api@1.2.0?type=jar</purl>
       <externalReferences><reference type="website"><url>http://java.net/all/javax.activation-api/</url></reference><reference type="distribution"><url>https://maven.java.net/service/local/staging/deploy/maven2/</url></reference><reference type="issue-tracker"><url>https://github.com/javaee/activation/issues</url></reference><reference type="vcs"><url>https://github.com/javaee/activation/javax.activation-api</url></reference></externalReferences>
     </component>
-    <component type="library" bom-ref="pkg:maven/com.sun.xml.bind/jaxb-impl@4.0.1?type=jar">
-      <publisher>Eclipse Foundation</publisher>
-      <group>com.sun.xml.bind</group>
-      <name>jaxb-impl</name>
-      <version>4.0.1</version>
-      <description>Old JAXB Runtime module. Contains sources required for runtime processing.</description>
-      <scope>required</scope>
-      <hashes>
-        <hash alg="MD5">a206231cbdf21fd1c6539e323c75a6b2</hash>
-        <hash alg="SHA-1">bad26cea1d483dda57b6f634cdeaca3238637aea</hash>
-        <hash alg="SHA-256">d97a653a78f8cf9a6de9acf39d4ed91da3907bfed748e8730a62c30f9f3ec9c1</hash>
-        <hash alg="SHA-512">ac45a0e17e1d165fe8b050450da0921624f5d6ac61857b16a2c59e45a771bf00ef6464831a842c981fcdb44055f71e9f606532e005007aeb1a3f7d42b93f7c89</hash>
-        <hash alg="SHA-384">87110c81c4c154d0fe7f7eb196015613bb0350f9ac956cd9e7a99d8548afb9f8eb87b6ae705e9b593bf0da80d75ef0dc</hash>
-        <hash alg="SHA3-384">a78cb77214e2800700c89c4ada641309008390a4156617411d2582babcad4461714b749b9b107e8b96f0207c0b8456a6</hash>
-        <hash alg="SHA3-256">ff1392014fa62e3f66845844986617ad129e852abce9a2f5c59adbc7a57ec936</hash>
-        <hash alg="SHA3-512">c41eb96d4334c95cdefd2a864c72ea0a09407d8b96ce5bbc22a604032e4044fa61f93f8db83a5a679a8810e228be6f3f06a5bd66b2c20ca06e96e00df1837f70</hash>
-      </hashes>
-      <licenses>
-        <license>
-          <id>BSD-3-Clause</id>
-        </license>
-      </licenses>
-      <purl>pkg:maven/com.sun.xml.bind/jaxb-impl@4.0.1?type=jar</purl>
-      <externalReferences><reference type="website"><url>https://eclipse-ee4j.github.io/jaxb-ri/</url></reference><reference type="distribution"><url>https://jakarta.oss.sonatype.org/service/local/staging/deploy/maven2/</url></reference><reference type="issue-tracker"><url>https://github.com/eclipse-ee4j/jaxb-ri/issues</url></reference><reference type="mailing-list"><url>https://accounts.eclipse.org/mailing-list/jaxb-impl-dev</url></reference><reference type="vcs"><url>https://github.com/eclipse-ee4j/jaxb-ri.git/jaxb-bundles/jaxb-impl</url></reference></externalReferences>
-    </component>
-    <component type="library" bom-ref="pkg:maven/com.sun.xml.bind/jaxb-core@4.0.1?type=jar">
-      <publisher>Eclipse Foundation</publisher>
-      <group>com.sun.xml.bind</group>
-      <name>jaxb-core</name>
-      <version>4.0.1</version>
-      <description>Old JAXB Core module. Contains sources required by XJC, JXC and Runtime modules with dependencies.</description>
-      <scope>required</scope>
-      <hashes>
-        <hash alg="MD5">86957dab6148bc36333f6244e4f52ea8</hash>
-        <hash alg="SHA-1">e8bf2d711d2d4250537199602bccae0cd4e62726</hash>
-        <hash alg="SHA-256">1086909cb130433039d8e2865bf331af628d992bcef10a95f72dc121ab020775</hash>
-        <hash alg="SHA-512">083cd810d22f6a071e8cbad5e1b96b82a58d47c8a0a842590bf301431de3c8787c2557692c00a8c0186e603bccf5d5a141cf308d31d5661e5a06260a7c5bc145</hash>
-        <hash alg="SHA-384">146b9df97f013de115fa8cb62a402e5360aaa70876aa05181d4fa8186bcedb2ffe284d73143edaa857fdbe96db3a1d31</hash>
-        <hash alg="SHA3-384">93008638d8b28661b459695b8a084d1add097b4c1faf169d12ed130f023c71567d64d50295c79700d25783e8d94fc2f6</hash>
-        <hash alg="SHA3-256">45aa77d48df38c432ff8141fe372f387268cae9793bf3d0aecb64483304912c6</hash>
-        <hash alg="SHA3-512">24c1840077f7555390459aada26c8ea466a0b7bb22a7d06adf9078e6ad3d3c5f8648ae547fd5aefed2683d987a52f72c8d983aa2735fd3402ef8364ca27da676</hash>
-      </hashes>
-      <licenses>
-        <license>
-          <id>BSD-3-Clause</id>
-        </license>
-      </licenses>
-      <purl>pkg:maven/com.sun.xml.bind/jaxb-core@4.0.1?type=jar</purl>
-      <externalReferences><reference type="website"><url>https://eclipse-ee4j.github.io/jaxb-ri/</url></reference><reference type="distribution"><url>https://jakarta.oss.sonatype.org/service/local/staging/deploy/maven2/</url></reference><reference type="issue-tracker"><url>https://github.com/eclipse-ee4j/jaxb-ri/issues</url></reference><reference type="mailing-list"><url>https://accounts.eclipse.org/mailing-list/jaxb-impl-dev</url></reference><reference type="vcs"><url>https://github.com/eclipse-ee4j/jaxb-ri.git/jaxb-bundles/jaxb-core</url></reference></externalReferences>
-    </component>
     <component type="library" bom-ref="pkg:maven/jakarta.xml.bind/jakarta.xml.bind-api@4.0.0?type=jar">
       <publisher>Eclipse Foundation</publisher>
       <group>jakarta.xml.bind</group>
@@ -474,6 +376,56 @@
       <purl>pkg:maven/jakarta.activation/jakarta.activation-api@2.1.0?type=jar</purl>
       <externalReferences><reference type="website"><url>https://github.com/eclipse-ee4j/jaf</url></reference><reference type="distribution"><url>https://jakarta.oss.sonatype.org/service/local/staging/deploy/maven2/</url></reference><reference type="issue-tracker"><url>https://github.com/eclipse-ee4j/jaf/issues/</url></reference><reference type="mailing-list"><url>https://dev.eclipse.org/mhonarc/lists/jakarta.ee-community/</url></reference><reference type="vcs"><url>https://github.com/eclipse-ee4j/jaf</url></reference></externalReferences>
     </component>
+    <component type="library" bom-ref="pkg:maven/com.sun.xml.bind/jaxb-impl@4.0.1?type=jar">
+      <publisher>Eclipse Foundation</publisher>
+      <group>com.sun.xml.bind</group>
+      <name>jaxb-impl</name>
+      <version>4.0.1</version>
+      <description>Old JAXB Runtime module. Contains sources required for runtime processing.</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">a206231cbdf21fd1c6539e323c75a6b2</hash>
+        <hash alg="SHA-1">bad26cea1d483dda57b6f634cdeaca3238637aea</hash>
+        <hash alg="SHA-256">d97a653a78f8cf9a6de9acf39d4ed91da3907bfed748e8730a62c30f9f3ec9c1</hash>
+        <hash alg="SHA-512">ac45a0e17e1d165fe8b050450da0921624f5d6ac61857b16a2c59e45a771bf00ef6464831a842c981fcdb44055f71e9f606532e005007aeb1a3f7d42b93f7c89</hash>
+        <hash alg="SHA-384">87110c81c4c154d0fe7f7eb196015613bb0350f9ac956cd9e7a99d8548afb9f8eb87b6ae705e9b593bf0da80d75ef0dc</hash>
+        <hash alg="SHA3-384">a78cb77214e2800700c89c4ada641309008390a4156617411d2582babcad4461714b749b9b107e8b96f0207c0b8456a6</hash>
+        <hash alg="SHA3-256">ff1392014fa62e3f66845844986617ad129e852abce9a2f5c59adbc7a57ec936</hash>
+        <hash alg="SHA3-512">c41eb96d4334c95cdefd2a864c72ea0a09407d8b96ce5bbc22a604032e4044fa61f93f8db83a5a679a8810e228be6f3f06a5bd66b2c20ca06e96e00df1837f70</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>BSD-3-Clause</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/com.sun.xml.bind/jaxb-impl@4.0.1?type=jar</purl>
+      <externalReferences><reference type="website"><url>https://eclipse-ee4j.github.io/jaxb-ri/</url></reference><reference type="distribution"><url>https://jakarta.oss.sonatype.org/service/local/staging/deploy/maven2/</url></reference><reference type="issue-tracker"><url>https://github.com/eclipse-ee4j/jaxb-ri/issues</url></reference><reference type="mailing-list"><url>https://accounts.eclipse.org/mailing-list/jaxb-impl-dev</url></reference><reference type="vcs"><url>https://github.com/eclipse-ee4j/jaxb-ri.git/jaxb-bundles/jaxb-impl</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/com.sun.xml.bind/jaxb-core@4.0.1?type=jar">
+      <publisher>Eclipse Foundation</publisher>
+      <group>com.sun.xml.bind</group>
+      <name>jaxb-core</name>
+      <version>4.0.1</version>
+      <description>Old JAXB Core module. Contains sources required by XJC, JXC and Runtime modules with dependencies.</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">86957dab6148bc36333f6244e4f52ea8</hash>
+        <hash alg="SHA-1">e8bf2d711d2d4250537199602bccae0cd4e62726</hash>
+        <hash alg="SHA-256">1086909cb130433039d8e2865bf331af628d992bcef10a95f72dc121ab020775</hash>
+        <hash alg="SHA-512">083cd810d22f6a071e8cbad5e1b96b82a58d47c8a0a842590bf301431de3c8787c2557692c00a8c0186e603bccf5d5a141cf308d31d5661e5a06260a7c5bc145</hash>
+        <hash alg="SHA-384">146b9df97f013de115fa8cb62a402e5360aaa70876aa05181d4fa8186bcedb2ffe284d73143edaa857fdbe96db3a1d31</hash>
+        <hash alg="SHA3-384">93008638d8b28661b459695b8a084d1add097b4c1faf169d12ed130f023c71567d64d50295c79700d25783e8d94fc2f6</hash>
+        <hash alg="SHA3-256">45aa77d48df38c432ff8141fe372f387268cae9793bf3d0aecb64483304912c6</hash>
+        <hash alg="SHA3-512">24c1840077f7555390459aada26c8ea466a0b7bb22a7d06adf9078e6ad3d3c5f8648ae547fd5aefed2683d987a52f72c8d983aa2735fd3402ef8364ca27da676</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>BSD-3-Clause</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/com.sun.xml.bind/jaxb-core@4.0.1?type=jar</purl>
+      <externalReferences><reference type="website"><url>https://eclipse-ee4j.github.io/jaxb-ri/</url></reference><reference type="distribution"><url>https://jakarta.oss.sonatype.org/service/local/staging/deploy/maven2/</url></reference><reference type="issue-tracker"><url>https://github.com/eclipse-ee4j/jaxb-ri/issues</url></reference><reference type="mailing-list"><url>https://accounts.eclipse.org/mailing-list/jaxb-impl-dev</url></reference><reference type="vcs"><url>https://github.com/eclipse-ee4j/jaxb-ri.git/jaxb-bundles/jaxb-core</url></reference></externalReferences>
+    </component>
     <component type="library" bom-ref="pkg:maven/org.eclipse.angus/angus-activation@1.0.0?type=jar">
       <publisher>Eclipse Foundation</publisher>
       <group>org.eclipse.angus</group>
@@ -499,17 +451,116 @@
       <purl>pkg:maven/org.eclipse.angus/angus-activation@1.0.0?type=jar</purl>
       <externalReferences><reference type="website"><url>https://github.com/eclipse-ee4j/angus-activation/angus-activation</url></reference><reference type="distribution"><url>https://jakarta.oss.sonatype.org/service/local/staging/deploy/maven2/</url></reference><reference type="issue-tracker"><url>https://github.com/eclipse-ee4j/angus-activation/issues/</url></reference><reference type="mailing-list"><url>https://dev.eclipse.org/mhonarc/lists/jakarta.ee-community/</url></reference><reference type="vcs"><url>https://github.com/eclipse-ee4j/angus-activation/angus-activation</url></reference></externalReferences>
     </component>
+    <component type="library" bom-ref="pkg:maven/org.openjfx/javafx-graphics@19-ea%2B7?type=jar">
+      <group>org.openjfx</group>
+      <name>javafx-graphics</name>
+      <version>19-ea+7</version>
+      <description>OpenJFX JavaFX</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">54aa5f9c8a590e49eaf27f785b65e50f</hash>
+        <hash alg="SHA-1">3b0a224171337f4752f511bf4ef343f76ec9a188</hash>
+        <hash alg="SHA-256">7997aadab74c1f6158a5d65ea94e8ad6e61de451b751e67ae160d3a9d4d71dbd</hash>
+        <hash alg="SHA-512">3ff07d24e77f0eba283fee3f9fc1d1098725500b141cb8597f205c4f432524627b2b63120077cc848565a2a1865d515c2c444c9f4f725ec334480d63b4e096ca</hash>
+        <hash alg="SHA-384">4dd337756db00a4286f685138c9249f6c65e968a560780ebe2237af2083b1caf946545e58615ee85f56964f455770e7d</hash>
+        <hash alg="SHA3-384">8919e5b44faec6550b6f3b82f2892a5525f4a7c9be1610ce007de2e4002842eab58664616ffe740c2e14dcc365efe2d4</hash>
+        <hash alg="SHA3-256">8bd1a0aa041d7915e676747f7167116a3ac50614074c4c9975fe910cc542fd98</hash>
+        <hash alg="SHA3-512">e21bf022d93412ef9f2ac2ae64436683a6c13430977c58a7908ce6321f48ea893b4778952a1dc280002d13287f26457c428d068dbbdd45a134c3e62623b09c27</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>GPL-2.0-with-classpath-exception</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.openjfx/javafx-graphics@19-ea%2B7?type=jar</purl>
+      <externalReferences><reference type="website"><url>https://openjdk.java.net/projects/openjfx/javafx-graphics/</url></reference><reference type="vcs"><url>https://github.com/openjdk/jfx/javafx-graphics</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.openjfx/javafx-graphics@19-ea%2B7?classifier=win&amp;type=jar">
+      <group>org.openjfx</group>
+      <name>javafx-graphics</name>
+      <version>19-ea+7</version>
+      <description>OpenJFX JavaFX</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">46a08a2c412340daa4398c0e7cc900d0</hash>
+        <hash alg="SHA-1">9536a27280b41e28d30164110867eca253af5726</hash>
+        <hash alg="SHA-256">0e17367a1400dccfbbf1cd7c9154802703838b75ec2b79f8c9d882e46f5daacd</hash>
+        <hash alg="SHA-512">c53031fb8ebdce5c3bbd3116557e48677c3a2b81a9e354ef4f15da354f0a18b24c0fdb264e0f2f57c7efe60a79f79534e9ac7d579ab8ab1011b855f86f1e2f4e</hash>
+        <hash alg="SHA-384">b0cfef119bc8d1084103554d6ba8b8d1d7f5d607b44d2b9d8c4f80c35cd94741033804825848d2bcf5690d3b16f34ca8</hash>
+        <hash alg="SHA3-384">dca4dab21c9be8b976b55e5780df39a84ac4d4f69c5f4fd510f14cdc8292be194275c33da45da97f9147997cef62b8a9</hash>
+        <hash alg="SHA3-256">d788f85871fe8092e255e5f6e2c16329eddd54d95de3f20bb82548b4391dc100</hash>
+        <hash alg="SHA3-512">54c44a699666f2dfdbd087e434eccb448d0b53ad5b462c6927db98c63ac850645f0e0caf86f1e2740e34eb25b0d30b58290926b58049afd837f1e13cb3d1cc64</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>GPL-2.0-with-classpath-exception</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.openjfx/javafx-graphics@19-ea%2B7?classifier=win&amp;type=jar</purl>
+      <externalReferences><reference type="website"><url>https://openjdk.java.net/projects/openjfx/javafx-graphics/</url></reference><reference type="vcs"><url>https://github.com/openjdk/jfx/javafx-graphics</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.openjfx/javafx-base@19-ea%2B7?type=jar">
+      <group>org.openjfx</group>
+      <name>javafx-base</name>
+      <version>19-ea+7</version>
+      <description>OpenJFX JavaFX</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">162bfa19c2a23415a4c7e3fa9b1a2d2a</hash>
+        <hash alg="SHA-1">e66da59d4e2544fc93d84f9936203aaf658f201d</hash>
+        <hash alg="SHA-256">7b1abbad342090f195783436078a0b10cd9d15d2dd5d4b9f7093162388bc87ef</hash>
+        <hash alg="SHA-512">b8e1c8ab3db8fc07477a0d7fdbe8d6f4575608051ad4c046c8b0eab317a71aa562beafd5be5b9d34d94e27c6737d2a97a3f201eb0090c9eb34dc3cf30ba38808</hash>
+        <hash alg="SHA-384">3e9c4fd1fd399c93b9ba588931dcc8a1c6aad585d1987aaa30752d40800fabecc77adc6c1c124cce717f125f3d40aed0</hash>
+        <hash alg="SHA3-384">148895d2e7c94b23d09b2c84ee34e20780b4772b638f810ba4b3139f053242066d63657d172c4f1983071501d6452a53</hash>
+        <hash alg="SHA3-256">f14df19526f1ce25f4ab8884dc08bab1ec93e3e62ac8123a71a14dd33b604ecb</hash>
+        <hash alg="SHA3-512">be0d8a4c55cfec01b5f7c297aa966c381499390817cd018f256616fd5e7ae5d30c351cd5e793f93a302464735bd0c5b0ef1fbd51f8726b0500b959750636bc28</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>GPL-2.0-with-classpath-exception</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.openjfx/javafx-base@19-ea%2B7?type=jar</purl>
+      <externalReferences><reference type="website"><url>https://openjdk.java.net/projects/openjfx/javafx-base/</url></reference><reference type="vcs"><url>https://github.com/openjdk/jfx/javafx-base</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.openjfx/javafx-base@19-ea%2B7?classifier=win&amp;type=jar">
+      <group>org.openjfx</group>
+      <name>javafx-base</name>
+      <version>19-ea+7</version>
+      <description>OpenJFX JavaFX</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">20cb1ddec46f7da67cf0e26f2e199855</hash>
+        <hash alg="SHA-1">25fbcc126fd80e8a0cb7b02c866f94e2affdc563</hash>
+        <hash alg="SHA-256">f8df6b9065324eb0caf32cf7c5391e838ca2c4fea7011b480a10cc8cf44ef251</hash>
+        <hash alg="SHA-512">6168894c68cec2c2a236207e71c9b5ed845ac56fbb5fec6b85148dd385cb6ef405b2685ee31bc2cd9854af355e370ad7a395236884a69d0b08465c9d4b2b82af</hash>
+        <hash alg="SHA-384">665e9b561a10fd87caf6450492fb5cc4e099c664d4d9deae8573c1728014a84ef1b76d0d4a4a66761d3f65956234f896</hash>
+        <hash alg="SHA3-384">15731943b510d13aea1423de3f4331e67bd542313d827e151cc45aa5004c5a81c8a26f9cf2b2a1ba4b61e4818e39b7ec</hash>
+        <hash alg="SHA3-256">1b38f2822e54322fa67a99cee2e362195996cc66c9b67853fe3103890eb8ab62</hash>
+        <hash alg="SHA3-512">789caa8464381f66715017f0a77b2160924721c4064b0e71382ce4e88fab1a08f903e995c1b1e1567283008073d1c71ba489c588e10f567e601c7818163b5acd</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>GPL-2.0-with-classpath-exception</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.openjfx/javafx-base@19-ea%2B7?classifier=win&amp;type=jar</purl>
+      <externalReferences><reference type="website"><url>https://openjdk.java.net/projects/openjfx/javafx-base/</url></reference><reference type="vcs"><url>https://github.com/openjdk/jfx/javafx-base</url></reference></externalReferences>
+    </component>
   </components>
   <dependencies>
     <dependency ref="pkg:maven/com.librairie/Librairie@1.0-SNAPSHOT?type=jar">
       <dependency ref="pkg:maven/org.openjfx/javafx-controls@19-ea%2B7?type=jar"/>
       <dependency ref="pkg:maven/org.openjfx/javafx-fxml@19-ea%2B7?type=jar"/>
+      <dependency ref="pkg:maven/org.openjfx/javafx-swing@11.0.2?type=jar"/>
       <dependency ref="pkg:maven/org.controlsfx/controlsfx@11.1.1?type=jar"/>
       <dependency ref="pkg:maven/com.dlsc.formsfx/formsfx-core@11.5.0?type=jar"/>
       <dependency ref="pkg:maven/net.synedra/validatorfx@0.3.1?type=jar"/>
       <dependency ref="pkg:maven/org.kordamp.bootstrapfx/bootstrapfx-core@0.4.0?type=jar"/>
       <dependency ref="pkg:maven/javax.xml.bind/jaxb-api@2.4.0-b180830.0359?type=jar"/>
+      <dependency ref="pkg:maven/jakarta.xml.bind/jakarta.xml.bind-api@4.0.0?type=jar"/>
       <dependency ref="pkg:maven/com.sun.xml.bind/jaxb-impl@4.0.1?type=jar"/>
+      <dependency ref="pkg:maven/org.openjfx/javafx-graphics@19-ea%2B7?type=jar"/>
     </dependency>
     <dependency ref="pkg:maven/org.openjfx/javafx-controls@19-ea%2B7?type=jar">
       <dependency ref="pkg:maven/org.openjfx/javafx-controls@19-ea%2B7?classifier=win&amp;type=jar"/>
@@ -530,6 +581,11 @@
       <dependency ref="pkg:maven/org.openjfx/javafx-controls@19-ea%2B7?type=jar"/>
     </dependency>
     <dependency ref="pkg:maven/org.openjfx/javafx-fxml@19-ea%2B7?classifier=win&amp;type=jar"/>
+    <dependency ref="pkg:maven/org.openjfx/javafx-swing@11.0.2?type=jar">
+      <dependency ref="pkg:maven/org.openjfx/javafx-swing@11.0.2?classifier=win&amp;type=jar"/>
+      <dependency ref="pkg:maven/org.openjfx/javafx-graphics@19-ea%2B7?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/org.openjfx/javafx-swing@11.0.2?classifier=win&amp;type=jar"/>
     <dependency ref="pkg:maven/org.controlsfx/controlsfx@11.1.1?type=jar"/>
     <dependency ref="pkg:maven/com.dlsc.formsfx/formsfx-core@11.5.0?type=jar"/>
     <dependency ref="pkg:maven/net.synedra/validatorfx@0.3.1?type=jar"/>
@@ -538,6 +594,10 @@
       <dependency ref="pkg:maven/javax.activation/javax.activation-api@1.2.0?type=jar"/>
     </dependency>
     <dependency ref="pkg:maven/javax.activation/javax.activation-api@1.2.0?type=jar"/>
+    <dependency ref="pkg:maven/jakarta.xml.bind/jakarta.xml.bind-api@4.0.0?type=jar">
+      <dependency ref="pkg:maven/jakarta.activation/jakarta.activation-api@2.1.0?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/jakarta.activation/jakarta.activation-api@2.1.0?type=jar"/>
     <dependency ref="pkg:maven/com.sun.xml.bind/jaxb-impl@4.0.1?type=jar">
       <dependency ref="pkg:maven/com.sun.xml.bind/jaxb-core@4.0.1?type=jar"/>
     </dependency>
@@ -545,10 +605,6 @@
       <dependency ref="pkg:maven/jakarta.xml.bind/jakarta.xml.bind-api@4.0.0?type=jar"/>
       <dependency ref="pkg:maven/org.eclipse.angus/angus-activation@1.0.0?type=jar"/>
     </dependency>
-    <dependency ref="pkg:maven/jakarta.xml.bind/jakarta.xml.bind-api@4.0.0?type=jar">
-      <dependency ref="pkg:maven/jakarta.activation/jakarta.activation-api@2.1.0?type=jar"/>
-    </dependency>
-    <dependency ref="pkg:maven/jakarta.activation/jakarta.activation-api@2.1.0?type=jar"/>
     <dependency ref="pkg:maven/org.eclipse.angus/angus-activation@1.0.0?type=jar">
       <dependency ref="pkg:maven/jakarta.activation/jakarta.activation-api@2.1.0?type=jar"/>
     </dependency>
