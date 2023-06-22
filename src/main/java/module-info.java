@@ -8,13 +8,16 @@ module com.librairie.librairie {
     requires java.sql;
     requires lombok;
 
+    requires org.apache.pdfbox;
+    //requires boxable;
+    requires java.desktop;
 
-    opens com.librairie.librairie to javafx.fxml;
+    opens com.librairie.librairie to javafx.fxml, java.xml.bind;
     exports com.librairie.librairie;
 
     exports com.librairie.librairie.Controller;
-    opens com.librairie.librairie.Controller to javafx.fxml;
+    opens com.librairie.librairie.Controller to javafx.fxml, java.xml.bind;
 
     exports com.librairie.librairie.Model;
-    opens com.librairie.librairie.Model to javafx.fxml;
+    opens com.librairie.librairie.Model to javafx.fxml, java.xml.bind;
 }

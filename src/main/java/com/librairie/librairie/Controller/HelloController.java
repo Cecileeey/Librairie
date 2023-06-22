@@ -1,6 +1,13 @@
 package com.librairie.librairie.Controller;
 import com.librairie.librairie.Model.Bibliotheque;
 import com.librairie.librairie.Model.DbConnection;
+import com.librairie.librairie.Model.XMLhandler;
+
+import org.xml.sax.SAXException;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import javafx.application.Platform;
 import javafx.beans.binding.Bindings;
@@ -8,9 +15,10 @@ import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.fxml.Initializable;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -26,16 +34,11 @@ import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
 
 import java.io.File;
-import java.net.URL;
-import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ResourceBundle;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Optional;
-import org.xml.sax.SAXException;
+
 
 /**
  * @version 1.5
@@ -108,7 +111,7 @@ public class HelloController {
     @FXML
     public TableColumn <Bibliotheque.Livre, String> presentationColumn;
     @FXML
-    public TableColumn <Bibliotheque.Livre, String> parutionColumn;
+    public TableColumn <Bibliotheque.Livre, Integer> parutionColumn;
     @FXML
     public TableColumn <Bibliotheque.Livre, Integer> colonneColumn;
     @FXML
@@ -122,6 +125,8 @@ public class HelloController {
      * Création d'une bibliothèque.
      */
     public Bibliotheque bibliotheque = new Bibliotheque();
+
+    public XMLhandler xmlfile = new XMLhandler();
 
     /**
      * Méthode qui permet de détecter les changements.
@@ -139,7 +144,7 @@ public class HelloController {
 
     Bibliotheque.Livre selectedBook = null ;
     File selectedFile = null;
-    boolean fileSaved ;
+    boolean fileSaved;
 
     /**
      * Cette méthode est appelée lors de l'initialisation de HelloApplication.
@@ -175,12 +180,12 @@ public class HelloController {
     public void inittableau(){
 
         titreColumn.setCellValueFactory(cellData -> {
-            String titre = String.valueOf(cellData.getValue().titreProperty());
+            String titre = cellData.getValue().titreProperty();
             ObservableValue<String> observableTitre = Bindings.createStringBinding(() -> titre);
             return observableTitre;
         });
         presentationColumn.setCellValueFactory(cellData -> {
-            String presentation = String.valueOf(cellData.getValue().getPresentation());
+            String presentation = cellData.getValue().getPresentation();
             ObservableValue<String> observablePresentation = Bindings.createStringBinding(() -> presentation);
             return observablePresentation;
         });
@@ -200,11 +205,12 @@ public class HelloController {
             return observableColonne;
         });
         parutionColumn.setCellValueFactory(cellData -> {
-            String parution = String.valueOf(cellData.getValue().getParution());
-            ObservableValue<String> observableParution = Bindings.createStringBinding(() -> parution);
+            int parution = cellData.getValue().getParution();
+            ObservableValue<Integer> observableParution = Bindings.createIntegerBinding(() -> parution).asObject();
             return observableParution;
         });
         tableView.getColumns().setAll(titreColumn,auteurColumn,presentationColumn,parutionColumn,colonneColumn,rangeeColumn);
+        tableView.setItems(bibliotheque.getLivre());
 
     }
 
@@ -242,7 +248,8 @@ public class HelloController {
     @FXML
     public void handleBookAction(ActionEvent event){
         if(checkData()) {
-            //Recuperer les donnÃ©es entrees dans le texte fields.
+            msgError();
+            //Recuperer les données entrees dans le texte fields.
             Bibliotheque.Livre.Auteur auteur1 = new Bibliotheque.Livre.Auteur() ;
             String auteurTexte = auteur.getText();
             String[] PrenomNom = auteurTexte.split(" ", 2);
@@ -252,21 +259,19 @@ public class HelloController {
             String titreText = titre.getText();
             int colonneText = Integer.parseInt(colonne.getText());
             int rangeeText = Integer.parseInt(rangee.getText());
-            String datapickerText = String.valueOf(parution.getValue().getYear());
+            int datapickerText = parution.getValue().getYear();
             String imageUrl = image.getText();
+            boolean etatBool = etat.isSelected();
 
             //Affichage de l'image
             Image image = new Image(imageUrl);
             imageView.setImage(image);
             if (selectedBook == null) {
-                bibliotheque.addLivre(titreText, auteur1, presentationText, datapickerText, colonneText, rangeeText, imageUrl);
+                bibliotheque.addLivre(titreText, auteur1, presentationText, datapickerText, colonneText, rangeeText, imageUrl, etatBool);
                 // Mise a jour du tableau
-
-                ObservableList<Bibliotheque.Livre> listD = getList();
-                tableView.setItems(listD);
                 tableView.refresh();
                 fileSaved = false;
-                AlerteAddModifyBookDone();
+                //AlerteAddModifyBookDone();
 
             } else {
 
@@ -277,21 +282,26 @@ public class HelloController {
                 selectedBook.setColonne(colonneText);
                 selectedBook.setImage(imageUrl);
 
-
                 // Mise a jour du tableau
-                if (AlerteModifyBook()) {
-                    ObservableList<Bibliotheque.Livre> listD = getList();
-                    tableView.setItems(listD);
-                    tableView.refresh();
+                if (Alerte(Alert.AlertType.INFORMATION,
+                        "Modification Livre",
+                        "modifier" + selectedBook.getTitre(),
+                        "Les modifications apportées au livre " + selectedBook.getTitre() + "vont etre validée. Cliquez sur" +
+                                " OK pour continuer")) {
+
                     fileSaved = false;
-                    AlerteAddModifyBookDone();
+                    Alerte(Alert.AlertType.INFORMATION,
+                            "Done",
+                            null,
+                            "La bibliothèque a été mise a jour"
+                    );
                 }
             }
         }
     }
 
     /**
-     * Méthode qui permet de vérifier le respect des REGEX pour chaque champs au moment de l'insertion des données.
+     * Méthode qui permet de vérifier le respect des REGEX pour chaques champs au moment de l'insertion des données.
      * @return
      */
     public boolean checkData(){
@@ -301,14 +311,16 @@ public class HelloController {
         }
         else{
             checkTitre = false;
+            msgErrorTitre.setVisible(true);
             System.out.println("erreur titre");
         }
-        if(auteur.getText().matches("[A-za-z]*\s[A-za-z]*")){
+        if(auteur.getText().matches("[A-Za-z]*\s[A-Za-z]*")){
             checkAuteur = true;
         }
         else{
 
             checkAuteur = false;
+            msgErrorAuteur.setVisible(true);
             System.out.println("erreur auteur");
         }
         if(colonne.getText().matches("[0-9]*") && Integer.parseInt(rangee.getText()) <= 12 && Integer.parseInt(rangee.getText()) >= 1){
@@ -317,6 +329,7 @@ public class HelloController {
         else{
 
             checkColonne = false;
+            msgErrorColonne.setVisible(true);
             System.out.println("erreur colonne");
         }
         if(rangee.getText().matches("[1-7]")){
@@ -324,6 +337,7 @@ public class HelloController {
         }
         else{
             checkRangee = false;
+            msgErrorRangee.setVisible(true);
             System.out.println("erreur rangee");
 
         }
@@ -332,52 +346,43 @@ public class HelloController {
             new Image(image.getText());
         }
         catch(Exception e){
-            checkImg = false ;
-            System.out.println( e.getMessage());
+            checkImg = false;
+            msgErrorUrl.setVisible(true);
+            System.out.println(e.getMessage());
         }
 
-        return checkTitre && checkAuteur && checkColonne && checkRangee && checkImg ;
+        return checkTitre && checkAuteur && checkColonne && checkRangee && checkImg;
     }
 
     /**
-     *
-     * @param event
-     * @throws JAXBException
+     * Méthode qui permet de gérer l'action de sauvegarde sous un nouveau fichier.
+     * @param event C'est l'événement déclencheur de l'action.
+     * @throws JAXBException est une exception du package javax.xml.bind qui est levée lorsqu'une erreur
+     * se produit pendant l'utilisation de la technologie JAXB.
+     * Si une erreur se produit lors de la transformation de l'objet en XML à l'aide de JAXB.
      */
     @FXML
     public void handleSaveAs(ActionEvent event) throws JAXBException {
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Enregistrer");
-        fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("Fichier XML", "*.xml"));
-        selectedFile = fileChooser.showSaveDialog(tableView.getScene().getWindow());
-        if (selectedFile != null){
-            JAXBContext jaxbContext = JAXBContext.newInstance(Bibliotheque.class);
-            Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
-            jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-            System.out.println("ok");
-            jaxbMarshaller.marshal(bibliotheque, selectedFile);
-            fileSaved = true;
-        }
+        xmlfile.SaveAs(tableView.getScene().getWindow(), bibliotheque);
     }
 
     /**
-     *
+     * Méthode qui permet de gérer l'action de sauvegarde d'un fichier.
      * @param event
      * @throws JAXBException
      */
     public void handleSave(ActionEvent event) throws JAXBException {
 
-        if (selectedFile != null) {
-            if (selectedFile != null) {
-                JAXBContext jaxbContext = JAXBContext.newInstance(Bibliotheque.class);
-                Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
-                jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-                System.out.println("ok");
-                jaxbMarshaller.marshal(bibliotheque, selectedFile);
-                fileSaved = true;
-            } else {
-                handleSaveAs(event);
-            }
+        if (selectedFile != null){
+            JAXBContext jaxbContext = JAXBContext.newInstance(Bibliotheque.class);
+            Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
+            jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+            System.out.println("OK");
+            jaxbMarshaller.marshal(bibliotheque, selectedFile);
+            fileSaved = true;
+        }
+        else{
+            handleSaveAs(event);
         }
     }
 
@@ -394,8 +399,8 @@ public class HelloController {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Ouvrir");
         fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("Fichier XML", "*.xml"));
-        selectedFile = fileChooser.showOpenDialog(tableView.getScene().getWindow());
-        if (selectedFile != null){
+        File openFile = fileChooser.showOpenDialog(tableView.getScene().getWindow());
+        if (openFile != null){
             //unmarshalling ( xml -> java)
             JAXBContext jaxbContext = JAXBContext.newInstance(Bibliotheque.class);
             Unmarshaller jaxbunMarshaller = jaxbContext.createUnmarshaller();
@@ -404,14 +409,17 @@ public class HelloController {
             //try
             Schema sch  = schemafactory.newSchema(xsdf);
             jaxbunMarshaller.setSchema(sch);
-            bibliotheque= (Bibliotheque) jaxbunMarshaller.unmarshal(selectedFile);
-            bibliotheque.print();
+            bibliotheque= (Bibliotheque) jaxbunMarshaller.unmarshal(openFile);
+            //bibliotheque.print();
 
             /* mise a jour du tableau d'affichage */
 
-            ObservableList<Bibliotheque.Livre> listD = getList();
-            tableView.setItems(listD);
             fileSaved = true;
+            selectedFile = openFile;
+
+            //ObservableList<Bibliotheque.Livre> listD = getList();
+            //tableView.setItems(listD);
+            //fileSaved = true;
 
         }
     }
@@ -426,16 +434,17 @@ public class HelloController {
         setDefaultTextField();
         selectedBook = null;
         buttonMoins.setDisable(true);
+        msgError();
 
     }
 
     /**
-     * Méthode qui permet de pré-remplir les textfields
+     * Méthode qui permet de pré-remplir par défaut les textfields.
      */
     public void setDefaultTextField(){
 
         titre.setText("Titre");
-        auteur.setText("Prénom Nom de l'auteur");
+        auteur.setText("Prenom Nom");
         presentation.setText("Présentation du livre");
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         LocalDate localDate = LocalDate.parse("01-01-2022", formatter);
@@ -443,6 +452,7 @@ public class HelloController {
         colonne.setText("1");
         rangee.setText("1");
         image.setText("https://birkhauser.com/product-not-found.png");
+        etat.setSelected(true);
     }
 
     /**
@@ -474,6 +484,25 @@ public class HelloController {
         }
 
     }
+
+    /**
+     * Méthode qui permet de retourner en arrière lorsqu'on clique sur About
+     */
+/*    public void handleBack(){
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("src/main/resources/com.librairie.librairie/hello-view.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+
+            // Obtenir la référence à l'objet Stage actuel
+            Stage stage = (Stage) retourMenu.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }*/
+
 /*public void start(Stage primaryStage) {
         Button btnEnregistrer = new Button("Sauvegarder");
         btnEnregistrer.setOnAction(e -> {
@@ -514,8 +543,8 @@ public class HelloController {
             while(rs.next()){
                 data.add(new Bibliotheque.Livre(rs.getString(2),
                         new Bibliotheque.Livre.Auteur(rs.getString(3).toString().split(" ")[0], rs.getString(3).toString().split(" ")[1]),rs.getString(4),
-                        rs.getString(7),rs.getInt(5),rs.getInt(6),
-                        rs.getString(8)));
+                        rs.getInt(7),rs.getInt(5),rs.getInt(6),
+                        rs.getString(8), rs.getBoolean(1)));
             }
             con.close();
         }catch (Exception e){
@@ -537,9 +566,14 @@ public class HelloController {
      * @throws JAXBException
      */
     public void handleExit() throws JAXBException {
-
+        String name = "no file";
         if(!fileSaved){
-            if(AlerteSauvegarde()){
+            if(selectedFile != null)name = selectedFile.getName();
+            if(Alerte(Alert.AlertType.CONFIRMATION ,
+                    "Exit",
+                    "Attention, en fermant cette fenêtre votre fichier ne sera pas sauvegardé",
+                    "Toute les modifications apportées au fichier " + name + "seront perdu. Cliquez sur" +
+                            " OK pour sauvegarder votre fichier")){
                 handleSave(new ActionEvent());
             }
 
@@ -597,6 +631,30 @@ public class HelloController {
         alert.setTitle("Suppression Livre");
         alert.setHeaderText("Voulez-vous le supprimer " + selectedBook.getTitre());
         alert.setContentText("Voulez-vous supprimer " + selectedBook.getTitre() + " de la liste?");
+
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == ButtonType.OK){
+            return true;
+        } else {
+            return false ;
+        }
+
+    }
+
+    /**
+     *
+     * @param myType
+     * @param title
+     * @param headerText
+     * @param content
+     * @return
+     */
+    public boolean Alerte(Alert.AlertType myType, String title , String headerText, String content){
+
+        Alert alert = new Alert(myType);
+        alert.setTitle(title);
+        alert.setHeaderText(headerText);
+        alert.setContentText(content );
 
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == ButtonType.OK){

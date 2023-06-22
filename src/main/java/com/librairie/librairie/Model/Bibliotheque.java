@@ -6,7 +6,8 @@
 //
 package com.librairie.librairie.Model;
 import javafx.beans.property.StringProperty;
-import javafx.scene.control.DatePicker;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import lombok.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -65,7 +66,7 @@ import javax.xml.bind.annotation.XmlType;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-        "livre"
+        "livrelist"
 })
 
 /**
@@ -73,11 +74,11 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlRootElement(name = "bibliotheque")
 public class Bibliotheque {
+    @XmlElement(name = "livre")
+    protected ObservableList<Livre> livrelist;
+    public Bibliotheque(){
 
-    @XmlElement(required = true)
-    protected List<Bibliotheque.Livre> livre;
-    public Bibliotheque() {
-        livre = new ArrayList<>();
+        livrelist = FXCollections.observableArrayList();
     }
 
     /**
@@ -108,11 +109,11 @@ public class Bibliotheque {
      *
      * @return this.livre
      */
-    public List<Bibliotheque.Livre> getLivre() {
-        if (livre == null) {
-            livre = new ArrayList<Bibliotheque.Livre>();
+    public ObservableList<Bibliotheque.Livre> getLivre() {
+        if (livrelist == null) {
+            livrelist = FXCollections.observableArrayList();
         }
-        return this.livre;
+        return this.livrelist;
     }
 
     //used by jaxb to create/write book
@@ -126,9 +127,9 @@ public class Bibliotheque {
      * @param colonne
      * @param rangee
      */
-    public void addLivre(String titre, Livre.Auteur auteur, String presentation , String parution , int colonne, int rangee , String image){
+    public void addLivre(String titre, Livre.Auteur auteur, String presentation , int parution , int colonne, int rangee , String image, boolean etat){
 
-        livre.add(new Livre(titre, auteur, presentation, parution ,colonne, rangee, image));
+        livrelist.add(new Livre(titre, auteur, presentation, parution ,colonne, rangee, image, etat));
 
     }
 
@@ -138,7 +139,7 @@ public class Bibliotheque {
      */
     public void print(){
         System.out.println(this);
-        livre.forEach(e->System.out.println(e.print()));
+        livrelist.forEach(e->System.out.println(e.print()));
     }
 
 
@@ -186,7 +187,8 @@ public class Bibliotheque {
             "parution",
             "colonne",
             "rangee",
-            "image"
+            "image",
+            "etat"
     })
 
     /**
@@ -208,7 +210,7 @@ public class Bibliotheque {
         @XmlElement(required = true)
         protected String presentation;
         @XmlSchemaType(name ="unsignedShort")
-        protected String parution;
+        protected int parution;
         @XmlSchemaType(name = "unsignedByte")
         protected int colonne;
         @XmlSchemaType(name = "unsignedByte")
@@ -227,8 +229,9 @@ public class Bibliotheque {
          * @param colonne
          * @param rangee
          * @param image
+         * @param etat
          */
-        public Livre(String titre, Bibliotheque.Livre.Auteur auteur,String presentation,String parution,Integer colonne, Integer rangee, String image){
+        public Livre(String titre, Bibliotheque.Livre.Auteur auteur,String presentation,Integer parution,Integer colonne, Integer rangee, String image, boolean etat){
             this.titre = titre;
             this.auteur =auteur;
             this.presentation = presentation;
@@ -236,6 +239,7 @@ public class Bibliotheque {
             this.colonne= colonne;
             this.rangee= rangee;
             this.image = image;
+            this.etat = etat;
         }
 
         /**
@@ -245,9 +249,10 @@ public class Bibliotheque {
             this.titre= null;
             this.auteur =null;
             this.presentation= null;
-            this.parution= null;
+            this.parution= 2020;
             this.colonne= 0;
             this.rangee= 0;
+            this.etat = true;
         }
 
         /**
@@ -354,10 +359,8 @@ public class Bibliotheque {
          * Getter Parution.
          *
          * @return
-         *      possible object is
-         *      {@link StringProperty }
          */
-        public String getParution() {
+        public int getParution() {
             return parution;
         }
 
@@ -369,7 +372,7 @@ public class Bibliotheque {
          *     allowed object is
          *     {@link StringProperty }
          */
-        public void setParution(String value) {
+        public void setParution(int value) {
             this.parution = value;
         }
 
@@ -529,7 +532,7 @@ public class Bibliotheque {
          *
          * @return
          */
-        public boolean getEtat () {
+        public boolean getEtat() {
             return etat;
         }
 

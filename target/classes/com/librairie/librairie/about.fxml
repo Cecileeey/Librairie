@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="500.0" prefWidth="870.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.librairie.librairie.Controller.HelloController">
+   <children>
+      <AnchorPane maxHeight="-1.0" maxWidth="-1.0" onMouseClicked="#handleOutsideCLick" prefHeight="500.0" prefWidth="884.0" VBox.vgrow="ALWAYS">
+         <MenuBar fx:id="menu" prefHeight="32.0" prefWidth="901.0">
+            <menus>
+               <Menu fx:id="retourMenu" mnemonicParsing="false" onAction="#handleBack" text="Retour" />
+            </menus>
+         </MenuBar>
+         <ImageView fx:id="img2" fitHeight="264.0" fitWidth="235.0" layoutX="333.0" layoutY="118.0" pickOnBounds="true" preserveRatio="true" />
+         <ImageView fx:id="img1" fitHeight="264.0" fitWidth="235.0" layoutX="56.0" layoutY="118.0" pickOnBounds="true" preserveRatio="true" />
+         <ImageView fx:id="img3" fitHeight="264.0" fitWidth="235.0" layoutX="614.0" layoutY="118.0" pickOnBounds="true" preserveRatio="true" />
+      </AnchorPane>
+   </children>
+</VBox>

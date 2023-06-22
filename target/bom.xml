@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bom serialNumber="urn:uuid:e6199cc1-ca53-47ea-844c-61b02128fec9" version="1" xmlns="http://cyclonedx.org/schema/bom/1.4">
+<bom serialNumber="urn:uuid:6eb771c9-14d7-4a7e-a326-4f319dbea774" version="1" xmlns="http://cyclonedx.org/schema/bom/1.4">
   <metadata>
-    <timestamp>2023-06-22T11:59:24Z</timestamp>
+    <timestamp>2023-06-22T15:18:08Z</timestamp>
     <tools>
       <tool>
         <vendor>OWASP Foundation</vendor>
@@ -275,22 +275,22 @@
       <purl>pkg:maven/org.kordamp.bootstrapfx/bootstrapfx-core@0.4.0?type=jar</purl>
       <externalReferences><reference type="website"><url>https://github.com/kordamp/bootstrapfx</url></reference><reference type="vcs"><url>https://github.com/kordamp/bootstrapfx</url></reference></externalReferences>
     </component>
-    <component type="library" bom-ref="pkg:maven/javax.xml.bind/jaxb-api@2.4.0-b180830.0359?type=jar">
+    <component type="library" bom-ref="pkg:maven/javax.xml.bind/jaxb-api@2.3.1?type=jar">
       <publisher>Oracle Corporation</publisher>
       <group>javax.xml.bind</group>
       <name>jaxb-api</name>
-      <version>2.4.0-b180830.0359</version>
+      <version>2.3.1</version>
       <description>JAXB (JSR 222) API</description>
       <scope>required</scope>
       <hashes>
-        <hash alg="MD5">a9b97f6723902f40287c02980aa66eef</hash>
-        <hash alg="SHA-1">b54184b7dcab2031add3f525550c7f1b7e12209d</hash>
-        <hash alg="SHA-256">56b9e9702753763007435162ea788055efcfefc86ab920f032c0411dc547b836</hash>
-        <hash alg="SHA-512">1d9e270e7ae1ab6bf3ad8c85b044096a58716180daeb9ffa181230b1d8862812954d4d2d3162b24cb2f1c947e998a186581259094e05ad875416488ca7dc3932</hash>
-        <hash alg="SHA-384">5da90218790c276b99e13044e27aeb4f03b51e3192b8f9ce13b8cf129894c7a0ed78759d1e21d8b28414c72c2d16e43a</hash>
-        <hash alg="SHA3-384">9018d3442f4d9d420a025613f7a101f9fa5dea513f98e0711b279e797c80379f4803e8699e6b632904f41a4d033315f6</hash>
-        <hash alg="SHA3-256">67f73c364ec5d46d5c0b92a7eb8f2257b11f6ba03ff3d39947a74f72cb5522b2</hash>
-        <hash alg="SHA3-512">a5a6f011475eed70062637ed6eaf7c62881c93a2eec7157dab1a0eb2bd06da57fe5769c3bf3022f66b9cfaf77b69956bb691928f06ecaea3c061bd0a686b87c1</hash>
+        <hash alg="MD5">bcf270d320f645ad19f5edb60091e87f</hash>
+        <hash alg="SHA-1">8531ad5ac454cc2deb9d4d32c40c4d7451939b5d</hash>
+        <hash alg="SHA-256">88b955a0df57880a26a74708bc34f74dcaf8ebf4e78843a28b50eae945732b06</hash>
+        <hash alg="SHA-512">93a47b245ab830d664a48c9d14e86198a38809ce94f72ca66b3d68746ae1d7b902f6fef2d1ac1a92c01701549ae80a07db69bd822ffd831a95d8dbffad435790</hash>
+        <hash alg="SHA-384">1eb2d7f307bda8cbf6a4ab5b2b97d830d33ca48ad94eb4bb1cbce860c54fca96285dbcb1ce9b164dbf37d4475f9a198f</hash>
+        <hash alg="SHA3-384">8df7409d3f60888f3a80f4d49af66c2cab6dc9f00e79c87c17703faad19d8ba6c8fc96ad897434170ce2686952921cdd</hash>
+        <hash alg="SHA3-256">41338683257d5ecead579ccc137bdef7bc4fea685d039a3d894e1d6730425e1d</hash>
+        <hash alg="SHA3-512">3371a96171f69876b0e6b8354674d252680e6d52c509a2645b1a0b0d7f9e176274bde6c89edb40986264733ffb6794cb7b2cba417666b1e82075bd4fd51197b6</hash>
       </hashes>
       <licenses>
         <license>
@@ -300,7 +300,7 @@
           <id>GPL-2.0-with-classpath-exception</id>
         </license>
       </licenses>
-      <purl>pkg:maven/javax.xml.bind/jaxb-api@2.4.0-b180830.0359?type=jar</purl>
+      <purl>pkg:maven/javax.xml.bind/jaxb-api@2.3.1?type=jar</purl>
       <externalReferences><reference type="website"><url>https://github.com/javaee/jaxb-spec/jaxb-api</url></reference><reference type="distribution"><url>https://maven.java.net/service/local/staging/deploy/maven2/</url></reference><reference type="issue-tracker"><url>https://github.com/javaee/jaxb-spec/issues</url></reference><reference type="vcs"><url>https://github.com/javaee/jaxb-spec.git/jaxb-api</url></reference></externalReferences>
     </component>
     <component type="library" bom-ref="pkg:maven/javax.activation/javax.activation-api@1.2.0?type=jar">
@@ -426,80 +426,55 @@
       <purl>pkg:maven/com.google.protobuf/protobuf-java@3.11.4?type=jar</purl>
       <externalReferences><reference type="website"><url>https://developers.google.com/protocol-buffers/protobuf-java/</url></reference><reference type="distribution"><url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url></reference><reference type="vcs"><url>https://github.com/protocolbuffers/protobuf/protobuf-java</url></reference></externalReferences>
     </component>
-    <component type="library" bom-ref="pkg:maven/com.sun.xml.bind/jaxb-impl@4.0.1?type=jar">
+    <component type="library" bom-ref="pkg:maven/com.sun.xml.bind/jaxb-impl@2.3.4?type=jar">
       <publisher>Eclipse Foundation</publisher>
       <group>com.sun.xml.bind</group>
       <name>jaxb-impl</name>
-      <version>4.0.1</version>
+      <version>2.3.4</version>
       <description>Old JAXB Runtime module. Contains sources required for runtime processing.</description>
       <scope>required</scope>
       <hashes>
-        <hash alg="MD5">a206231cbdf21fd1c6539e323c75a6b2</hash>
-        <hash alg="SHA-1">bad26cea1d483dda57b6f634cdeaca3238637aea</hash>
-        <hash alg="SHA-256">d97a653a78f8cf9a6de9acf39d4ed91da3907bfed748e8730a62c30f9f3ec9c1</hash>
-        <hash alg="SHA-512">ac45a0e17e1d165fe8b050450da0921624f5d6ac61857b16a2c59e45a771bf00ef6464831a842c981fcdb44055f71e9f606532e005007aeb1a3f7d42b93f7c89</hash>
-        <hash alg="SHA-384">87110c81c4c154d0fe7f7eb196015613bb0350f9ac956cd9e7a99d8548afb9f8eb87b6ae705e9b593bf0da80d75ef0dc</hash>
-        <hash alg="SHA3-384">a78cb77214e2800700c89c4ada641309008390a4156617411d2582babcad4461714b749b9b107e8b96f0207c0b8456a6</hash>
-        <hash alg="SHA3-256">ff1392014fa62e3f66845844986617ad129e852abce9a2f5c59adbc7a57ec936</hash>
-        <hash alg="SHA3-512">c41eb96d4334c95cdefd2a864c72ea0a09407d8b96ce5bbc22a604032e4044fa61f93f8db83a5a679a8810e228be6f3f06a5bd66b2c20ca06e96e00df1837f70</hash>
+        <hash alg="MD5">b714837d6069149dcaa4b3093d52261d</hash>
+        <hash alg="SHA-1">e68c7e5b1be0d7258e1bc4eb5d5dd76cffc01275</hash>
+        <hash alg="SHA-256">1deae10556191791093c3d0c2f6fbcd2769d3b68295dd7ab1f7c0888573b20c0</hash>
+        <hash alg="SHA-512">7d2a2f73248828a893dc531679a6c909ee97528c71aaa0033e92cb1c25087077bceb9ad308d5a4da3090ae2a4c448695858cdbc3345a915e431ec67e245a5147</hash>
+        <hash alg="SHA-384">205196084d657daacac718314024db43fe045a65e82bed481e6477ca55a0d4464acb0bb10a26bf50fd8b8621619d964c</hash>
+        <hash alg="SHA3-384">cca7805e1727e666ce672df174a26237fa3b7417e50fc77df08f62a1f4ca215ac5116b5f0bb220922f119f52c09a850e</hash>
+        <hash alg="SHA3-256">539029dd1ea715f21bd08c3fad157bc38b420a51889fdd914d33cd2c92459446</hash>
+        <hash alg="SHA3-512">f8766115873b14e59b90410a465b93c486243aaa2337f895699287cd6644f3fca9c7ddade5ffc9f490b9b03af84e95fca57b009477ff978036fa888f6a98c5b0</hash>
       </hashes>
       <licenses>
         <license>
           <id>BSD-3-Clause</id>
         </license>
       </licenses>
-      <purl>pkg:maven/com.sun.xml.bind/jaxb-impl@4.0.1?type=jar</purl>
-      <externalReferences><reference type="website"><url>https://eclipse-ee4j.github.io/jaxb-ri/</url></reference><reference type="distribution"><url>https://jakarta.oss.sonatype.org/service/local/staging/deploy/maven2/</url></reference><reference type="issue-tracker"><url>https://github.com/eclipse-ee4j/jaxb-ri/issues</url></reference><reference type="mailing-list"><url>https://accounts.eclipse.org/mailing-list/jaxb-impl-dev</url></reference><reference type="vcs"><url>https://github.com/eclipse-ee4j/jaxb-ri.git/jaxb-bundles/jaxb-impl</url></reference></externalReferences>
+      <purl>pkg:maven/com.sun.xml.bind/jaxb-impl@2.3.4?type=jar</purl>
+      <externalReferences><reference type="website"><url>https://eclipse-ee4j.github.io/jaxb-ri/jaxb-bundles/jaxb-impl</url></reference><reference type="distribution"><url>https://jakarta.oss.sonatype.org/service/local/staging/deploy/maven2/</url></reference><reference type="issue-tracker"><url>https://github.com/eclipse-ee4j/jaxb-ri/issues</url></reference><reference type="mailing-list"><url>https://accounts.eclipse.org/mailing-list/jaxb-impl-dev</url></reference><reference type="vcs"><url>https://github.com/eclipse-ee4j/jaxb-ri.git/jaxb-bundles/jaxb-impl</url></reference></externalReferences>
     </component>
-    <component type="library" bom-ref="pkg:maven/com.sun.xml.bind/jaxb-core@4.0.1?type=jar">
+    <component type="library" bom-ref="pkg:maven/com.sun.activation/jakarta.activation@1.2.2?type=jar">
       <publisher>Eclipse Foundation</publisher>
-      <group>com.sun.xml.bind</group>
-      <name>jaxb-core</name>
-      <version>4.0.1</version>
-      <description>Old JAXB Core module. Contains sources required by XJC, JXC and Runtime modules with dependencies.</description>
+      <group>com.sun.activation</group>
+      <name>jakarta.activation</name>
+      <version>1.2.2</version>
+      <description>Jakarta Activation</description>
       <scope>required</scope>
       <hashes>
-        <hash alg="MD5">86957dab6148bc36333f6244e4f52ea8</hash>
-        <hash alg="SHA-1">e8bf2d711d2d4250537199602bccae0cd4e62726</hash>
-        <hash alg="SHA-256">1086909cb130433039d8e2865bf331af628d992bcef10a95f72dc121ab020775</hash>
-        <hash alg="SHA-512">083cd810d22f6a071e8cbad5e1b96b82a58d47c8a0a842590bf301431de3c8787c2557692c00a8c0186e603bccf5d5a141cf308d31d5661e5a06260a7c5bc145</hash>
-        <hash alg="SHA-384">146b9df97f013de115fa8cb62a402e5360aaa70876aa05181d4fa8186bcedb2ffe284d73143edaa857fdbe96db3a1d31</hash>
-        <hash alg="SHA3-384">93008638d8b28661b459695b8a084d1add097b4c1faf169d12ed130f023c71567d64d50295c79700d25783e8d94fc2f6</hash>
-        <hash alg="SHA3-256">45aa77d48df38c432ff8141fe372f387268cae9793bf3d0aecb64483304912c6</hash>
-        <hash alg="SHA3-512">24c1840077f7555390459aada26c8ea466a0b7bb22a7d06adf9078e6ad3d3c5f8648ae547fd5aefed2683d987a52f72c8d983aa2735fd3402ef8364ca27da676</hash>
+        <hash alg="MD5">0b8bee3bf29b9a015f8b992035581a7c</hash>
+        <hash alg="SHA-1">74548703f9851017ce2f556066659438019e7eb5</hash>
+        <hash alg="SHA-256">02156773e4ae9d048d14a56ad35d644bee9f1052a791d072df3ded3c656e6e1a</hash>
+        <hash alg="SHA-512">8bd94a4370b827e3904f31253b022e5c1851896d3b616ca7daebfef259238cedc56d4ced32c74f24a13c3e2295b0ea012af5d04656b7f713cc53a2f18d5e2cf7</hash>
+        <hash alg="SHA-384">1cb0aff8b73ba52a9931b2cf13c75a1ce6665fb826bf97ede66db75c532136aa189fb53a1925e62b6eef572309ef3b9a</hash>
+        <hash alg="SHA3-384">83801332576d931f4091ba65ea240d49c23e3b93dae939ce2eed63de943f80f251a4347638b99900de5b831796b12590</hash>
+        <hash alg="SHA3-256">5363211b59dfaff6e1973e93548e5e4062189c6d0f43d7802627ebeb7b7ff37d</hash>
+        <hash alg="SHA3-512">0c7b62a3432b19ffad02eafffc7e598391cd32b1313d075f94cda09913402770b4ba2314716625571f266431067229c93cec36e17c3ea598623542988634ca0a</hash>
       </hashes>
       <licenses>
         <license>
           <id>BSD-3-Clause</id>
         </license>
       </licenses>
-      <purl>pkg:maven/com.sun.xml.bind/jaxb-core@4.0.1?type=jar</purl>
-      <externalReferences><reference type="website"><url>https://eclipse-ee4j.github.io/jaxb-ri/</url></reference><reference type="distribution"><url>https://jakarta.oss.sonatype.org/service/local/staging/deploy/maven2/</url></reference><reference type="issue-tracker"><url>https://github.com/eclipse-ee4j/jaxb-ri/issues</url></reference><reference type="mailing-list"><url>https://accounts.eclipse.org/mailing-list/jaxb-impl-dev</url></reference><reference type="vcs"><url>https://github.com/eclipse-ee4j/jaxb-ri.git/jaxb-bundles/jaxb-core</url></reference></externalReferences>
-    </component>
-    <component type="library" bom-ref="pkg:maven/org.eclipse.angus/angus-activation@1.0.0?type=jar">
-      <publisher>Eclipse Foundation</publisher>
-      <group>org.eclipse.angus</group>
-      <name>angus-activation</name>
-      <version>1.0.0</version>
-      <description>Angus Activation Registries Implementation</description>
-      <scope>required</scope>
-      <hashes>
-        <hash alg="MD5">9e3baa4febebb96420a512190a5c44d9</hash>
-        <hash alg="SHA-1">0f0ceddd49f92109fbfad9125e958f5bfd3f2aa1</hash>
-        <hash alg="SHA-256">e37aff147e18ed48c50aa9fb78cc85e7478cbfd01257b02d53d3a186d1832245</hash>
-        <hash alg="SHA-512">dcf6727e97d8831492fe24b515f6bc7f0e8552646590895415de2075a3835ed7b4557261caab0e968b0ad767ec80ce517fd8a88161c6fc37da03fcc9e5ba435f</hash>
-        <hash alg="SHA-384">f83719dba2642448f8e56190213aeb05fb72138c05831938c97a6ba620908e134fbb8a302ee09f3307d40bb498bc4fcb</hash>
-        <hash alg="SHA3-384">a40e5e3c9e2da890090e69708b05d0c4f9c844699d8422345a7234b46b0f962d842a9d99e21c052ff0db5042fe8b2189</hash>
-        <hash alg="SHA3-256">130301a8cfb9135ff8b4a6e890968ea71223d36d97de47d32c0c2d6179189d1a</hash>
-        <hash alg="SHA3-512">eaad80cce76fcd1bcec9edc00cc87b82a2c27d28630e5d6f6398b051e796207732f14c4304f000ac3fefc87ab13b1d9a23dd5682c7c3d225a7129c13750b40fe</hash>
-      </hashes>
-      <licenses>
-        <license>
-          <id>BSD-3-Clause</id>
-        </license>
-      </licenses>
-      <purl>pkg:maven/org.eclipse.angus/angus-activation@1.0.0?type=jar</purl>
-      <externalReferences><reference type="website"><url>https://github.com/eclipse-ee4j/angus-activation/angus-activation</url></reference><reference type="distribution"><url>https://jakarta.oss.sonatype.org/service/local/staging/deploy/maven2/</url></reference><reference type="issue-tracker"><url>https://github.com/eclipse-ee4j/angus-activation/issues/</url></reference><reference type="mailing-list"><url>https://dev.eclipse.org/mhonarc/lists/jakarta.ee-community/</url></reference><reference type="vcs"><url>https://github.com/eclipse-ee4j/angus-activation/angus-activation</url></reference></externalReferences>
+      <purl>pkg:maven/com.sun.activation/jakarta.activation@1.2.2?type=jar</purl>
+      <externalReferences><reference type="website"><url>https://github.com/eclipse-ee4j/jaf/jakarta.activation</url></reference><reference type="distribution"><url>https://jakarta.oss.sonatype.org/service/local/staging/deploy/maven2/</url></reference><reference type="issue-tracker"><url>https://github.com/eclipse-ee4j/jaf/issues/</url></reference><reference type="mailing-list"><url>https://dev.eclipse.org/mhonarc/lists/jakarta.ee-community/</url></reference><reference type="vcs"><url>https://github.com/eclipse-ee4j/jaf/jakarta.activation</url></reference></externalReferences>
     </component>
     <component type="library" bom-ref="pkg:maven/org.openjfx/javafx-graphics@19-ea%2B7?type=jar">
       <group>org.openjfx</group>
@@ -867,10 +842,10 @@
       <dependency ref="pkg:maven/com.dlsc.formsfx/formsfx-core@11.5.0?type=jar"/>
       <dependency ref="pkg:maven/net.synedra/validatorfx@0.3.1?type=jar"/>
       <dependency ref="pkg:maven/org.kordamp.bootstrapfx/bootstrapfx-core@0.4.0?type=jar"/>
-      <dependency ref="pkg:maven/javax.xml.bind/jaxb-api@2.4.0-b180830.0359?type=jar"/>
+      <dependency ref="pkg:maven/javax.xml.bind/jaxb-api@2.3.1?type=jar"/>
       <dependency ref="pkg:maven/jakarta.xml.bind/jakarta.xml.bind-api@4.0.0?type=jar"/>
       <dependency ref="pkg:maven/mysql/mysql-connector-java@8.0.28?type=jar"/>
-      <dependency ref="pkg:maven/com.sun.xml.bind/jaxb-impl@4.0.1?type=jar"/>
+      <dependency ref="pkg:maven/com.sun.xml.bind/jaxb-impl@2.3.4?type=jar"/>
       <dependency ref="pkg:maven/org.openjfx/javafx-graphics@19-ea%2B7?type=jar"/>
       <dependency ref="pkg:maven/org.projectlombok/lombok@1.18.28?type=jar"/>
       <dependency ref="pkg:maven/org.apache.pdfbox/pdfbox@3.0.0-alpha3?type=jar"/>
@@ -908,7 +883,7 @@
     <dependency ref="pkg:maven/com.dlsc.formsfx/formsfx-core@11.5.0?type=jar"/>
     <dependency ref="pkg:maven/net.synedra/validatorfx@0.3.1?type=jar"/>
     <dependency ref="pkg:maven/org.kordamp.bootstrapfx/bootstrapfx-core@0.4.0?type=jar"/>
-    <dependency ref="pkg:maven/javax.xml.bind/jaxb-api@2.4.0-b180830.0359?type=jar">
+    <dependency ref="pkg:maven/javax.xml.bind/jaxb-api@2.3.1?type=jar">
       <dependency ref="pkg:maven/javax.activation/javax.activation-api@1.2.0?type=jar"/>
     </dependency>
     <dependency ref="pkg:maven/javax.activation/javax.activation-api@1.2.0?type=jar"/>
@@ -920,16 +895,11 @@
       <dependency ref="pkg:maven/com.google.protobuf/protobuf-java@3.11.4?type=jar"/>
     </dependency>
     <dependency ref="pkg:maven/com.google.protobuf/protobuf-java@3.11.4?type=jar"/>
-    <dependency ref="pkg:maven/com.sun.xml.bind/jaxb-impl@4.0.1?type=jar">
-      <dependency ref="pkg:maven/com.sun.xml.bind/jaxb-core@4.0.1?type=jar"/>
-    </dependency>
-    <dependency ref="pkg:maven/com.sun.xml.bind/jaxb-core@4.0.1?type=jar">
+    <dependency ref="pkg:maven/com.sun.xml.bind/jaxb-impl@2.3.4?type=jar">
       <dependency ref="pkg:maven/jakarta.xml.bind/jakarta.xml.bind-api@4.0.0?type=jar"/>
-      <dependency ref="pkg:maven/org.eclipse.angus/angus-activation@1.0.0?type=jar"/>
+      <dependency ref="pkg:maven/com.sun.activation/jakarta.activation@1.2.2?type=jar"/>
     </dependency>
-    <dependency ref="pkg:maven/org.eclipse.angus/angus-activation@1.0.0?type=jar">
-      <dependency ref="pkg:maven/jakarta.activation/jakarta.activation-api@2.1.0?type=jar"/>
-    </dependency>
+    <dependency ref="pkg:maven/com.sun.activation/jakarta.activation@1.2.2?type=jar"/>
     <dependency ref="pkg:maven/org.projectlombok/lombok@1.18.28?type=jar"/>
     <dependency ref="pkg:maven/org.apache.pdfbox/pdfbox@3.0.0-alpha3?type=jar">
       <dependency ref="pkg:maven/org.apache.pdfbox/io@3.0.0-alpha3?type=jar"/>
