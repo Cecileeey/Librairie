@@ -215,6 +215,7 @@ public class Bibliotheque {
         protected int rangee;
         @XmlSchemaType(name = "unsignedByte")
         protected String image;
+        protected boolean etat; //true = non emprunte false = emprunte
 
         /**
          * Constructeur principal de la classe Livre avec tous les attributs.
@@ -522,6 +523,22 @@ public class Bibliotheque {
                 this.prenom = value;
             }
 
+        }
+
+        /**
+         *
+         * @return
+         */
+        public boolean getEtat () {
+            return etat;
+        }
+
+        /**
+         *
+         * @param b
+         */
+        public void setEtat (boolean b){
+            etat = b;
         }
 
     }

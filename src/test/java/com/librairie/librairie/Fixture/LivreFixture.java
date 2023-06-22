@@ -22,6 +22,7 @@ public class LivreFixture {
                 .auteur(auteur)
                 .image(image)
                 .rangee(rangee)
+                .colonne(colonne)
                 .presentation(presentation)
                 .parution(parution)
                 .build();

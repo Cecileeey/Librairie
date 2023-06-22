@@ -26,8 +26,8 @@ class BibliothequeTest extends Bibliotheque {
     }
 
     @Test
-    void testGetAuteur_Nok() {
-        Assertions.assertNotEquals(new Livre.Auteur("Marion", "Aimée"), livre.getAuteur());
+    void testGetAuteur_Ko() {
+        Assertions.assertNotEquals(new Livre.Auteur("Cecile", "Marine"), livre.getAuteur());
     }
 
     @Test

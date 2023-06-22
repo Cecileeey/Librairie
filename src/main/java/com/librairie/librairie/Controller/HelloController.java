@@ -14,6 +14,7 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 
 import javax.xml.XMLConstants;
@@ -65,6 +66,8 @@ public class HelloController {
     public TextField image;
     @FXML
     public ImageView imageView;
+    @FXML
+    public CheckBox etat;
 
     /**
      * Déclaration des différents boutons de l'application.
@@ -79,6 +82,20 @@ public class HelloController {
     private Button buttonConnexion;
     @FXML
     private Button buttonEnregistrer;
+
+    /**
+     * Déclaration des différents messages d'erreurs pour la vérification des champs.
+     */
+    @FXML
+    public Text msgErrorTitre;
+    @FXML
+    public Text msgErrorAuteur ;
+    @FXML
+    public Text msgErrorColonne ;
+    @FXML
+    public Text msgErrorRangee ;
+    @FXML
+    public Text msgErrorUrl ;
 
 
     /**
@@ -125,7 +142,9 @@ public class HelloController {
     boolean fileSaved ;
 
     /**
-     * Méthode qui
+     * Cette méthode est appelée lors de l'initialisation de HelloApplication.
+     * Elle configure l'état initial des éléments graphiques tels que les boutons, les champs de texte, le calendrier.
+     * Elle masque également les messages d'erreur.
      */
     @FXML
     public void initialize(){
@@ -135,7 +154,24 @@ public class HelloController {
         setDefaultTextField();
         fileSaved = true;
         parution.getEditor().setDisable(true);
+        msgError();
     }
+
+    /**
+     * Hide all the error message below the textfields in the form
+     * Set all Visible  attribute of textviewers to false
+     */
+    public void msgError(){
+        msgErrorTitre.setVisible(false);
+        msgErrorAuteur.setVisible(false);
+        msgErrorColonne.setVisible(false);
+        msgErrorRangee.setVisible(false);
+        msgErrorUrl.setVisible(false);
+    }
+
+    /**
+     * Méthode qui permet de lier une cellule de la vue tableau à un getter afin de récupérer un attribut de la classe Bibliotheque
+     */
     public void inittableau(){
 
         titreColumn.setCellValueFactory(cellData -> {
@@ -173,7 +209,9 @@ public class HelloController {
     }
 
     /**
-     *
+     * Set selectedbook to the Livre object binded to the row selected
+     * Put attribute of the Livre object from the selected row into the textfield of the form
+     * Unable btnMoins (minus button)
      * @param event
      */
     @FXML
@@ -190,6 +228,7 @@ public class HelloController {
             colonne.setText(Integer.toString(selectedBook.getColonne()));
             rangee.setText(Integer.toString(selectedBook.getRangee()));
             image.setText(selectedBook.getImage());
+            etat.setSelected(selectedBook.getEtat());
 
             buttonMoins.setDisable(false);
         }
@@ -251,6 +290,10 @@ public class HelloController {
         }
     }
 
+    /**
+     * Méthode qui permet de vérifier le respect des REGEX pour chaque champs au moment de l'insertion des données.
+     * @return
+     */
     public boolean checkData(){
         boolean checkTitre , checkAuteur, checkColonne , checkRangee , checkImg;
         if(titre.getText().matches("[A-Za-z0-9 _]*")){
@@ -387,15 +430,15 @@ public class HelloController {
     }
 
     /**
-     *
+     * Méthode qui permet de pré-remplir les textfields
      */
     public void setDefaultTextField(){
 
         titre.setText("Titre");
-        auteur.setText("Prenom Nom");
-        presentation.setText("Un court resume");
+        auteur.setText("Prénom Nom de l'auteur");
+        presentation.setText("Présentation du livre");
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-        LocalDate localDate = LocalDate.parse("01-01-2000", formatter);
+        LocalDate localDate = LocalDate.parse("01-01-2022", formatter);
         parution.setValue(localDate);
         colonne.setText("1");
         rangee.setText("1");
