@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bom serialNumber="urn:uuid:a77dbaeb-8d96-41b9-98b8-c46c1cae9840" version="1" xmlns="http://cyclonedx.org/schema/bom/1.4">
+<bom serialNumber="urn:uuid:e6199cc1-ca53-47ea-844c-61b02128fec9" version="1" xmlns="http://cyclonedx.org/schema/bom/1.4">
   <metadata>
-    <timestamp>2023-06-21T13:08:25Z</timestamp>
+    <timestamp>2023-06-22T11:59:24Z</timestamp>
     <tools>
       <tool>
         <vendor>OWASP Foundation</vendor>
@@ -376,6 +376,56 @@
       <purl>pkg:maven/jakarta.activation/jakarta.activation-api@2.1.0?type=jar</purl>
       <externalReferences><reference type="website"><url>https://github.com/eclipse-ee4j/jaf</url></reference><reference type="distribution"><url>https://jakarta.oss.sonatype.org/service/local/staging/deploy/maven2/</url></reference><reference type="issue-tracker"><url>https://github.com/eclipse-ee4j/jaf/issues/</url></reference><reference type="mailing-list"><url>https://dev.eclipse.org/mhonarc/lists/jakarta.ee-community/</url></reference><reference type="vcs"><url>https://github.com/eclipse-ee4j/jaf</url></reference></externalReferences>
     </component>
+    <component type="library" bom-ref="pkg:maven/mysql/mysql-connector-java@8.0.28?type=jar">
+      <publisher>Oracle Corporation</publisher>
+      <group>mysql</group>
+      <name>mysql-connector-java</name>
+      <version>8.0.28</version>
+      <description>JDBC Type 4 driver for MySQL</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">95cde01c78e7b04e13305338d60e056a</hash>
+        <hash alg="SHA-1">33678b1729d4f832b9e4bcb2d5bbd67940920a7a</hash>
+        <hash alg="SHA-256">a00ccdf537ff50e50067b989108c2235197ffb65e197149bbb669db843cd1c3e</hash>
+        <hash alg="SHA-512">4ae30140e72abea9e40a615748c358ac6079bb22844b08dd29801ef38b66761fa2b5534ca1519feff2fb1c7db3e37a9bdc9504ed5aa97710863a7b49b3fc2238</hash>
+        <hash alg="SHA-384">1a1926d1ca542e5563ff9cd6c71dc5aab5887f5cb9c9362cf7a30267cf3777a7cc05812200d91f410ffc8e443db39458</hash>
+        <hash alg="SHA3-384">39d7d365e76e549aa58940120562d197d7a3490306c8fa43655d441dcfd4a676a2299d514574942fe692994faa49352b</hash>
+        <hash alg="SHA3-256">412c1a20adc489795e5fb100c4d6cabd4008bb64a03d25ca0d6a5bbb2fa3755a</hash>
+        <hash alg="SHA3-512">6bfd0c031ef5acf1209ae73a563754503f152d79e906b4a1352e31a53bc88dd9d9797964672f898b27f597820f8f4254994f4f9d211bde467a56df06e23df7cf</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <name>The GNU General Public License, v2 with FOSS exception</name>
+        </license>
+      </licenses>
+      <purl>pkg:maven/mysql/mysql-connector-java@8.0.28?type=jar</purl>
+      <externalReferences><reference type="website"><url>http://dev.mysql.com/doc/connector-j/en/</url></reference><reference type="vcs"><url>https://github.com/mysql/mysql-connector-j</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/com.google.protobuf/protobuf-java@3.11.4?type=jar">
+      <group>com.google.protobuf</group>
+      <name>protobuf-java</name>
+      <version>3.11.4</version>
+      <description>Core Protocol Buffers library. Protocol Buffers are a way of encoding structured data in an
+    efficient yet extensible format.</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">c4ceefed77d79affded2a1302e74606d</hash>
+        <hash alg="SHA-1">7ec0925cc3aef0335bbc7d57edfd42b0f86f8267</hash>
+        <hash alg="SHA-256">42e98f58f53d1a49fd734c2dd193880f2dfec3436a2993a00d06b8800a22a3f2</hash>
+        <hash alg="SHA-512">0b03d37537c0779f088b77c01f82bddcc962e0e6428303382a7395df2ebc352ff77a38747c689d4ba9405877abda98d840a527abaa500191128f10651186919a</hash>
+        <hash alg="SHA-384">1162b20a630471da3ee284fcc593faaa76ae373a4112a332e8885a706ae5232f399e3f37956beaf33ecb84237808c78f</hash>
+        <hash alg="SHA3-384">b7270ef8b710b09cec5c4c547477ce2a0a347ad45db6757082d0cdf796138f8e9ba6c0a493fa541c94e810ad3516ae02</hash>
+        <hash alg="SHA3-256">813ee11a7c840ecde4c46f386df8a419fc4b1322ce808e3b0d0ba27b728bf693</hash>
+        <hash alg="SHA3-512">ef6a49457a61fe7cc91a71f988b5cb29ac54f77955fa3cd4f10777ac6cae3a07a3c938988a9bf84eac5632326d2eeabba67d84a45e2bb512a4d9ddb5e10e603e</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>BSD-3-Clause</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/com.google.protobuf/protobuf-java@3.11.4?type=jar</purl>
+      <externalReferences><reference type="website"><url>https://developers.google.com/protocol-buffers/protobuf-java/</url></reference><reference type="distribution"><url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url></reference><reference type="vcs"><url>https://github.com/protocolbuffers/protobuf/protobuf-java</url></reference></externalReferences>
+    </component>
     <component type="library" bom-ref="pkg:maven/com.sun.xml.bind/jaxb-impl@4.0.1?type=jar">
       <publisher>Eclipse Foundation</publisher>
       <group>com.sun.xml.bind</group>
@@ -547,6 +597,266 @@
       <purl>pkg:maven/org.openjfx/javafx-base@19-ea%2B7?classifier=win&amp;type=jar</purl>
       <externalReferences><reference type="website"><url>https://openjdk.java.net/projects/openjfx/javafx-base/</url></reference><reference type="vcs"><url>https://github.com/openjdk/jfx/javafx-base</url></reference></externalReferences>
     </component>
+    <component type="library" bom-ref="pkg:maven/org.projectlombok/lombok@1.18.28?type=jar">
+      <group>org.projectlombok</group>
+      <name>lombok</name>
+      <version>1.18.28</version>
+      <description>Spice up your java: Automatic Resource Management, automatic generation of getters, setters, equals, hashCode and toString, and more!</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">99be6bf05b7244ab44af156500cc3f0e</hash>
+        <hash alg="SHA-1">a2ff5da8bcd8b1b26f36b806ced63213362c6dcc</hash>
+        <hash alg="SHA-256">b774dc4fca543225d8b5e8c1637eb413c4363b2e613e95222776f792a8cec0e0</hash>
+        <hash alg="SHA-512">b2b6aa81bcce4428d80abd97140e5f6aca84f887af5fdaef032fdac9743cd77c4552f291ecc2199ecc68173cae8e528cb832268ac998c5cd836dfa4ea57a2810</hash>
+        <hash alg="SHA-384">334d9e9fdfc5725eca2e73fbc9d1058f03ce0fab3f869d049f824eaef789a71b0cf89b787311f2481d9be50e54754783</hash>
+        <hash alg="SHA3-384">942ef24f57b841e734c5310713f1fc49efda332a120acdcb3389bbf17c9784777af95b3723ec6cd0a02d539de1f85dd8</hash>
+        <hash alg="SHA3-256">912d016327a964e7283e6e1fdecda99f53523dca54c28b371e0c0feb8ae2dde3</hash>
+        <hash alg="SHA3-512">50aa5925cb25585b8dc24cbf13ecd198d3556316aa90385e0534978dcd91abc2627516de07c27ea4ff886738e77855cf101798b632863db62b593999e7433528</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>MIT</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.projectlombok/lombok@1.18.28?type=jar</purl>
+      <externalReferences><reference type="website"><url>https://projectlombok.org</url></reference><reference type="issue-tracker"><url>https://github.com/projectlombok/lombok/issues</url></reference><reference type="vcs"><url>http://github.com/projectlombok/lombok</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.apache.pdfbox/pdfbox@3.0.0-alpha3?type=jar">
+      <publisher>The Apache Software Foundation</publisher>
+      <group>org.apache.pdfbox</group>
+      <name>pdfbox</name>
+      <version>3.0.0-alpha3</version>
+      <description>The Apache PDFBox library is an open source Java tool for working with PDF documents.</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">2b3878140044467322347b099b5f2d36</hash>
+        <hash alg="SHA-1">e5731f0d0be0bc1799c8725c12fa475c69b1277c</hash>
+        <hash alg="SHA-256">96fe72c808708f376e09f316342c02b1c4d622fb6e90f8e138400b65260a6607</hash>
+        <hash alg="SHA-512">bf6e80424d0504da6aea9468dfe8c81403793750332c87afd4541122ddea3ae96a8923138e6498ce72ffa4b9abdce2b1899daf7a9328b4565a68622574520137</hash>
+        <hash alg="SHA-384">4d5aa24fa7cb934243328cdea0ba206bd1f4b3f987bb2a79d3cc5877c05154f4ac1820f8c03feb5be132bd14ccdd5d7a</hash>
+        <hash alg="SHA3-384">286c4a409897e260d564232e48d0e8b057bf5fc416552eaf366337860f9001357d35f4c354dbf696c9b9563dfe863eab</hash>
+        <hash alg="SHA3-256">cdf6c629da64b8868eec1265216caac723a0ddaa1f9d37a3d2b79fa8f1ee63c2</hash>
+        <hash alg="SHA3-512">3c61c76253438ad1cd9ff3beb1932f52294cafb0ed72f8a9a03b30b84ea5b73a48008644f3147bde1254a4ab74a090c568b32d7b964bd8f397bffa82083a383c</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.apache.pdfbox/pdfbox@3.0.0-alpha3?type=jar</purl>
+      <externalReferences><reference type="website"><url>https://www.apache.org/pdfbox-parent/pdfbox/</url></reference><reference type="distribution"><url>https://repository.apache.org/service/local/staging/deploy/maven2</url></reference><reference type="issue-tracker"><url>https://issues.apache.org/jira/browse/PDFBOX</url></reference><reference type="mailing-list"><url>https://mail-archives.apache.org/mod_mbox/www-announce/</url></reference><reference type="vcs"><url>http://svn.apache.org/viewvc/pdfbox/tags/3.0.0-alpha3/trunk/pdfbox</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.apache.pdfbox/io@3.0.0-alpha3?type=jar">
+      <publisher>The Apache Software Foundation</publisher>
+      <group>org.apache.pdfbox</group>
+      <name>io</name>
+      <version>3.0.0-alpha3</version>
+      <description>The Apache PDFBox library is an open source Java tool for working with PDF documents. 
+        This artefact contains IO related classes.</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">2dffdaccae55c99d1ab47815cbc4141e</hash>
+        <hash alg="SHA-1">4b096033b03bd8e01fbdd161e2708cf46c8e771b</hash>
+        <hash alg="SHA-256">8d1246a59fa318587ebff999a2ca63d6464d8950c38ae3549a6e5162965e137d</hash>
+        <hash alg="SHA-512">1256672a7644775963d55f3944c8b03169912986c3af77ea315b5e677d18ec204576fc520ce3364b64a413be6bbff3682c2c21da3cf3a5f042d4be4ba0d19a75</hash>
+        <hash alg="SHA-384">c68148144deff91f3558f428904b08abd9971ac39ea84f43b5c70dc2fee26bb74a7b0edbf8908513ed68ef22113e8f8a</hash>
+        <hash alg="SHA3-384">8b4405efdc19981b9311819f644f59d139781648a384545c95176c4893a08bd2172c744db0cb74e5e9c5a4aba485249d</hash>
+        <hash alg="SHA3-256">81867210843daa8bf80734897fee5657ebd86c5e333a01cb38d474b12ac4ac7e</hash>
+        <hash alg="SHA3-512">24f4dafb4dbec8c9852c62d7f8be960df53f71191f1f35d4516a78ddc0238691ae4aa1e06a895756e35918f6a2e8cf5cf5a4c9fc735ec660c68b26c30b0b58c7</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.apache.pdfbox/io@3.0.0-alpha3?type=jar</purl>
+      <externalReferences><reference type="website"><url>https://www.apache.org/pdfbox-parent/io/</url></reference><reference type="distribution"><url>https://repository.apache.org/service/local/staging/deploy/maven2</url></reference><reference type="issue-tracker"><url>https://issues.apache.org/jira/browse/PDFBOX</url></reference><reference type="mailing-list"><url>https://mail-archives.apache.org/mod_mbox/www-announce/</url></reference><reference type="vcs"><url>http://svn.apache.org/viewvc/pdfbox/tags/3.0.0-alpha3/trunk/io</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/commons-logging/commons-logging@1.2?type=jar">
+      <publisher>The Apache Software Foundation</publisher>
+      <group>commons-logging</group>
+      <name>commons-logging</name>
+      <version>1.2</version>
+      <description>Apache Commons Logging is a thin adapter allowing configurable bridging to other,
+    well known logging systems.</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">040b4b4d8eac886f6b4a2a3bd2f31b00</hash>
+        <hash alg="SHA-1">4bfc12adfe4842bf07b657f0369c4cb522955686</hash>
+        <hash alg="SHA-256">daddea1ea0be0f56978ab3006b8ac92834afeefbd9b7e4e6316fca57df0fa636</hash>
+        <hash alg="SHA-512">ed00dbfabd9ae00efa26dd400983601d076fe36408b7d6520084b447e5d1fa527ce65bd6afdcb58506c3a808323d28e88f26cb99c6f5db9ff64f6525ecdfa557</hash>
+        <hash alg="SHA-384">ac20720d7156131478205f1b454395abf84cfc8da2f163301af32f63bd3c4764bd26cb54ed53800f33193ae591f3ce9c</hash>
+        <hash alg="SHA3-384">628eb4407e95dca84da1a06b08a6d9b832a49de8472b1b217e8607f08efeeed18b996232d64dd07f03e78e0e3bb4b078</hash>
+        <hash alg="SHA3-256">9aab62deccf156ee6e324c925dfc30ecb53e8465802863a551901a461424e807</hash>
+        <hash alg="SHA3-512">3fd76857f6d20c03799537cc961c1c4ddf1c375c6c192fb982363e3b9397ba138b77f24ef38b4202f44e37586789c0320e4de18fdadd2772304fd14a9b26d552</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/commons-logging/commons-logging@1.2?type=jar</purl>
+      <externalReferences><reference type="website"><url>http://commons.apache.org/proper/commons-logging/</url></reference><reference type="build-system"><url>https://continuum-ci.apache.org/</url></reference><reference type="distribution"><url>https://repository.apache.org/service/local/staging/deploy/maven2</url></reference><reference type="issue-tracker"><url>http://issues.apache.org/jira/browse/LOGGING</url></reference><reference type="mailing-list"><url>http://mail-archives.apache.org/mod_mbox/commons-user/</url></reference><reference type="vcs"><url>http://svn.apache.org/repos/asf/commons/proper/logging/trunk</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.apache.pdfbox/fontbox@2.0.0?type=jar">
+      <publisher>The Apache Software Foundation</publisher>
+      <group>org.apache.pdfbox</group>
+      <name>fontbox</name>
+      <version>2.0.0</version>
+      <description>The Apache FontBox library is an open source Java tool to obtain low level information
+    from font files. FontBox is a subproject of Apache PDFBox.</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">868afb33f7ccdf7cf49761447685f0cb</hash>
+        <hash alg="SHA-1">6f762d4e1c8ea99589d30597ef3731dfdcee43e2</hash>
+        <hash alg="SHA-256">e7969d265425fc6791becae096a92ae3a76953e4aec192bb4e616e6ffdf35381</hash>
+        <hash alg="SHA-512">d11f9466b6ea17b9972b49f8c145ae094c657b04a6aade6734579e83cd675a2fe3411766e0d75903f3070d38ec645735f0b7c6af29c38c51cdf2639ff8786ec0</hash>
+        <hash alg="SHA-384">7706f53dafe16bddb8ddee10886a91303ac3840ce3dff414b1c2644d65df66036d69b82104a8f28d0f7d24423c1bcdfd</hash>
+        <hash alg="SHA3-384">5a811f2c42b91ceaf01946498d12413b871a0490321fff61f942c9fa3f5244a6773d4b7c19b6af02462dfc13ca8b9db8</hash>
+        <hash alg="SHA3-256">a3a898f4b2821f35fefef2fddf67ab81eafbc7180aa4ccb8add6f1c61d0e7b9d</hash>
+        <hash alg="SHA3-512">883c1ead93f288960c945c651c30582f44606ec426fe557f1d7cafbd31063aaff612fab615e765c17559388371af1671be41d56fd5996f18d2e264b862c7257c</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.apache.pdfbox/fontbox@2.0.0?type=jar</purl>
+      <externalReferences><reference type="website"><url>http://pdfbox.apache.org/</url></reference><reference type="distribution"><url>https://repository.apache.org/service/local/staging/deploy/maven2</url></reference><reference type="issue-tracker"><url>https://issues.apache.org/jira/browse/PDFBOX</url></reference><reference type="mailing-list"><url>http://mail-archives.apache.org/mod_mbox/www-announce/</url></reference><reference type="vcs"><url>http://svn.apache.org/viewvc/maven/pom/tags/2.0.0/pdfbox-parent/fontbox</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.apache.pdfbox/jempbox@1.8.11?type=jar">
+      <publisher>The Apache Software Foundation</publisher>
+      <group>org.apache.pdfbox</group>
+      <name>jempbox</name>
+      <version>1.8.11</version>
+      <description>The Apache JempBox library is an open source Java tool that implements Adobe's XMP(TM)
+    specification. JempBox is a subproject of Apache PDFBox.</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">ea59dc682cd3ed8ce8fb51e14e4693a4</hash>
+        <hash alg="SHA-1">e4a930b874f4012314068550c70187e7857c4bd1</hash>
+        <hash alg="SHA-256">b50879b87e1e9287831795d417af39d5587fcb2608b6296b7241fb0738aaaf6d</hash>
+        <hash alg="SHA-512">7e1858b5129a79c884558481cddeb962897350afd7920f9abd4093307325a2a7fe45cb0bdd4a2f63aadefa353f3a79e0dc2f48a9e677fae92c840326fc602769</hash>
+        <hash alg="SHA-384">eff2d70522482411a4cd8b168848dbb40b9618d8dbdd6a49b55c76bdf454469e180c9b69643552c3054613e7a12e8033</hash>
+        <hash alg="SHA3-384">f32b1d034b9fe77e35293a91f7de4588b43dcc7016db483363add3ab09486e8c44e9363f5c98c528a892f1a3e810f52f</hash>
+        <hash alg="SHA3-256">730518bdaf357c41b405704da2e293c7348076e62dd177e9edb318525709841b</hash>
+        <hash alg="SHA3-512">71c42db3da062490e8b0ee76da3018ed1bdd923dc2ec2528020fdb16758e85c7f47b6280193832447206bc62b70d9ebd0586ab1f741a8b925de6bbcbc2164293</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.apache.pdfbox/jempbox@1.8.11?type=jar</purl>
+      <externalReferences><reference type="website"><url>http://www.apache.org/pdfbox-parent/jempbox/</url></reference><reference type="distribution"><url>https://repository.apache.org/service/local/staging/deploy/maven2</url></reference><reference type="issue-tracker"><url>https://issues.apache.org/jira/browse/PDFBOX</url></reference><reference type="mailing-list"><url>http://mail-archives.apache.org/mod_mbox/www-announce/</url></reference><reference type="vcs"><url>http://svn.apache.org/viewvc/maven/pom/tags/1.8.11/pdfbox-parent/jempbox</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.apache.pdfbox/xmpbox@2.0.0?type=jar">
+      <publisher>The Apache Software Foundation</publisher>
+      <group>org.apache.pdfbox</group>
+      <name>xmpbox</name>
+      <version>2.0.0</version>
+      <description>The Apache XmpBox library is an open source Java tool that implements Adobe's XMP(TM)
+    specification. It can be used to parse, validate and create xmp contents.
+    It is mainly used by subproject preflight of Apache PDFBox. 
+    XmpBox is a subproject of Apache PDFBox.</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">3e6d2ff0b1e654e02193813429110d43</hash>
+        <hash alg="SHA-1">a49fc207982081856e4c2007221dc5535ed9b099</hash>
+        <hash alg="SHA-256">da0519511bfb093be796bcc1017c09d354d0ec8482a245955c2ff69462764afa</hash>
+        <hash alg="SHA-512">6543dc80aaf2a98947db72724109c64ad582a1f3876fa964a0d8c1ab34f1b6ba023ea831c62e3c70757e76545bba9561b4a217b41e8216c05f0df62d693a4a45</hash>
+        <hash alg="SHA-384">ea2f01ac9875af47eb6f12e6a2b16f635b5ce65ee12e3b39bf4eec4f5197a6d7f2729daa64a86a248c0f85856a827e8f</hash>
+        <hash alg="SHA3-384">08637c95cacb8a6703c3f31795ac417ef796754b058994311a3d99048f64566cdb031ccf734ce1031e9fb0f6ba6ca9af</hash>
+        <hash alg="SHA3-256">14b19592517a97830231b0f44f25dcf75bbcb2ff60e665384f00276bdc4409aa</hash>
+        <hash alg="SHA3-512">5e9c15cd793a81e309bcf2f305b61ecb5ac443b041ecb1b3f6a979a95ea4e04ad36e9d9115820045e4c473182fb9e2feb4d1cd9e949e721be7cee90d85c65563</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.apache.pdfbox/xmpbox@2.0.0?type=jar</purl>
+      <externalReferences><reference type="website"><url>http://www.apache.org/pdfbox-parent/xmpbox/</url></reference><reference type="distribution"><url>https://repository.apache.org/service/local/staging/deploy/maven2</url></reference><reference type="issue-tracker"><url>https://issues.apache.org/jira/browse/PDFBOX</url></reference><reference type="mailing-list"><url>http://mail-archives.apache.org/mod_mbox/www-announce/</url></reference><reference type="vcs"><url>http://svn.apache.org/viewvc/maven/pom/tags/2.0.0/pdfbox-parent/xmpbox</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.apache.pdfbox/preflight@2.0.0?type=jar">
+      <publisher>The Apache Software Foundation</publisher>
+      <group>org.apache.pdfbox</group>
+      <name>preflight</name>
+      <version>2.0.0</version>
+      <description>The Apache Preflight library is an open source Java tool that implements 
+      a parser compliant with the ISO-19005 (PDF/A) specification. Preflight is a 
+      subproject of Apache PDFBox.</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">3f1c0ef1459524ea0f206ae2283769f7</hash>
+        <hash alg="SHA-1">462214561aaa035470da4c60872daa7e88a48dfd</hash>
+        <hash alg="SHA-256">1dd0465b2a49f66d5a781e6a243e87647563a3329742b00bc915a221a60ddf87</hash>
+        <hash alg="SHA-512">40c5c91edefe89cbe5a158ea3b8f2747a45bd778273c3b32bcfc40add051644930529d62c46bad353ed8de930802f5ae0daa443aace79edecd31d1cf0e51f6e4</hash>
+        <hash alg="SHA-384">06de8aff1f48a1b8f48c1ee36bafe72fd974145309a7f9a0449ac052b83936386a2316cf0b81858a6a2039624621fbb3</hash>
+        <hash alg="SHA3-384">50080753bfbc96a5f65633df3676ec7e297f3ae10cdf27a9496344112c41627936e92c88dd57a624389833cead33e755</hash>
+        <hash alg="SHA3-256">c6ac22f369affc6c75ba340d710e772ab853d87f9213569293703b17eea985e6</hash>
+        <hash alg="SHA3-512">339ab3f7398893af9bd0457273219d2184e8941297b174a7d9e584ce562626fa38d45798d6aa0c065b699f91b5415706cef3ab3530bb4fc99215d0c0af112cf3</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.apache.pdfbox/preflight@2.0.0?type=jar</purl>
+      <externalReferences><reference type="website"><url>http://www.apache.org/pdfbox-parent/preflight/</url></reference><reference type="distribution"><url>https://repository.apache.org/service/local/staging/deploy/maven2</url></reference><reference type="issue-tracker"><url>https://issues.apache.org/jira/browse/PDFBOX</url></reference><reference type="mailing-list"><url>http://mail-archives.apache.org/mod_mbox/www-announce/</url></reference><reference type="vcs"><url>http://svn.apache.org/viewvc/maven/pom/tags/2.0.0/pdfbox-parent/preflight</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.apache.pdfbox/pdfbox-tools@2.0.0?type=jar">
+      <publisher>The Apache Software Foundation</publisher>
+      <group>org.apache.pdfbox</group>
+      <name>pdfbox-tools</name>
+      <version>2.0.0</version>
+      <description>The Apache PDFBox library is an open source Java tool for working with PDF documents. 
+    This artefact contains commandline tools using Apache PDFBox.</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">42fafbbd06823d2e468c8df360db29e0</hash>
+        <hash alg="SHA-1">500a6241df0aba9533a1996f5374d5f37e23f02c</hash>
+        <hash alg="SHA-256">ca17e1f989279c8867234ad09d6c791e2d0633a62124c752259c541c137b98a5</hash>
+        <hash alg="SHA-512">20e280ac167294d62eb5d931ad72e971335e8d716b85897aa1426c17c6db54c17e33259f4e4266a3aa4dc03051d0151e9019bbf1f8b1d407fae44fdf32db8825</hash>
+        <hash alg="SHA-384">fb8d43a7c8c5f69564ab5203fcbbd75cfade019ff9472bd772d305587463aaed099f06af4738405a490d96495406365f</hash>
+        <hash alg="SHA3-384">d033bbe0a929056993dd64095cae75e5f9de8f4fde8750c37763ac0c338ec5abcf1af57b9b4ad76357581b35f129f0a4</hash>
+        <hash alg="SHA3-256">1451b9bf411a18f66d6273336364bc28468d28b99052ab0f11fc27f9d4620a13</hash>
+        <hash alg="SHA3-512">4c16af752e636aaf16e22f7c9144f3e35ac48567971dca04b4ce293ed41d04987a2c52410a1d75592c5ad3fc0c0f249d3dba1f4a94b0dd7274e5ea08a575c683</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.apache.pdfbox/pdfbox-tools@2.0.0?type=jar</purl>
+      <externalReferences><reference type="website"><url>http://www.apache.org/pdfbox-parent/pdfbox-tools/</url></reference><reference type="distribution"><url>https://repository.apache.org/service/local/staging/deploy/maven2</url></reference><reference type="issue-tracker"><url>https://issues.apache.org/jira/browse/PDFBOX</url></reference><reference type="mailing-list"><url>http://mail-archives.apache.org/mod_mbox/www-announce/</url></reference><reference type="vcs"><url>http://svn.apache.org/viewvc/maven/pom/tags/2.0.0/pdfbox-parent/pdfbox-tools</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.apache.pdfbox/pdfbox-debugger@2.0.0?type=jar">
+      <publisher>The Apache Software Foundation</publisher>
+      <group>org.apache.pdfbox</group>
+      <name>pdfbox-debugger</name>
+      <version>2.0.0</version>
+      <description>The Apache PDFBox library is an open source Java tool for working with PDF documents. 
+    This artefact contains the PDFDebugger.</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">79317534fa8e89928d1e5304f4669cad</hash>
+        <hash alg="SHA-1">40dee084d57276765cfd026c75fcfe10542f8406</hash>
+        <hash alg="SHA-256">19713feadea0656398edd3aebf34cf5b8e91384432057370cff3076b16bc9325</hash>
+        <hash alg="SHA-512">dddb12fc03e7d698109341a13429c846414cfc83b8c2b8291bc7ac17654925b08a957891b9b3e9659e1c4ee4e04810769199e3047c7ef2356b0d1f12f82f6f0f</hash>
+        <hash alg="SHA-384">c7c915f529538e496062e7bdbe18fa6c352eed483d8ceded3070985c70e691b33a405a80e7faf33669869c1b4fef1764</hash>
+        <hash alg="SHA3-384">695bc8599effa363cecb7c2b98efa68bdc5a083f04a166bb905d03ceaf183bb4b3a63640fa3aa2d086451035cda8cd1f</hash>
+        <hash alg="SHA3-256">274693e0fcbd3ad3cbcfb11d32623f64fa4ce100bd07160c918be2bd437c1c04</hash>
+        <hash alg="SHA3-512">e98aaebf13cd2775a082ff6637aa897b424bdf9feb5df425ea72651423b67b7eea660476394f3007f66655733dfee6fc660259bb2ef0a1214f4e6821ba3e8911</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.apache.pdfbox/pdfbox-debugger@2.0.0?type=jar</purl>
+      <externalReferences><reference type="website"><url>http://www.apache.org/pdfbox-parent/pdfbox-debugger/</url></reference><reference type="distribution"><url>https://repository.apache.org/service/local/staging/deploy/maven2</url></reference><reference type="issue-tracker"><url>https://issues.apache.org/jira/browse/PDFBOX</url></reference><reference type="mailing-list"><url>http://mail-archives.apache.org/mod_mbox/www-announce/</url></reference><reference type="vcs"><url>http://svn.apache.org/viewvc/maven/pom/tags/2.0.0/pdfbox-parent/pdfbox-debugger</url></reference></externalReferences>
+    </component>
   </components>
   <dependencies>
     <dependency ref="pkg:maven/com.librairie/Librairie@1.0-SNAPSHOT?type=jar">
@@ -559,8 +869,16 @@
       <dependency ref="pkg:maven/org.kordamp.bootstrapfx/bootstrapfx-core@0.4.0?type=jar"/>
       <dependency ref="pkg:maven/javax.xml.bind/jaxb-api@2.4.0-b180830.0359?type=jar"/>
       <dependency ref="pkg:maven/jakarta.xml.bind/jakarta.xml.bind-api@4.0.0?type=jar"/>
+      <dependency ref="pkg:maven/mysql/mysql-connector-java@8.0.28?type=jar"/>
       <dependency ref="pkg:maven/com.sun.xml.bind/jaxb-impl@4.0.1?type=jar"/>
       <dependency ref="pkg:maven/org.openjfx/javafx-graphics@19-ea%2B7?type=jar"/>
+      <dependency ref="pkg:maven/org.projectlombok/lombok@1.18.28?type=jar"/>
+      <dependency ref="pkg:maven/org.apache.pdfbox/pdfbox@3.0.0-alpha3?type=jar"/>
+      <dependency ref="pkg:maven/org.apache.pdfbox/fontbox@2.0.0?type=jar"/>
+      <dependency ref="pkg:maven/org.apache.pdfbox/jempbox@1.8.11?type=jar"/>
+      <dependency ref="pkg:maven/org.apache.pdfbox/xmpbox@2.0.0?type=jar"/>
+      <dependency ref="pkg:maven/org.apache.pdfbox/preflight@2.0.0?type=jar"/>
+      <dependency ref="pkg:maven/org.apache.pdfbox/pdfbox-tools@2.0.0?type=jar"/>
     </dependency>
     <dependency ref="pkg:maven/org.openjfx/javafx-controls@19-ea%2B7?type=jar">
       <dependency ref="pkg:maven/org.openjfx/javafx-controls@19-ea%2B7?classifier=win&amp;type=jar"/>
@@ -598,6 +916,10 @@
       <dependency ref="pkg:maven/jakarta.activation/jakarta.activation-api@2.1.0?type=jar"/>
     </dependency>
     <dependency ref="pkg:maven/jakarta.activation/jakarta.activation-api@2.1.0?type=jar"/>
+    <dependency ref="pkg:maven/mysql/mysql-connector-java@8.0.28?type=jar">
+      <dependency ref="pkg:maven/com.google.protobuf/protobuf-java@3.11.4?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/com.google.protobuf/protobuf-java@3.11.4?type=jar"/>
     <dependency ref="pkg:maven/com.sun.xml.bind/jaxb-impl@4.0.1?type=jar">
       <dependency ref="pkg:maven/com.sun.xml.bind/jaxb-core@4.0.1?type=jar"/>
     </dependency>
@@ -607,6 +929,33 @@
     </dependency>
     <dependency ref="pkg:maven/org.eclipse.angus/angus-activation@1.0.0?type=jar">
       <dependency ref="pkg:maven/jakarta.activation/jakarta.activation-api@2.1.0?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/org.projectlombok/lombok@1.18.28?type=jar"/>
+    <dependency ref="pkg:maven/org.apache.pdfbox/pdfbox@3.0.0-alpha3?type=jar">
+      <dependency ref="pkg:maven/org.apache.pdfbox/io@3.0.0-alpha3?type=jar"/>
+      <dependency ref="pkg:maven/org.apache.pdfbox/fontbox@2.0.0?type=jar"/>
+      <dependency ref="pkg:maven/commons-logging/commons-logging@1.2?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/org.apache.pdfbox/io@3.0.0-alpha3?type=jar">
+      <dependency ref="pkg:maven/commons-logging/commons-logging@1.2?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/commons-logging/commons-logging@1.2?type=jar"/>
+    <dependency ref="pkg:maven/org.apache.pdfbox/fontbox@2.0.0?type=jar">
+      <dependency ref="pkg:maven/commons-logging/commons-logging@1.2?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/org.apache.pdfbox/jempbox@1.8.11?type=jar"/>
+    <dependency ref="pkg:maven/org.apache.pdfbox/xmpbox@2.0.0?type=jar">
+      <dependency ref="pkg:maven/commons-logging/commons-logging@1.2?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/org.apache.pdfbox/preflight@2.0.0?type=jar">
+      <dependency ref="pkg:maven/org.apache.pdfbox/pdfbox@3.0.0-alpha3?type=jar"/>
+      <dependency ref="pkg:maven/org.apache.pdfbox/xmpbox@2.0.0?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/org.apache.pdfbox/pdfbox-tools@2.0.0?type=jar">
+      <dependency ref="pkg:maven/org.apache.pdfbox/pdfbox-debugger@2.0.0?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/org.apache.pdfbox/pdfbox-debugger@2.0.0?type=jar">
+      <dependency ref="pkg:maven/org.apache.pdfbox/pdfbox@3.0.0-alpha3?type=jar"/>
     </dependency>
   </dependencies>
 </bom>

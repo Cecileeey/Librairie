@@ -38,7 +38,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Bibliotheque }
-     *
+     * @return
      */
     public Bibliotheque createBibliotheque() {
         return new Bibliotheque();
@@ -46,7 +46,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Bibliotheque.Livre }
-     *
+     * @return
      */
     public Bibliotheque.Livre createBibliothequeLivre() {
         return new Bibliotheque.Livre();
@@ -54,7 +54,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Bibliotheque.Livre.Auteur }
-     *
+     * @return
      */
     public Bibliotheque.Livre.Auteur createBibliothequeLivreAuteur() {
         return new Bibliotheque.Livre.Auteur();

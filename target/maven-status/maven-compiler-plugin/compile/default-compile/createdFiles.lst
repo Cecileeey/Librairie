@@ -4,4 +4,6 @@ com\librairie\librairie\Model\ObjectFactory.class
 module-info.class
 com\librairie\librairie\Model\Bibliotheque$Livre$Auteur.class
 com\librairie\librairie\Model\Bibliotheque$Livre.class
+com\librairie\librairie\Model\DbConnection.class
 com\librairie\librairie\Model\Bibliotheque.class
+com\librairie\librairie\Model\Bibliotheque$Livre$LivreBuilder.class

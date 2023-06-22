@@ -5,13 +5,9 @@
 // G�n�r� le : 2023.03.23 � 02:30:44 PM CET
 //
 package com.librairie.librairie.Model;
-
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.scene.control.DatePicker;
-
+import lombok.*;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -20,7 +16,6 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
-
 
 /**
  * <p>Classe Java pour anonymous complex type.
@@ -67,16 +62,20 @@ import javax.xml.bind.annotation.XmlType;
  *
  *
  */
+
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
         "livre"
 })
+
+/**
+ * Classe principale Bibliothèque.
+ */
 @XmlRootElement(name = "bibliotheque")
 public class Bibliotheque {
 
     @XmlElement(required = true)
     protected List<Bibliotheque.Livre> livre;
-
     public Bibliotheque() {
         livre = new ArrayList<>();
     }
@@ -103,6 +102,12 @@ public class Bibliotheque {
      *
      *
      */
+    /**
+     * Méthode qui permet de récupérer une liste.
+     * Si elle est null alors on instancie une nouvelle liste appelé "livre".
+     *
+     * @return this.livre
+     */
     public List<Bibliotheque.Livre> getLivre() {
         if (livre == null) {
             livre = new ArrayList<Bibliotheque.Livre>();
@@ -112,24 +117,28 @@ public class Bibliotheque {
 
     //used by jaxb to create/write book
     /**
+     * Méthode qui permet d'ajouter un livre.
      * *
      * @param titre
      * @param auteur
-     * @param pre
-     * @param pick
-     * @param col
+     * @param presentation
+     * @param parution
+     * @param colonne
      * @param rangee
      */
-    public void addLivre(String titre, Livre.Auteur auteur, String pre , String pick , int col, int rangee , String image){
+    public void addLivre(String titre, Livre.Auteur auteur, String presentation , String parution , int colonne, int rangee , String image){
 
-        livre.add(new Livre(titre, auteur, pre, pick ,col, rangee, image));
+        livre.add(new Livre(titre, auteur, presentation, parution ,colonne, rangee, image));
 
     }
+
+    /**
+     * Méthode qui permet d'afficher du texte dans la console de sortie.
+     * Ici c'est le texte de la méthode "addLivre"
+     */
     public void print(){
         System.out.println(this);
         livre.forEach(e->System.out.println(e.print()));
-
-
     }
 
 
@@ -179,9 +188,19 @@ public class Bibliotheque {
             "rangee",
             "image"
     })
+
+    /**
+    * Classe qui permet d'initialiser les attributs d'un livre, ainsi que les constructeurs et les getters/setters.
+    */
+    @EqualsAndHashCode
+    @Getter
+    @Setter
+    @Builder
+    @AllArgsConstructor
     public static class Livre {
-
-
+        /**
+         * Déclaration des attributs de la classe Livre.
+         */
         @XmlElement(required = true)
         protected String titre;
         @XmlElement(required = true)
@@ -197,6 +216,17 @@ public class Bibliotheque {
         @XmlSchemaType(name = "unsignedByte")
         protected String image;
 
+        /**
+         * Constructeur principal de la classe Livre avec tous les attributs.
+         * Initialisation des données membres de la classe.
+         * @param titre
+         * @param auteur
+         * @param presentation
+         * @param parution
+         * @param colonne
+         * @param rangee
+         * @param image
+         */
         public Livre(String titre, Bibliotheque.Livre.Auteur auteur,String presentation,String parution,Integer colonne, Integer rangee, String image){
             this.titre = titre;
             this.auteur =auteur;
@@ -206,6 +236,10 @@ public class Bibliotheque {
             this.rangee= rangee;
             this.image = image;
         }
+
+        /**
+         * Constructeur vide de la classe Livre.
+         */
         public Livre(){
             this.titre= null;
             this.auteur =null;
@@ -216,12 +250,10 @@ public class Bibliotheque {
         }
 
         /**
-         * Obtient la valeur de la propri�t� titre.
-         *
-         * @return
-         *     possible object is
-         *     {@link StringProperty }
-         *
+         * Obtient la valeur de la propriété titre.
+         * @return possible object is
+         *         {@link StringProperty }
+         * Getter Titre
          */
         public String getTitre() {
             return titre;
@@ -231,20 +263,20 @@ public class Bibliotheque {
         }
 
         /**
-         * D�finit la valeur de la propri�t� titre.
+         * Définit la valeur de la propriété titre.
+         * Setter Titre.
          *
          * @param value
          *     allowed object is
          *     {@link StringProperty }
-         *
          */
         public void setTitre(String value) {
             this.titre=value;
         }
 
         /**
-         * Obtient la valeur de la propri�t� auteur.
-         *
+         * Obtient la valeur de la propriété auteur.
+         * Getter Auteur.
          * @return
          *     possible object is
          *     {@link Bibliotheque.Livre.Auteur }
@@ -260,6 +292,7 @@ public class Bibliotheque {
 
         /**
          * D�finit la valeur de la propri�t� auteur.
+         * Setter Auteur.
          *
          * @param value
          *     allowed object is
@@ -269,9 +302,9 @@ public class Bibliotheque {
         public void setAuteur(Bibliotheque.Livre.Auteur value) {
             this.auteur = value;
         }
-
         /**
          * Obtient la valeur de la propri�t� presentation.
+         * Getter Presentation.
          *
          * @return
          *     possible object is
@@ -284,6 +317,7 @@ public class Bibliotheque {
 
         /**
          * D�finit la valeur de la propri�t� presentation.
+         * Setter Presentation.
          *
          * @param value
          *     allowed object is
@@ -294,26 +328,45 @@ public class Bibliotheque {
             this.presentation = value;
         }
         /**
-         * Obtient la valeur de l'image.
+         * Obtient la valeur de la propriété image.
+         * Getter Image.
          *
+         * @return
+         *      possible object is
+         *      {@link StringProperty }
          */
         public String getImage(){
             return image;
         }
-
+        /**
+         * Définit la valeur de la propriété image.
+         * Setter Image.
+         *
+         * @param value
+         *     allowed object is
+         *     {@link StringProperty }
+         */
         public void setImage(String value){this.presentation=value;}
 
         /**
-         * Obtient la valeur de la propri�t� parution.
+         * Obtient la valeur de la propriété parution.
+         * Getter Parution.
          *
+         * @return
+         *      possible object is
+         *      {@link StringProperty }
          */
         public String getParution() {
             return parution;
         }
 
         /**
-         * D�finit la valeur de la propri�t� parution.
+         * Définit la valeur de la propriété parution.
+         * Setter Parution.
          *
+         * @param value
+         *     allowed object is
+         *     {@link StringProperty }
          */
         public void setParution(String value) {
             this.parution = value;
@@ -321,6 +374,7 @@ public class Bibliotheque {
 
         /**
          * Obtient la valeur de la propri�t� colonne.
+         * Getter colonne
          *
          */
         public int getColonne() {
@@ -329,6 +383,7 @@ public class Bibliotheque {
 
         /**
          * D�finit la valeur de la propri�t� colonne.
+         * Setter Colonne.
          *
          */
         public void setColonne(int value) {
@@ -336,7 +391,10 @@ public class Bibliotheque {
         }
 
         /**
-         * Obtient la valeur de la propri�t� rangee.
+         * Obtient la valeur de la propriété rangee.
+         * Getter Rangee.
+         *
+         * @return
          *
          */
         public int getRangee() {
@@ -348,6 +406,7 @@ public class Bibliotheque {
 
         /**
          * D�finit la valeur de la propri�t� rangee.
+         * Setter Rangee.
          *
          */
         public void setRangee(Integer value) {
@@ -357,6 +416,7 @@ public class Bibliotheque {
         public String print(){
             return this.toString() + "\n" + this.getTitre() + "\n" + this.getAuteur().toString() ;
         }
+
 
         /**
          * <p>Classe Java pour anonymous complex type.
@@ -378,30 +438,45 @@ public class Bibliotheque {
          *
          *
          */
+        /**
+         * Classe pour différencié le prenom et le nom de l'auteur.
+         */
         @XmlAccessorType(XmlAccessType.FIELD)
         @XmlType(name = "", propOrder = {
                 "nom",
                 "prenom"
         })
-        public static class Auteur {
 
+        public static class Auteur {
+            /**
+             * Déclarations des attributs de la classe Auteur.
+             */
             @XmlElement(required = true)
             protected String nom;
             @XmlElement(required = true)
             protected String prenom;
 
+            /**
+             * Constructeur avec les différents attributs de la classe Auteur.
+             * Initilisation des attributs.
+             *
+             * @param nom
+             * @param prenom
+             */
             public Auteur(String nom, String prenom){
                 this.nom = nom;
                 this.prenom = prenom;
             }
-
+            /**
+             * Constructeur vide de la classe Auteur.
+             */
             public Auteur(){
                 this.nom = null;
                 this.prenom = null;
             }
             /**
              * Obtient la valeur de la propri�t� nom.
-             *
+             * Getter Nom.
              * @return
              *     possible object is
              *     {@link String }
@@ -413,7 +488,7 @@ public class Bibliotheque {
 
             /**
              * D�finit la valeur de la propri�t� nom.
-             *
+             * Setter Nom.
              * @param value
              *     allowed object is
              *     {@link String }
@@ -425,7 +500,7 @@ public class Bibliotheque {
 
             /**
              * Obtient la valeur de la propri�t� prenom.
-             *
+             * Getter Prenom.
              * @return
              *     possible object is
              *     {@link String }
@@ -437,7 +512,7 @@ public class Bibliotheque {
 
             /**
              * D�finit la valeur de la propri�t� prenom.
-             *
+             * Setter Prenom.
              * @param value
              *     allowed object is
              *     {@link String }

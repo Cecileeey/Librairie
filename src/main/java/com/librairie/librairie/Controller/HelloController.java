@@ -1,18 +1,20 @@
 package com.librairie.librairie.Controller;
 import com.librairie.librairie.Model.Bibliotheque;
+import com.librairie.librairie.Model.DbConnection;
+
 import javafx.application.Platform;
 import javafx.beans.binding.Bindings;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.Initializable;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
-import org.xml.sax.SAXException;
 
 import javax.xml.XMLConstants;
 import javax.xml.bind.JAXBContext;
@@ -21,12 +23,32 @@ import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
+
 import java.io.File;
+import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ResourceBundle;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Optional;
+import org.xml.sax.SAXException;
 
+/**
+ * @version 1.5
+ * @author Marianne Marine Cécile
+ */
+
+/**
+ * Classe principale avec une implementation.
+ * @author Marianne Marine Cécile
+ */
 public class HelloController {
+    /**
+     * Déclarations des attributs de la classe HelloController.
+     */
     @FXML
     public TextField titre;
     @FXML
@@ -44,16 +66,24 @@ public class HelloController {
     @FXML
     public ImageView imageView;
 
-    //BUTTON
+    /**
+     * Déclaration des différents boutons de l'application.
+     */
     @FXML
     private Button buttonPlus;
     @FXML
     private Button buttonMoins;
     @FXML
-    private Button btnValider;
+    private Button buttonValider;
+    @FXML
+    private Button buttonConnexion;
+    @FXML
+    private Button buttonEnregistrer;
 
 
-    //TABLE COLUMN
+    /**
+     * Déclarations des différentes colonnes du tableau ainsi que le tableau lui-même.
+     */
     @FXML
     public TableColumn <Bibliotheque.Livre, String> titreColumn;
     @FXML
@@ -66,20 +96,37 @@ public class HelloController {
     public TableColumn <Bibliotheque.Livre, Integer> colonneColumn;
     @FXML
     public TableColumn <Bibliotheque.Livre, Integer> rangeeColumn;
-
+    @FXML
+    public TableColumn <Bibliotheque.Livre, String> imageColumn;
+    @FXML
     public TableView <Bibliotheque.Livre> tableView;
 
+    /**
+     * Création d'une bibliothèque.
+     */
     public Bibliotheque bibliotheque = new Bibliotheque();
 
+    /**
+     * Méthode qui permet de détecter les changements.
+     * Elle permet de notifier les changements survenant dans la liste.
+     * Lorsque des éléments sont ajoutés, supprimés ou modifiés dans la liste, les observateurs enregistrés sont notifiés des modifications.
+     * Cela facilite la mise à jour de l'interface utilisateur en fonction des changements de données.
+     * Retourne une collection.
+     *
+     * @return listBook
+     */
     public ObservableList<Bibliotheque.Livre> getList() {
-    ObservableList<Bibliotheque.Livre> listBook = FXCollections.observableArrayList();
+    ObservableList<Bibliotheque.Livre> listBook = FXCollections.observableArrayList(bibliotheque.getLivre());
     return listBook;
     }
 
-    Bibliotheque.Livre selectedbook = null ;
+    Bibliotheque.Livre selectedBook = null ;
     File selectedFile = null;
     boolean fileSaved ;
 
+    /**
+     * Méthode qui
+     */
     @FXML
     public void initialize(){
 
@@ -125,26 +172,34 @@ public class HelloController {
 
     }
 
+    /**
+     *
+     * @param event
+     */
     @FXML
     public void handleSelection(MouseEvent event){
 
-        selectedbook = tableView.getSelectionModel().getSelectedItem();
-        if(selectedbook != null){
-            titre.setText(selectedbook.getTitre());
-            auteur.setText(selectedbook.getStringAuteur());
-            presentation.setText(selectedbook.getPresentation());
+        selectedBook = tableView.getSelectionModel().getSelectedItem();
+        if(selectedBook != null){
+            titre.setText(selectedBook.getTitre());
+            auteur.setText(selectedBook.getStringAuteur());
+            presentation.setText(selectedBook.getPresentation());
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-            LocalDate localDate = LocalDate.parse("01-01-" + selectedbook.getParution(), formatter);
+            LocalDate localDate = LocalDate.parse("01-01-" + selectedBook.getParution(), formatter);
             parution.setValue(localDate);
-            colonne.setText(Integer.toString(selectedbook.getColonne()));
-            rangee.setText(Integer.toString(selectedbook.getRangee()));
-            image.setText(selectedbook.getImage());
-
-            //btn moins active
+            colonne.setText(Integer.toString(selectedBook.getColonne()));
+            rangee.setText(Integer.toString(selectedBook.getRangee()));
+            image.setText(selectedBook.getImage());
 
             buttonMoins.setDisable(false);
         }
     }
+
+    /**
+     * Méthode qui permet de récupérer les données entrées par l'user.
+     *
+     * @param event
+     */
     @FXML
     public void handleBookAction(ActionEvent event){
         if(checkData()) {
@@ -164,7 +219,7 @@ public class HelloController {
             //Affichage de l'image
             Image image = new Image(imageUrl);
             imageView.setImage(image);
-            if (selectedbook == null) {
+            if (selectedBook == null) {
                 bibliotheque.addLivre(titreText, auteur1, presentationText, datapickerText, colonneText, rangeeText, imageUrl);
                 // Mise a jour du tableau
 
@@ -176,12 +231,12 @@ public class HelloController {
 
             } else {
 
-                selectedbook.setTitre(titreText);
-                selectedbook.setPresentation(presentationText);
-                selectedbook.setParution(datapickerText);
-                selectedbook.setRangee(rangeeText);
-                selectedbook.setColonne(colonneText);
-                selectedbook.setImage(imageUrl);
+                selectedBook.setTitre(titreText);
+                selectedBook.setPresentation(presentationText);
+                selectedBook.setParution(datapickerText);
+                selectedBook.setRangee(rangeeText);
+                selectedBook.setColonne(colonneText);
+                selectedBook.setImage(imageUrl);
 
 
                 // Mise a jour du tableau
@@ -197,50 +252,55 @@ public class HelloController {
     }
 
     public boolean checkData(){
-        boolean ti , aut, col , rg , img;
+        boolean checkTitre , checkAuteur, checkColonne , checkRangee , checkImg;
         if(titre.getText().matches("[A-Za-z0-9 _]*")){
-            ti = true;
+            checkTitre = true;
         }
         else{
-            ti = false;
-            System.out.println("pb titre");
+            checkTitre = false;
+            System.out.println("erreur titre");
         }
         if(auteur.getText().matches("[A-za-z]*\s[A-za-z]*")){
-            aut = true;
+            checkAuteur = true;
         }
         else{
 
-            aut = false;
-            System.out.println("pb auteur");
+            checkAuteur = false;
+            System.out.println("erreur auteur");
         }
         if(colonne.getText().matches("[0-9]*") && Integer.parseInt(rangee.getText()) <= 12 && Integer.parseInt(rangee.getText()) >= 1){
-            col = true;
+            checkColonne = true;
         }
         else{
 
-            col = false;
-            System.out.println("pb colonne");
+            checkColonne = false;
+            System.out.println("erreur colonne");
         }
         if(rangee.getText().matches("[1-7]")){
-            rg = true;
+            checkRangee = true;
         }
         else{
-            rg = false;
-            System.out.println("pb rangee");
+            checkRangee = false;
+            System.out.println("erreur rangee");
 
         }
-        img = true;
+        checkImg = true;
         try{
             new Image(image.getText());
         }
         catch(Exception e){
-            img = false ;
+            checkImg = false ;
             System.out.println( e.getMessage());
         }
 
-        return ti && aut && col && rg && img ;
+        return checkTitre && checkAuteur && checkColonne && checkRangee && checkImg ;
     }
 
+    /**
+     *
+     * @param event
+     * @throws JAXBException
+     */
     @FXML
     public void handleSaveAs(ActionEvent event) throws JAXBException {
         FileChooser fileChooser = new FileChooser();
@@ -256,6 +316,12 @@ public class HelloController {
             fileSaved = true;
         }
     }
+
+    /**
+     *
+     * @param event
+     * @throws JAXBException
+     */
     public void handleSave(ActionEvent event) throws JAXBException {
 
         if (selectedFile != null) {
@@ -272,6 +338,12 @@ public class HelloController {
         }
     }
 
+    /**
+     *
+     * @param event
+     * @throws JAXBException
+     * @throws SAXException
+     */
     public void handleOpen(ActionEvent event) throws JAXBException, SAXException {
         File xsdf = new File("src/main/xsd/Biblio.xsd");
 
@@ -302,16 +374,21 @@ public class HelloController {
     }
 
 
-
+    /**
+     *
+     */
     public void handleOutsideCLick(){
 
         tableView.getSelectionModel().clearSelection();
         setDefaultTextField();
-        selectedbook = null;
+        selectedBook = null;
         buttonMoins.setDisable(true);
 
     }
 
+    /**
+     *
+     */
     public void setDefaultTextField(){
 
         titre.setText("Titre");
@@ -325,29 +402,97 @@ public class HelloController {
         image.setText("https://birkhauser.com/product-not-found.png");
     }
 
+    /**
+     * Méthode des différents boutons.
+     */
     public void handlePlusBouton(){
 
         tableView.getSelectionModel().clearSelection();
         setDefaultTextField();
         buttonMoins.setDisable(true);
-        selectedbook = null;
+        selectedBook = null;
         titre.requestFocus();
     }
 
+    /**
+     *
+     */
     public void handleMoinsBouton(){
 
-        if(selectedbook != null){
+        if(selectedBook != null){
             if (AlerteSuppBook()) {
-                bibliotheque.getLivre().remove(selectedbook);
+                bibliotheque.getLivre().remove(selectedBook);
                 ObservableList<Bibliotheque.Livre> listD = getList();
                 tableView.setItems(listD);
                 tableView.refresh();
                 fileSaved = false;
+                handleOutsideCLick();
             }
         }
 
     }
+/*public void start(Stage primaryStage) {
+        Button btnEnregistrer = new Button("Sauvegarder");
+        btnEnregistrer.setOnAction(e -> {
+            // Logique de sauvegarde à implémenter ici
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.setTitle("Enregistrer le fichier");
+            File file = fileChooser.showSaveDialog(primaryStage);
+            if (file != null) {
+                System.out.println("Fichier enregistré : " + file.getAbsolutePath());
+            }
+        });
+    }*/
 
+    /**
+     * ???
+     */
+    public ObservableList<Bibliotheque.Livre> data = FXCollections.observableArrayList();
+
+    /**
+     * Méthode pour la connexion à la BDD.
+     * On fait appel à la méthode qui se trouve dans dbConnection, une fois connecté on fait une requête SQL pour récupérer les données
+     * dans phpmyadmin.
+     * Affichage des données dans le tableau.
+     *
+     * @param event
+     * @throws SQLException
+     */
+    public void login(ActionEvent event) throws SQLException {
+        try{
+            DbConnection myBDD = new DbConnection();
+            Connection con = myBDD.getConnexion();
+
+            System.out.println("Vous êtes connecté à la bdd");
+            String sql = "SELECT * FROM livre";
+            PreparedStatement stat = con.prepareStatement(sql);
+            ResultSet rs = stat.executeQuery();
+
+            while(rs.next()){
+                data.add(new Bibliotheque.Livre(rs.getString(2),
+                        new Bibliotheque.Livre.Auteur(rs.getString(3).toString().split(" ")[0], rs.getString(3).toString().split(" ")[1]),rs.getString(4),
+                        rs.getString(7),rs.getInt(5),rs.getInt(6),
+                        rs.getString(8)));
+            }
+            con.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        titre.getCharacters();
+        auteur.getCharacters();
+        presentation.getCharacters();
+        colonne.getCharacters();
+        rangee.getCharacters();
+        parution.getConverter();
+        image.getCharacters();
+        tableView.setItems(data);
+    }
+
+    /**
+     *
+     * @throws JAXBException
+     */
     public void handleExit() throws JAXBException {
 
         if(!fileSaved){
@@ -359,15 +504,17 @@ public class HelloController {
         Platform.exit();
     }
 
-    //ALERTES
+    /**
+     *
+     * @return
+     */
     public boolean AlerteSauvegarde(){
         String name = "no file";
         if(selectedFile != null){name = selectedFile.getName(); }
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Exit");
-        alert.setHeaderText("You're going to exist without saving");
-        alert.setContentText("Toute les modifications apportées au fichier " + name + "seront perdu. Cliquez sur" +
-                " OK pour sauvegarder votre fichier" );
+        alert.setHeaderText("Êtes-vous sur de quitter sans sauvegarder?");
+        alert.setContentText("Toute les modifications apportées au fichier " + name + "seront perdu. Cliquez sur OK pour sauvegarder votre fichier");
 
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == ButtonType.OK){
@@ -382,7 +529,7 @@ public class HelloController {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Done");
         alert.setHeaderText(null);
-        alert.setContentText("Bibliotheque mise a jour");
+        alert.setContentText("La bibliothèque a été mise a jour !");
 
         alert.showAndWait();
     }
@@ -391,9 +538,8 @@ public class HelloController {
 
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Modification Livre");
-        alert.setHeaderText("Voulez vous modifier " + selectedbook.getTitre());
-        alert.setContentText("Les modifications apportées au livre " + selectedbook.getTitre() + "vont etre validée. Cliquez sur" +
-                " OK pour continuer" );
+        alert.setHeaderText("Voulez-vous modifier ce livre" + selectedBook.getTitre());
+        alert.setContentText("Le livre suivant " + selectedBook.getTitre() + "a été modifié. Veuillez valider pour continuer.");
 
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == ButtonType.OK){
@@ -406,9 +552,8 @@ public class HelloController {
     public boolean AlerteSuppBook(){
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Suppression Livre");
-        alert.setHeaderText("Voulez vous supprimer " + selectedbook.getTitre());
-        alert.setContentText("Voulez vous supprimer " + selectedbook.getTitre() + "  de la liste? Cliquez sur" +
-                " OK pour supprimer" );
+        alert.setHeaderText("Voulez-vous le supprimer " + selectedBook.getTitre());
+        alert.setContentText("Voulez-vous supprimer " + selectedBook.getTitre() + " de la liste?");
 
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == ButtonType.OK){

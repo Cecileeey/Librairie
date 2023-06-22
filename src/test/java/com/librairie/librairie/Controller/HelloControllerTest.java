@@ -19,7 +19,7 @@ import static org.junit.jupiter.api.Assertions.*;
 //@ExtendWith(ApplicationExtension.class)
 
 class HelloControllerTest {
-    /*private HelloController helloController;
+    private HelloController helloController;
     private JFXPanel panel = new JFXPanel();
     @BeforeAll
     public static void initializeJavaFX() {
@@ -58,5 +58,5 @@ class HelloControllerTest {
         assertEquals(1, helloController.tableView.getItems().size());
         assertEquals("Livre 1", helloController.tableView.getItems().get(0).getTitre());
 
-    }*/
+    }
 }

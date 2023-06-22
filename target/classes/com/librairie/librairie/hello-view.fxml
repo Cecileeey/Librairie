@@ -32,6 +32,7 @@
                   <TableColumn fx:id="parutionColumn" prefWidth="85.0" text="Parution" />
                   <TableColumn fx:id="colonneColumn" prefWidth="99.0" text="Colonne" />
                   <TableColumn fx:id="rangeeColumn" minWidth="0.0" prefWidth="70.0" text="Rangée" />
+                  <TableColumn fx:id="imageColumn" prefWidth="75.0" text="image" />
                </columns>
                <columnResizePolicy>
                   <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -71,7 +72,7 @@
             <Label layoutX="630.0" layoutY="302.0" prefHeight="17.0" prefWidth="46.0" text="Rangée" textAlignment="CENTER" />
             <TextField fx:id="image" layoutX="694.0" layoutY="341.0" />
             <Label layoutX="634.0" layoutY="346.0" prefHeight="17.0" prefWidth="38.0" text="Image" textAlignment="CENTER" />
-            <Button fx:id="btnValider" layoutX="784.0" layoutY="378.0" mnemonicParsing="false" onAction="#handleBookAction" style="-fx-background-color: #409a13;" text="Valider" textFill="WHITE">
+            <Button fx:id="buttonValider" layoutX="784.0" layoutY="378.0" mnemonicParsing="false" onAction="#handleBookAction" style="-fx-background-color: #409a13;" text="Valider" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
@@ -80,6 +81,7 @@
             <Button fx:id="buttonMoins" layoutX="421.0" layoutY="427.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="34.0" text="-" onAction="#handleMoinsBouton" />
             <DatePicker fx:id="parution" layoutX="694.0" layoutY="210.0" prefHeight="23.0" prefWidth="160.0" />
             <ImageView fx:id="imageView" fitHeight="121.0" fitWidth="134.0" layoutX="586.0" layoutY="373.0" pickOnBounds="true" preserveRatio="true" />
+            <Button fx:id="buttonConnexion" layoutX="511.0" layoutY="428.0" mnemonicParsing="false" onAction="#login" text="Connexion" />
          </children>
       </AnchorPane>
    </children>

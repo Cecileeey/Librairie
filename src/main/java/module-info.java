@@ -4,9 +4,9 @@ module com.librairie.librairie {
     requires java.xml.bind;
 
     requires org.controlsfx.controls;
-    //requires mysql.connector.java;
+    requires mysql.connector.java;
     requires java.sql;
-
+    requires lombok;
 
 
     opens com.librairie.librairie to javafx.fxml;

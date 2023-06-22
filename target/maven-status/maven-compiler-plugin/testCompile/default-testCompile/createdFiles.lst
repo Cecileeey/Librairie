@@ -1,2 +1,4 @@
 librairieTest\Controller\HelloControllerTest.class
 com\librairie\librairie\Controller\HelloControllerTest.class
+com\librairie\librairie\Fixture\LivreFixture.class
+com\librairie\librairie\Model\BibliothequeTest.class
