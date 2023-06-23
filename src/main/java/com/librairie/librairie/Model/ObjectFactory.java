@@ -1,15 +1,5 @@
-package com.librairie.librairie.Model;//
-// Ce fichier a �t� g�n�r� par l'impl�mentation de r�f�rence JavaTM Architecture for XML Binding (JAXB), v2.2.8-b130911.1802
-// Voir <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a>
-// Toute modification apport�e � ce fichier sera perdue lors de la recompilation du sch�ma source.
-// G�n�r� le : 2023.03.23 � 10:22:50 AM CET
-//
-
-
-import com.librairie.librairie.Model.Bibliotheque;
+package com.librairie.librairie.Model;
 import javax.xml.bind.annotation.XmlRegistry;
-
-
 
 /**
  * This object contains factory methods for each
@@ -23,12 +13,9 @@ import javax.xml.bind.annotation.XmlRegistry;
  * type definitions, element declarations and model
  * groups.  Factory methods for each of these are
  * provided in this class.
- *
  */
 @XmlRegistry
 public class ObjectFactory {
-
-
     /**
      * Create a new com.librairie.librairie.Model.ObjectFactory that can be used to create new instances of schema derived classes for package: com.esiee.java_avance_lot_1
      *
@@ -59,5 +46,4 @@ public class ObjectFactory {
     public Bibliotheque.Livre.Auteur createBibliothequeLivreAuteur() {
         return new Bibliotheque.Livre.Auteur();
     }
-
 }

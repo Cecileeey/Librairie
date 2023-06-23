@@ -2,6 +2,7 @@ package com.librairie.librairie.Model;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -26,7 +27,6 @@ public class DbConnection {
 
     /**
      * Méthode qui permet de passer les instructions SQL qui sont exécutées et les résultats sont renvoyés dans le contexte d'une connexion.
-     *
      * @return
      * @throws SQLException
      */
@@ -36,7 +36,6 @@ public class DbConnection {
 
     /**
      * Méthode qui permet de faire la connection à la base de données via les attributs déclarés.
-     *
      * @return
      */
     public Connection getConnexion() {
@@ -50,5 +49,35 @@ public class DbConnection {
             }
         }
         return connection;
+    }
+
+    /**
+     * Méthode qui permet d'insérer dans la BDD les données rentrées dans le tableau
+     * @param biblio
+     * @return
+     */
+    public static int save(Bibliotheque.Livre biblio){
+        int bi = 0;
+
+        try{
+            String sql = "INSERT INTO livre(titre,auteur,presentation,colonne,rangee,parution, image, etat) " +
+                    "VALUES(?,?,?,?,?,?,?,?)";
+            Connection con = new DbConnection().getConnexion();
+            PreparedStatement stat;
+            stat = con.prepareStatement(sql);
+            stat.setString(1, biblio.getTitre());
+            stat.setString(2, biblio.auteur.getPrenom()+biblio.auteur.getNom());
+            stat.setString(3, biblio.getPresentation());
+            stat.setInt(4, biblio.getColonne());
+            stat.setInt(5, biblio.getRangee());
+            stat.setString(6, biblio.getParution());
+            stat.setString(7, biblio.getImage());
+            stat.setString(8, biblio.getEtat());
+            bi = stat.executeUpdate();
+            con.close();
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        return bi;
     }
 }
