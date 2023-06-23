@@ -6,9 +6,9 @@ public class LivreFixture {
     private String titre = "TitreTest";
     private Bibliotheque.Livre.Auteur auteur = new Bibliotheque.Livre.Auteur("Musso", "Guillaume");
     private String presentation = "Presentation fictive pour test";
-    private String parution = "date de parution";
-    private int colonne = '0';
-    private int rangee = '0';
+    private int parution = 2022;
+    private int colonne = 0;
+    private int rangee = 0;
     private String image = "url image";
 
     public static LivreFixture leLivre() {
