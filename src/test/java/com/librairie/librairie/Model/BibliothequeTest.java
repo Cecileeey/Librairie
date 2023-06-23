@@ -5,7 +5,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static com.librairie.librairie.Fixture.LivreFixture.leLivre;
-import static org.junit.jupiter.api.Assertions.*;
 
 class BibliothequeTest extends Bibliotheque {
 

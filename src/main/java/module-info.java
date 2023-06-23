@@ -9,7 +9,6 @@ module com.librairie.librairie {
     requires lombok;
 
     requires org.apache.pdfbox;
-    //requires boxable;
     requires java.desktop;
 
     opens com.librairie.librairie to javafx.fxml, java.xml.bind;

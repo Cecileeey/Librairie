@@ -6,7 +6,6 @@ import com.librairie.librairie.Model.DbConnection;
 import com.librairie.librairie.Model.XMLhandler;
 
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.xml.sax.SAXException;
@@ -170,8 +169,8 @@ public class HelloController {
     }
 
     /**
-     * Hide all the error message below the textfields in the form
-     * Set all Visible  attribute of textviewers to false
+     * Cacher tous les messages d'erreur sous les textfields du formulaire.
+     * Attribuer la valeur false à tous les attributs textfields.
      */
     public void msgError() {
         msgErrorTitre.setVisible(false);
@@ -222,9 +221,8 @@ public class HelloController {
     }
 
     /**
-     * Set selectedbook to the Livre object binded to the row selected
-     * Put attribute of the Livre object from the selected row into the textfield of the form
-     * Unable btnMoins (minus button)
+     * Définir selectedbook à l'objet Livre lié à la ligne sélectionnée
+     * Mettre l'attribut de l'objet Livre de la ligne sélectionnée dans le champ de texte du formulaire
      *
      * @param event
      */
@@ -398,27 +396,8 @@ public class HelloController {
      *  @throws SAXException Si une exception SAX se produit lors de la validation du fichier XML par le schéma.
      */
     public void handleOpen(ActionEvent event) throws JAXBException, SAXException {
-        File xsdf = new File("src/main/xsd/Biblio.xsd");
-
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Ouvrir");
-        fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("Fichier XML", "*.xml"));
-        File openFile = fileChooser.showOpenDialog(tableView.getScene().getWindow());
-        if (openFile != null) {
-            JAXBContext jaxbContext = JAXBContext.newInstance(Bibliotheque.class);
-            Unmarshaller jaxbunMarshaller = jaxbContext.createUnmarshaller();
-            SchemaFactory schemafactory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
-
-            //try
-            Schema sch = schemafactory.newSchema(xsdf);
-            jaxbunMarshaller.setSchema(sch);
-            bibliotheque = (Bibliotheque) jaxbunMarshaller.unmarshal(openFile);
-
-            /* mise a jour du tableau d'affichage */
-
-            fileSaved = true;
-            selectedFile = openFile;
-        }
+        bibliotheque = xmlfile.Open(tableView.getScene().getWindow());
+        tableView.setItems(bibliotheque.getLivre());
     }
 
 
@@ -576,28 +555,6 @@ public class HelloController {
         }
         Platform.exit();
     }
-
-    /**
-     * @return
-     */
-    public boolean AlerteSauvegarde() {
-        String name = "no file";
-        if (selectedFile != null) {
-            name = selectedFile.getName();
-        }
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Exit");
-        alert.setHeaderText("Êtes-vous sur de quitter sans sauvegarder?");
-        alert.setContentText("Toute les modifications apportées au fichier " + name + "seront perdu. Cliquez sur OK pour sauvegarder votre fichier");
-
-        Optional<ButtonType> result = alert.showAndWait();
-        if (result.get() == ButtonType.OK) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
 
     public boolean AlerteModifyBook() {
 

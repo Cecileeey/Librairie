@@ -5,8 +5,6 @@ package com.librairie.librairie.Model;//
 // G�n�r� le : 2023.03.23 � 10:22:50 AM CET
 //
 
-
-import com.librairie.librairie.Model.Bibliotheque;
 import javax.xml.bind.annotation.XmlRegistry;
 
 
