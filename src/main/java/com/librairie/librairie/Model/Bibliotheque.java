@@ -485,6 +485,7 @@ public class Bibliotheque {
              *     possible object is
              *     {@link String }
              *
+             *
              */
             public String getNom() {
                 return nom;
