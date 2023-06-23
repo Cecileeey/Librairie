@@ -69,9 +69,9 @@ public class DbConnection {
             stat.setString(3, biblio.getPresentation());
             stat.setInt(4, biblio.getColonne());
             stat.setInt(5, biblio.getRangee());
-            stat.setString(6, biblio.getParution());
+            stat.setInt(6, biblio.getParution());
             stat.setString(7, biblio.getImage());
-            stat.setString(8, biblio.getEtat());
+            stat.setBoolean(8, biblio.getEtat());
             bi = stat.executeUpdate();
             con.close();
         } catch (Exception e){

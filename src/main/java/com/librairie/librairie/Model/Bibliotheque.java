@@ -20,9 +20,7 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Classe Java pour anonymous complex type.
- *
  * <p>Le fragment de sch�ma suivant indique le contenu attendu figurant dans cette classe.
- *
  * <pre>
  * &lt;complexType>
  *   &lt;complexContent>
@@ -60,8 +58,6 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- *
- *
  */
 
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -83,30 +79,24 @@ public class Bibliotheque {
 
     /**
      * Gets the value of the livre property.
-     *
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
      * This is why there is not a <CODE>set</CODE> method for the livre property.
-     *
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
      *    getLivre().add(newItem);
      * </pre>
-     *
-     *
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link Bibliotheque.Livre }
-     *
-     *
      */
+
     /**
      * Méthode qui permet de récupérer une liste.
      * Si elle est null alors on instancie une nouvelle liste appelé "livre".
-     *
      * @return this.livre
      */
     public ObservableList<Bibliotheque.Livre> getLivre() {
@@ -116,10 +106,8 @@ public class Bibliotheque {
         return this.livrelist;
     }
 
-    //used by jaxb to create/write book
     /**
      * Méthode qui permet d'ajouter un livre.
-     * *
      * @param titre
      * @param auteur
      * @param presentation
@@ -127,9 +115,9 @@ public class Bibliotheque {
      * @param colonne
      * @param rangee
      */
-    public void addLivre(String titre, Livre.Auteur auteur, String presentation , int parution , int colonne, int rangee , String image, boolean etat){
+    public void addLivre(String titre, Livre.Auteur auteur, String presentation , int colonne, int rangee ,int parution , String image, boolean etat){
 
-        livrelist.add(new Livre(titre, auteur, presentation, parution ,colonne, rangee, image, etat));
+        livrelist.add(new Livre(titre, auteur, presentation, colonne, rangee, parution , image, etat));
 
     }
 
@@ -184,9 +172,9 @@ public class Bibliotheque {
             "titre",
             "auteur",
             "presentation",
-            "parution",
             "colonne",
             "rangee",
+            "parution",
             "image",
             "etat"
     })
@@ -231,13 +219,13 @@ public class Bibliotheque {
          * @param image
          * @param etat
          */
-        public Livre(String titre, Bibliotheque.Livre.Auteur auteur,String presentation,Integer parution,Integer colonne, Integer rangee, String image, boolean etat){
+        public Livre(String titre, Bibliotheque.Livre.Auteur auteur,String presentation,Integer colonne, Integer rangee,Integer parution, String image, boolean etat){
             this.titre = titre;
             this.auteur =auteur;
             this.presentation = presentation;
-            this.parution= parution;
             this.colonne= colonne;
             this.rangee= rangee;
+            this.parution= parution;
             this.image = image;
             this.etat = etat;
         }
@@ -249,9 +237,9 @@ public class Bibliotheque {
             this.titre= null;
             this.auteur =null;
             this.presentation= null;
-            this.parution= 2020;
             this.colonne= 0;
             this.rangee= 0;
+            this.parution= 2020;
             this.etat = true;
         }
 

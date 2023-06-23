@@ -4,18 +4,14 @@ import com.librairie.librairie.HelloApplication;
 import com.librairie.librairie.Model.Bibliotheque;
 import com.librairie.librairie.Model.DbConnection;
 import com.librairie.librairie.Model.XMLhandler;
-
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.xml.sax.SAXException;
-
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
 import javafx.application.Platform;
 import javafx.beans.binding.Bindings;
 import javafx.beans.value.ObservableValue;
@@ -39,17 +35,14 @@ import javax.xml.bind.Unmarshaller;
 import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
 import java.io.File;
-import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Optional;
-import org.xml.sax.SAXException;
+
 
 /**
- * @version 1.5
+ * @version 2.0
  * @author Marianne Marine Cécile
  */
 
@@ -302,7 +295,7 @@ public class HelloController {
                 selectedBook.setColonne(colonneText);
                 selectedBook.setParution(datapickerText);
                 selectedBook.setImage(imageUrl);
-                selectedBook.setEtat(etatText);
+                selectedBook.setEtat(etatBool);
 
                 // Mise a jour du tableau
                 if (Alerte(Alert.AlertType.INFORMATION,
@@ -540,8 +533,8 @@ public class HelloController {
             while (rs.next()) {
                 data.add(new Bibliotheque.Livre(rs.getString(2),
                         new Bibliotheque.Livre.Auteur(rs.getString(3).toString().split(" ")[0], rs.getString(3).toString().split(" ")[1]), rs.getString(4),
-                        rs.getInt(7), rs.getInt(5), rs.getInt(6),
-                        rs.getString(8), rs.getBoolean(1)));
+                         rs.getInt(5), rs.getInt(6),rs.getInt(7),
+                        rs.getString(8), rs.getBoolean(9)));
             }
             con.close();
         } catch (Exception e) {
@@ -555,7 +548,7 @@ public class HelloController {
         rangee.getCharacters();
         parution.getConverter();
         image.getCharacters();
-        etat.getCharacters();
+        etat.isSelected();
         tableView.setItems(data);
     }
 
@@ -689,9 +682,9 @@ public class HelloController {
         String presentationText = presentation.getText();
         int colonneText = Integer.parseInt(colonne.getText());
         int rangeeText = Integer.parseInt(rangee.getText());
-        String datapickerText = String.valueOf(parution.getValue().getYear());
+        int datapickerText = parution.getValue().getYear();
         String imageUrl = image.getText();
-        String etatText = etat.getText();
+        boolean etatText = etat.isSelected();
 
         Bibliotheque.Livre biblio = new Bibliotheque.Livre();
         biblio.setTitre(titreText);
