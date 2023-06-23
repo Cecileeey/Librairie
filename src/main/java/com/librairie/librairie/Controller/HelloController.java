@@ -647,6 +647,7 @@ public class HelloController {
     }
 
     /**
+     * Méthode qui permet d'afficher des messages d'alerte
      * @param myType
      * @param title
      * @param headerText

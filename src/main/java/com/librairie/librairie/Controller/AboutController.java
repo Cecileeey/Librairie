@@ -14,10 +14,20 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+/**
+ * Classe pour les infos des élèves
+ */
 public class AboutController implements Initializable {
+    /**
+     * Déclaration de l'attribut utilisé dans la classe
+     */
     @FXML
     private Button infos;
 
+    /**
+     * @param url
+     * @param resourceBundle
+     */
     public void initialize(URL url, ResourceBundle resourceBundle) {
         infos.setOnAction(actionEvent -> infos.getScene().getWindow().hide());
     }

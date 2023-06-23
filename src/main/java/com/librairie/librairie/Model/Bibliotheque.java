@@ -285,7 +285,7 @@ public class Bibliotheque {
         }
 
         /**
-         * D�finit la valeur de la propri�t� auteur.
+         * Définit la valeur de la propriété auteur.
          * Setter Auteur.
          *
          * @param value
@@ -310,7 +310,7 @@ public class Bibliotheque {
         }
 
         /**
-         * D�finit la valeur de la propri�t� presentation.
+         * Définit la valeur de la propriété presentation.
          * Setter Presentation.
          *
          * @param value
@@ -367,16 +367,16 @@ public class Bibliotheque {
         /**
          * Obtient la valeur de la propri�t� colonne.
          * Getter colonne
-         *
+         * @return
          */
         public int getColonne() {
             return colonne;
         }
 
         /**
-         * D�finit la valeur de la propri�t� colonne.
+         * Définit la valeur de la propriété colonne.
          * Setter Colonne.
-         *
+         * @param value
          */
         public void setColonne(int value) {
             this.colonne = value;
@@ -397,7 +397,7 @@ public class Bibliotheque {
         }
 
         /**
-         * D�finit la valeur de la propri�t� rangee.
+         * Définit la valeur de la propriété rangee.
          * Setter Rangee.
          *
          */
@@ -409,6 +409,23 @@ public class Bibliotheque {
             return this.toString() + "\n" + this.getTitre() + "\n" + this.getAuteur().toString() ;
         }
 
+        /**
+         * Obtient la valeur de la propriété etat.
+         * Getter Etat.
+         * @return
+         */
+        public boolean getEtat() {
+            return etat;
+        }
+
+        /**
+         * Définit la valeur de la propriété etat.
+         * Setter etat.
+         * @param b
+         */
+        public void setEtat (boolean b){
+            etat = b;
+        }
 
         /**
          * <p>Classe Java pour anonymous complex type.
@@ -430,6 +447,7 @@ public class Bibliotheque {
          *
          *
          */
+
         /**
          * Classe pour différencié le prenom et le nom de l'auteur.
          */
@@ -515,23 +533,5 @@ public class Bibliotheque {
             }
 
         }
-
-        /**
-         *
-         * @return
-         */
-        public boolean getEtat() {
-            return etat;
-        }
-
-        /**
-         *
-         * @param b
-         */
-        public void setEtat (boolean b){
-            etat = b;
-        }
-
     }
-
 }

@@ -29,7 +29,6 @@ public class HelloApplication extends Application {
      * @param args
      */
     public static void main(String[] args) {
-
         launch();
     }
 }
