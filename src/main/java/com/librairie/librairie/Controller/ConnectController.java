@@ -11,6 +11,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -55,8 +57,13 @@ public class ConnectController implements Initializable {
                 System.out.println("Connecté");
                 Stage stage = new Stage();
                 //Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("../../../../../resources/com/librairie/librairie/hello-view.fxml"));
-                Parent root = FXMLLoader.load(HelloApplication.class.getClassLoader().getResource("../../../../../resources/com/librairie/librairie/hello-view.fxml"));
-                Scene scene = new Scene(root);
+                FXMLLoader root = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+                Scene scene;
+                try {
+                    scene = new Scene(root.load());
+                } catch (IOException e) {
+                    throw new RuntimeException();
+                }
                 stage.setScene(scene);
                 stage.show();
             }else{

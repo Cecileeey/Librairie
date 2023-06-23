@@ -166,7 +166,11 @@ public class HelloController {
             ObservableValue<String> observableParution = Bindings.createStringBinding(() -> parution);
             return observableParution;
         });
-        //imageColumn.setCellValueFactory(cellData -> cellData.getValue().getImage());
+        imageColumn.setCellValueFactory(cellData -> {
+            String image = String.valueOf(cellData.getValue().getImage());
+            ObservableValue<String> observableImage = Bindings.createStringBinding(() -> image);
+            return observableImage;
+        });
         etatColumn.setCellValueFactory(cellData -> {
             String etat = String.valueOf(cellData.getValue().getEtat());
             ObservableValue<String> observableEtat = Bindings.createStringBinding(() -> etat);

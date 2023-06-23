@@ -14,7 +14,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<?import javafx.scene.image.ImageView?>
 <VBox prefHeight="500.0" prefWidth="870.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.librairie.librairie.Controller.HelloController">
    <children>
       <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="549.0" prefWidth="979.0" onMouseClicked="#handleOutsideCLick" VBox.vgrow="ALWAYS"  >
@@ -33,6 +32,7 @@
                   <TableColumn fx:id="colonneColumn" prefWidth="99.0" text="Colonne" />
                   <TableColumn fx:id="rangeeColumn" minWidth="0.0" prefWidth="70.0" text="Rangée" />
                   <TableColumn fx:id="imageColumn" prefWidth="75.0" text="image" />
+                  <TableColumn fx:id="etatColumn" prefWidth="75.0" text="image" />
                </columns>
                <columnResizePolicy>
                   <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -72,7 +72,6 @@
             <Label layoutX="630.0" layoutY="302.0" prefHeight="17.0" prefWidth="46.0" text="Rangée" textAlignment="CENTER" />
             <TextField fx:id="image" layoutX="694.0" layoutY="341.0" />
             <Label layoutX="634.0" layoutY="346.0" prefHeight="17.0" prefWidth="38.0" text="Image" textAlignment="CENTER" />
-            <Label layoutX="637.0" layoutY="345.0" prefHeight="17.0" prefWidth="38.0" text="Image" textAlignment="CENTER" />
             <Button fx:id="buttonValider" layoutX="781.0" layoutY="423.0" mnemonicParsing="false" onAction="#handleBookAction" style="-fx-background-color: #409a13;" text="Valider" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
@@ -85,7 +84,11 @@
             <Button fx:id="buttonConnexion" layoutX="511.0" layoutY="428.0" mnemonicParsing="false" onAction="#login" text="Connexion" />
             <Label layoutX="651.0" layoutY="387.0" text="Etat" />
             <TextField fx:id="etat" layoutX="695.0" layoutY="382.0" />
-            <Button fx:id="buttonBdd" layoutX="668.0" layoutY="428.0" mnemonicParsing="false" onAction="#insertData" text="ValiderBdd" />
+            <Button fx:id="buttonBdd" layoutX="668.0" layoutY="423.0" mnemonicParsing="false" onAction="#insertData" style="-fx-background-color: #409a13;" text="ValiderBdd" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </children>

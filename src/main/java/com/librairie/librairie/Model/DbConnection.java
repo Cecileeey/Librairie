@@ -58,7 +58,6 @@ public class DbConnection {
      */
     public static int save(Bibliotheque.Livre biblio){
         int bi = 0;
-
         try{
             String sql = "INSERT INTO livre(titre,auteur,presentation,colonne,rangee,parution, image, etat) " +
                     "VALUES(?,?,?,?,?,?,?,?)";
