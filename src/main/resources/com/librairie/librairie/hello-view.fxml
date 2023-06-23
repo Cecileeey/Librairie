@@ -13,6 +13,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <VBox prefHeight="500.0" prefWidth="870.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.librairie.librairie.Controller.HelloController">
    <children>
@@ -42,19 +43,19 @@
                <menus>
                   <Menu fx:id="fichier" mnemonicParsing="false" text="Fichier">
                      <items>
-                        <MenuItem fx:id="ouvrir" mnemonicParsing="false" onAction="#handleOpen" text="Ouvrir" />
-                        <MenuItem fx:id="quitter" mnemonicParsing="false" onAction="#handleExit" text="Quitter" />
+                        <MenuItem fx:id="ouvrir" mnemonicParsing="false" text="Ouvrir" onAction="#handleOpen"/>
+                        <MenuItem fx:id="quitter" mnemonicParsing="false" text="Quitter" onAction="#handleExit" />
                      </items>
                   </Menu>
                   <Menu fx:id="edition" mnemonicParsing="false" text="Edition">
                      <items>
-                        <MenuItem fx:id="sauv" mnemonicParsing="false" text="Sauvegarder" />
-                        <MenuItem fx:id="sauvSous" mnemonicParsing="false" text="Sauvegarder sous ..." />
+                        <MenuItem fx:id="sauv" mnemonicParsing="false" onAction="#handleSave" text="Sauvegarder" />
+                        <MenuItem fx:id="sauvSous" mnemonicParsing="false" onAction="#handleSaveAs" text="Sauvegarder sous ..." />
                      </items>
                   </Menu>
                   <Menu fx:id="about" mnemonicParsing="false" text="About">
                      <items>
-                        <MenuItem fx:id="infos" mnemonicParsing="false" text="Infos" />
+                        <MenuItem fx:id="infos" mnemonicParsing="false" onAction="#openAbout" text="Infos" />
                      </items>
                   </Menu>
                </menus>
@@ -77,18 +78,38 @@
                   <Font name="System Bold" size="16.0" />
                </font>
             </Button>
-            <Button fx:id="buttonPlus" layoutX="369.0" layoutY="427.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="36.0" style="-fx-background-color: #409a13;" text="+" textFill="WHITE" onAction="#handlePlusBouton" />
-            <Button fx:id="buttonMoins" layoutX="421.0" layoutY="427.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="34.0" text="-" onAction="#handleMoinsBouton" />
-            <DatePicker fx:id="parution" layoutX="694.0" layoutY="210.0" prefHeight="23.0" prefWidth="160.0" />
-            <ImageView fx:id="imageView" fitHeight="121.0" fitWidth="134.0" layoutX="586.0" layoutY="373.0" pickOnBounds="true" preserveRatio="true" />
-            <Button fx:id="buttonConnexion" layoutX="511.0" layoutY="428.0" mnemonicParsing="false" onAction="#login" text="Connexion" />
-            <Label layoutX="651.0" layoutY="387.0" text="Etat" />
-            <TextField fx:id="etat" layoutX="695.0" layoutY="382.0" />
-            <Button fx:id="buttonBdd" layoutX="668.0" layoutY="423.0" mnemonicParsing="false" onAction="#insertData" style="-fx-background-color: #409a13;" text="ValiderBdd" textFill="WHITE">
+            <Button fx:id="buttonPlus" layoutX="330.0" layoutY="427.0" mnemonicParsing="false" onAction="#handlePlusBouton" prefHeight="28.0" prefWidth="36.0" style="-fx-background-color: #409a13;" text="+" textFill="WHITE" />
+            <Button fx:id="buttonMoins" layoutX="377.0" layoutY="427.0" mnemonicParsing="false" onAction="#handleMoinsBouton" prefHeight="28.0" prefWidth="34.0" text="-" />
+            <DatePicker fx:id="parution" layoutX="690.0" layoutY="196.0" prefHeight="31.0" prefWidth="181.0" />
+            <ImageView fx:id="imageView" fitHeight="112.0" fitWidth="114.0" layoutX="560.0" layoutY="386.0" pickOnBounds="true" preserveRatio="true" />
+            <Text fx:id="msgErrorTitre" fill="RED" layoutX="661.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Le titre doit contenir des chiffres, lettres ou caractère spéciaux">
                <font>
-                  <Font name="System Bold" size="16.0" />
+                  <Font size="8.0" />
                </font>
-            </Button>
+            </Text>
+            <Text fx:id="msgErrorAuteur" fill="RED" layoutX="652.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="L' auteur doit contenir un nom et prenom separé par un espace" wrappingWidth="240.00001542270184">
+               <font>
+                  <Font size="8.0" />
+               </font>
+            </Text>
+            <Text fx:id="msgErrorColonne" fill="RED" layoutX="694.0" layoutY="277.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Colonne compris entre 1 et 12" wrappingWidth="187.00000262260437">
+               <font>
+                  <Font size="8.0" />
+               </font>
+            </Text>
+            <Text fx:id="msgErrorRangee" fill="RED" layoutX="689.0" layoutY="357.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rangee compris entre 1 et 7" wrappingWidth="210.1953125">
+               <font>
+                  <Font size="8.0" />
+               </font>
+            </Text>
+            <Text fx:id="msgErrorUrl" fill="RED" layoutX="695.0" layoutY="401.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Url non valide" wrappingWidth="202.8619384765625">
+               <font>
+                  <Font size="8.0" />
+               </font>
+            </Text>
+            <CheckBox fx:id="etat" layoutX="694.0" layoutY="285.0" mnemonicParsing="false" text="oui" />
+            <Label layoutX="594.0" layoutY="284.0" prefHeight="21.0" prefWidth="74.0" text="Disponible" textAlignment="CENTER" />
+            <Button fx:id="buttonConnexion" layoutX="204.0" layoutY="429.0" mnemonicParsing="false" onAction="#login" text="Connexion" />
          </children>
       </AnchorPane>
    </children>
